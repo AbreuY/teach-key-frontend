@@ -1,20 +1,13 @@
 import React from "react";
-
+import Logo from "../../../img/logo.png";
 export const LandingDescription = () => {
 	return (
 		<>
 			<div className="d-flex flex-row">
-				<img
-					style={{ height: "7rem", width: "7rem" }}
-					src='logo.png'
-				/>
+				<img style={{ height: "7.5rem", width: "7.5rem" }} src={Logo} />
 				<div>
 					<h2>Learn with ease.</h2>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras metus felis, semper ut accumsan
-						sed, viverra sit amet odio. Aliquam erat volutpat. Praesent pharetra ex egestas elit iaculis
-						commodo.
-					</p>
+					<p />
 				</div>
 			</div>
 		</>
