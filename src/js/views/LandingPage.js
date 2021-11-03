@@ -4,12 +4,14 @@ import { LandingDescription } from "../component/landing_page/LandingDescription
 import { LandingJumbotron } from "../component/landing_page/LandingJumbotron";
 import { LandingNavbar } from "../component/landing_page/LandingNavbar";
 
-export const Home = () => {
+export const LandingPage = () => {
 	return (
 		<>
 			<LandingNavbar />
-			<LandingJumbotron />
-			<LandingDescription />
+			<div className="container">
+				<LandingJumbotron />
+				<LandingDescription />
+			</div>
 		</>
 	);
 };
