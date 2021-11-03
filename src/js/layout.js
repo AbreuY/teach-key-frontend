@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
-import { Single } from "./views/single";
+import { LandingPage } from "./views/LandingPage";
 import injectContext from "./store/appContext";
 
 //create your first component
@@ -18,10 +17,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Switch>
 						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+							<LandingPage />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
