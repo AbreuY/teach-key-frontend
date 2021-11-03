@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../../img/logo.png";
+import Logo from "../../../img/logo2.png";
 export const LandingNavbar = () => {
 	return (
 		<div className="container-fluid bg-light">
@@ -16,7 +16,7 @@ export const LandingNavbar = () => {
 							</span>
 						</div>
 					</Link>
-					<button type="button" className="btn btn-primary">
+					<button type="button" className="btn btn-primary w-75 h-50">
 						Main Page
 					</button>
 				</div>
