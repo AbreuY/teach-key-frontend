@@ -6,4 +6,15 @@
 //  border: red 1px solid;
 //  }
 
+.linkDecoration{
+    text-decoration: none;
+}
 
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+input {
+    border: hidden;
+    border-bottom: solid black 1px;
+  }

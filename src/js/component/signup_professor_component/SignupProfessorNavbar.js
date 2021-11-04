@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../img/logo2.png";
 
-export const LoginNavbar = () => {
+export const SignupProfessorNavbar = () => {
 	return (
 		<div className="container">
 			<div className="row align-items-center m-3 mb-5">

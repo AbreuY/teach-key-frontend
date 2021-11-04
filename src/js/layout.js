@@ -5,6 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { LandingPage } from "./views/LandingPage";
 import injectContext from "./store/appContext";
 import { Login } from "./views/Login";
+import { SignupProfessor } from "./views/SignupProfessor";
+import { SignupStudent } from "./views/SignupStudent";
 
 //create your first component
 const Layout = () => {
@@ -22,6 +24,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/login">
 							<Login />
+						</Route>
+						<Route exact path="/signup/professor">
+							<SignupProfessor />
+						</Route>
+						<Route exact path="/signup/student">
+							<SignupStudent />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

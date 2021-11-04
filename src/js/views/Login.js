@@ -1,10 +1,10 @@
 import React from "react";
-import { LoginNavbar } from "../component/login_components/LoginNavbar";
+import { LoginContent } from "../component/login_components/LoginContent";
 
 export const Login = () => {
 	return (
 		<>
-			<LoginNavbar />
+			<LoginContent />
 		</>
 	);
 };
