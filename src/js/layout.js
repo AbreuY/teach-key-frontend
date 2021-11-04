@@ -5,6 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { LandingPage } from "./views/LandingPage";
 import injectContext from "./store/appContext";
 import { Home } from "./views/Home";
+import AppContextProvider from "./store/appContext";
+import { Navbar } from "./component/home_components/Navbar";
 
 //create your first component
 const Layout = () => {
@@ -14,21 +16,24 @@ const Layout = () => {
 
 	return (
 		<div>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route exact path="/landing/">
-							<LandingPage />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
-				</ScrollToTop>
-			</BrowserRouter>
+			<AppContextProvider>
+				<BrowserRouter basename={basename}>
+					<ScrollToTop>
+						<Navbar />
+						<Switch>
+							<Route exact path="/" component={Home} />
+							<Route exact path="/landing/">
+								<LandingPage />
+							</Route>
+							<Route>
+								<h1>Not found!</h1>
+							</Route>
+						</Switch>
+					</ScrollToTop>
+				</BrowserRouter>
+			</AppContextProvider>
 		</div>
 	);
 };
 
-export default injectContext(Layout);
+export default Layout;
