@@ -18,3 +18,13 @@ input {
     border: hidden;
     border-bottom: solid black 1px;
   }
+
+.signupBox{
+    padding: 2rem;
+    height: 30rem;
+}
+
+.signupInput ::placeholder{
+    color: rgb(236, 73, 73);
+    font-size: 21px;
+    }
