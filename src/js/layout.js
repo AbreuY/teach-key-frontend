@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { LandingPage } from "./views/LandingPage";
 import injectContext from "./store/appContext";
+import { Login } from "./views/Login";
 
 //create your first component
 const Layout = () => {
@@ -18,6 +19,9 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<LandingPage />
+						</Route>
+						<Route exact path="/login">
+							<Login />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

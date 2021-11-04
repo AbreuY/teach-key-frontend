@@ -20,7 +20,7 @@ export const LandingNavbar = () => {
 							</span>
 						</div>
 					</Link>
-					<button type="button" className="btn btn-primary w-75 h-50">
+					<button type="button" className="btn btn-primary">
 						Main Page
 					</button>
 				</div>
