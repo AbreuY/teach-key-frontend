@@ -5,7 +5,7 @@ import { SignupProfessorNavbar } from "../component/signup_professor_component/S
 export const SignupProfessor = () => {
 	return (
 		<>
-			<SignupProfessorNavbar />
+			{/* <SignupProfessorNavbar /> */}
 			<SignupProfessorContent />
 		</>
 	);
