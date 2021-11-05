@@ -20,6 +20,7 @@ const Layout = () => {
 
 	return (
 		<div>
+			<AppContextProvider>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
@@ -44,6 +45,7 @@ const Layout = () => {
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
+			</AppContextProvider>
 		</div>
 	);
 };
