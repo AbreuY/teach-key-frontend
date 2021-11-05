@@ -21,12 +21,12 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-						<Navbar />
+					<Navbar />
 					<Switch>
-							<Route exact path="/" component={Home} />
-							<Route exact path="/landing/">
-								<LandingPage />
-							</Route>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/landing/">
+							<LandingPage />
+						</Route>
 						<Route exact path="/login">
 							<Login />
 						</Route>
@@ -42,10 +42,6 @@ const Layout = () => {
 					</Switch>
 				</ScrollToTop>
 			</BrowserRouter>
-			
-				
-					
-						
 		</div>
 	);
 };
