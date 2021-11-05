@@ -132,7 +132,10 @@ h1{
     }
   }
 
-input:focus, textarea:focus, select:focus{
+   /* INPUTS FOR SIGNUPS FORMS
+-------------------------------------------------- */
+
+input:focus, textarea:focus, select:focus select form{
     outline: none;
 }
 
@@ -142,11 +145,14 @@ input {
   }
 
 .signupBox{
-    padding: 2rem;
-    height: 30rem;
+    height: auto;
 }
 
-.signupInput ::placeholder{
+.signupInput ::placeholder {
     color: rgb(236, 73, 73);
     font-size: 21px;
     }
+
+form {
+    margin: 0;
+}
