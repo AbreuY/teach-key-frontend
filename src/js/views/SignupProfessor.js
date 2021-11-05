@@ -1,11 +1,15 @@
 import React from "react";
-import { SignupProfessorContent } from "../component/signup_professor_component/SignupProfessorContent";
-import { SignupProfessorNavbar } from "../component/signup_professor_component/SignupProfessorNavbar";
+import { SignupContent } from "../component/signupComponents/SignupContent";
+import ProfessorImage from "../../img/professorimage.jpg";
 
 export const SignupProfessor = () => {
 	return (
 		<>
-			<SignupProfessorContent />
+			<SignupContent
+				title="Sign Up as a Professor"
+				titleDescription="Without paying anything!"
+				image={ProfessorImage}
+			/>
 		</>
 	);
 };

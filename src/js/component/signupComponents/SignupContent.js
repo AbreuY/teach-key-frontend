@@ -1,14 +1,15 @@
 import React from "react";
-import GirlStudying from "../../../img/girlstudying.jpg";
+import PropTypes from "prop-types";
+import { SignupCountryInputs } from "./SignupCountryInputs";
 
-export const SignupProfessorContent = () => {
+export const SignupContent = props => {
 	return (
 		<>
 			<div className="container">
 				<div className="row align-items-center mt-5">
 					<div className="col-12 col-md-12 col-sm-12 col-lg-6 text-md-center text-sm-center signupBox text-center shadow-lg p-3 mb-5 bg-body rounded">
-						<div className="fs-2">Sign Up as a Professor</div>
-						<p className="text-secondary pt-3">Without paying anything!</p>
+						<div className="fs-2">{props.title}</div>
+						<p className="text-secondary pt-3">{props.titleDescription}</p>
 						<div className="row pt-3 signupInput">
 							<div className="col-12 col-md-6 col-sm-6 col-lg-6 pt-3">
 								<input
@@ -50,14 +51,7 @@ export const SignupProfessorContent = () => {
 								<div className="pt-3 pt-sm-3 pt-md-2 pt-lg-0 ">
 									<p style={{ color: "rgb(236, 73, 73)", fontSize: "21px" }}>Country</p>
 									<div>
-										<select className="w-50 border-0 border-bottom me-0">
-											<option value="0" className="text-center border border-bottom">
-												Select
-											</option>
-											<option value="1">Venezuela</option>
-											<option value="2">United States</option>
-											<option value="3">Panama</option>
-										</select>
+										<SignupCountryInputs />
 									</div>
 								</div>
 							</div>
@@ -77,7 +71,7 @@ export const SignupProfessorContent = () => {
 									<img
 										className="rounded-circle shadow-lg mb-5 bg-body h-100 w-100"
 										style={{ height: "25rem", width: "32.5rem" }}
-										src={GirlStudying}
+										src={props.image}
 									/>
 								</div>
 							</div>
@@ -87,4 +81,10 @@ export const SignupProfessorContent = () => {
 			</div>
 		</>
 	);
+};
+
+SignupContent.propTypes = {
+	title: PropTypes.string,
+	titleDescription: PropTypes.string,
+	image: PropTypes.string
 };

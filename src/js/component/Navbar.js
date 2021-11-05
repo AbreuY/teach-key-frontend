@@ -8,9 +8,9 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<div className="container-fluid">
-				<a className="navbar-brand" href="#">
+				<Link to="/" className="navbar-brand">
 					Navbar
-				</a>
+				</Link>
 				<button
 					className="navbar-toggler"
 					type="button"
@@ -27,7 +27,7 @@ export const Navbar = () => {
 							<li className="nav-item">
 								<a className="nav-link active" aria-current="page" href="#">
 									Do you have an account?
-									<Link to="/" className="linkDecoration text-danger">
+									<Link to="/login/professor" className="linkDecoration text-danger">
 										{" "}
 										Login Here.
 									</Link>
@@ -39,7 +39,7 @@ export const Navbar = () => {
 							<li className="nav-item">
 								<a className="nav-link active" aria-current="page" href="#">
 									Do you have an account?
-									<Link to="/" className="linkDecoration text-danger">
+									<Link to="/login/student" className="linkDecoration text-danger">
 										{" "}
 										Login Here.
 									</Link>
@@ -70,14 +70,14 @@ export const Navbar = () => {
 								</a>
 								<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 									<li>
-										<a className="dropdown-item" href="#">
+										<Link to="/login/student" className="dropdown-item" href="#">
 											Login as Student
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a className="dropdown-item" href="#">
+										<Link to="/login/professor" className="dropdown-item" href="#">
 											Login as Professor
-										</a>
+										</Link>
 									</li>
 								</ul>
 							</li>

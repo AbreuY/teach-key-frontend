@@ -4,13 +4,14 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { LandingPage } from "./views/LandingPage";
 import injectContext from "./store/appContext";
-import { Login } from "./views/Login";
 import { SignupProfessor } from "./views/SignupProfessor";
 import { SignupStudent } from "./views/SignupStudent";
 import { Home } from "./views/Home";
 import AppContextProvider from "./store/appContext";
-import { Navbar } from "./component/home_components/Navbar";
+import { Navbar } from "./component/Navbar";
 import { Footer } from "./component/Footer";
+import { LoginProfessor } from "./views/LoginProfessor";
+import { LoginStudent } from "./views/LoginStudent";
 
 //create your first component
 const Layout = () => {
@@ -29,14 +30,17 @@ const Layout = () => {
 							<Route exact path="/landing/">
 								<LandingPage />
 							</Route>
-							<Route exact path="/login">
-								<Login />
-							</Route>
 							<Route exact path="/signup/professor">
 								<SignupProfessor />
 							</Route>
 							<Route exact path="/signup/student">
 								<SignupStudent />
+							</Route>
+							<Route exact path="/login/professor">
+								<LoginProfessor />
+							</Route>
+							<Route exact path="/login/student">
+								<LoginStudent />
 							</Route>
 							<Route>
 								<h1>Not found!</h1>
