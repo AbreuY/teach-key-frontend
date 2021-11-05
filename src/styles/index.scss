@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body{
   font-family: 'Open Sans', sans-serif;
   background-color: #FFFFFF;
@@ -139,6 +140,10 @@ input:focus, textarea:focus, select:focus select form{
     outline: none;
 }
 
+.loginInput ::placeholder {
+  color: rgb(221, 96, 96);
+  font-size: 21px;
+}
 input {
     border: hidden;
     border-bottom: solid black 1px;
@@ -156,3 +161,5 @@ input {
 form {
     margin: 0;
 }
+
+
