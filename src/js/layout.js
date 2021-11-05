@@ -21,30 +21,30 @@ const Layout = () => {
 	return (
 		<div>
 			<AppContextProvider>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route exact path="/landing/">
-							<LandingPage />
-						</Route>
-						<Route exact path="/login">
-							<Login />
-						</Route>
-						<Route exact path="/signup/professor">
-							<SignupProfessor />
-						</Route>
-						<Route exact path="/signup/student">
-							<SignupStudent />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
+				<BrowserRouter basename={basename}>
+					<ScrollToTop>
+						<Navbar />
+						<Switch>
+							<Route exact path="/" component={Home} />
+							<Route exact path="/landing/">
+								<LandingPage />
+							</Route>
+							<Route exact path="/login">
+								<Login />
+							</Route>
+							<Route exact path="/signup/professor">
+								<SignupProfessor />
+							</Route>
+							<Route exact path="/signup/student">
+								<SignupStudent />
+							</Route>
+							<Route>
+								<h1>Not found!</h1>
+							</Route>
+						</Switch>
+						<Footer />
+					</ScrollToTop>
+				</BrowserRouter>
 			</AppContextProvider>
 		</div>
 	);
