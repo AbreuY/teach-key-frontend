@@ -1,7 +1,7 @@
 import React from "react";
 import { LoginContent } from "../component/login_components/LoginContent";
 
-export const Login = () => {
+export const LoginStudent = () => {
 	return (
 		<>
 			<LoginContent />

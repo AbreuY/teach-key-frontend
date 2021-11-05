@@ -1,6 +1,23 @@
 
 @import "~bootstrap/scss/bootstrap.scss";
 
+<<<<<<< HEAD
 //body{
     // background-color: black;
 //}
+=======
+form {
+    margin: 0;
+}
+
+/* LOGIN CLASSES */
+
+.loginForm{
+  width: 25rem;
+}
+
+.loginInput ::placeholder {
+  color: rgb(236, 73, 73);
+  font-size: 21px;
+  }
+>>>>>>> jesus
