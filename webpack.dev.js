@@ -18,7 +18,7 @@ module.exports = merge(common, {
         new FriendlyErrorsWebpackPlugin(),
         new ErrorOverlayPlugin(),
         new PrettierPlugin({
-            parser: "babylon",
+            parser: "babel",
             printWidth: 120,             // Specify the length of line that the printer will wrap on.
             tabWidth: 4,                // Specify the number of spaces per indentation-level.
             useTabs: true,              // Indent lines with tabs instead of spaces.
