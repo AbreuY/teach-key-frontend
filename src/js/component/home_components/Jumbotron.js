@@ -3,7 +3,7 @@ import React from "react";
 export const Jumbotron = () => {
 	return (
 		<div className="container-fluid ps-0 pe-0">
-			<div id="myCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
+			<div id="myCarousel" className="home carousel slide carousel-fade" data-bs-ride="carousel">
 				<div className="carousel-indicators">
 					<button
 						type="button"
@@ -17,16 +17,16 @@ export const Jumbotron = () => {
 					<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" />
 				</div>
 				<div className="carousel-inner">
-					<div className="carousel-item active">
+					<div className="home carousel-item active">
 						<img
-							className="bd-placeholder-img"
+							className="home bd-placeholder-img"
 							width="100%"
 							height="100%"
 							src="https://i.imgur.com/uNPNlLp.jpg"
 						/>
 
 						<div className="container">
-							<div className="carousel-caption text-start">
+							<div className="home carousel-caption text-start">
 								<h1>Example headline.</h1>
 								<p>Some representative placeholder content for the first slide of the carousel.</p>
 								<p>
@@ -37,9 +37,9 @@ export const Jumbotron = () => {
 							</div>
 						</div>
 					</div>
-					<div className="carousel-item">
+					<div className="home carousel-item">
 						<svg
-							className="bd-placeholder-img"
+							className="home bd-placeholder-img"
 							width="100%"
 							height="100%"
 							xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ export const Jumbotron = () => {
 						</svg>
 
 						<div className="container">
-							<div className="carousel-caption">
+							<div className="home carousel-caption">
 								<h1>Another example headline.</h1>
 								<p>Some representative placeholder content for the second slide of the carousel.</p>
 								<p>
@@ -61,9 +61,9 @@ export const Jumbotron = () => {
 							</div>
 						</div>
 					</div>
-					<div className="carousel-item">
+					<div className="home carousel-item">
 						<svg
-							className="bd-placeholder-img"
+							className="home bd-placeholder-img"
 							width="100%"
 							height="100%"
 							xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export const Jumbotron = () => {
 						</svg>
 
 						<div className="container">
-							<div className="carousel-caption text-end">
+							<div className="home carousel-caption text-end">
 								<h1>One more for good measure.</h1>
 								<p>Some representative placeholder content for the third slide of this carousel.</p>
 								<p>
