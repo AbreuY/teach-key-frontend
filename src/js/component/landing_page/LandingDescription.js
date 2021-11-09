@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../../img/logo2.png";
+import { LandingCarrousel } from "./LandingCarrousel";
 export const LandingDescription = () => {
 	return (
 		<div>
@@ -17,7 +18,7 @@ export const LandingDescription = () => {
 				{"y han llevado el aprendizaje a otro nivel"}
 			</div>
 			<div className="pb-5">
-				{/* Aqui va el componente landing carousel */}Aqui va el componente landing carousel
+				<LandingCarrousel />
 			</div>
 		</div>
 	);
