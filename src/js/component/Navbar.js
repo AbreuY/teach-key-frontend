@@ -27,7 +27,7 @@ export const Navbar = () => {
 							<li className="nav-item">
 								<a className="nav-link active" aria-current="page" href="#">
 									Do you have an account?
-									<Link to="/login/professor" className="linkDecoration text-danger">
+									<Link to="/login" className="linkDecoration text-danger">
 										{" "}
 										Login Here.
 									</Link>
@@ -39,7 +39,7 @@ export const Navbar = () => {
 							<li className="nav-item">
 								<a className="nav-link active" aria-current="page" href="#">
 									Do you have an account?
-									<Link to="/login/student" className="linkDecoration text-danger">
+									<Link to="/login" className="linkDecoration text-danger">
 										{" "}
 										Login Here.
 									</Link>
@@ -70,13 +70,8 @@ export const Navbar = () => {
 								</a>
 								<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 									<li>
-										<Link to="/login/student" className="dropdown-item" href="#">
-											Login as Student
-										</Link>
-									</li>
-									<li>
-										<Link to="/login/professor" className="dropdown-item" href="#">
-											Login as Professor
+										<Link to="/login" className="dropdown-item" href="#">
+											Login
 										</Link>
 									</li>
 								</ul>
