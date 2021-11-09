@@ -10,10 +10,9 @@ import { Home } from "./views/Home";
 import AppContextProvider from "./store/appContext";
 import { Navbar } from "./component/Navbar";
 import { Footer } from "./component/Footer";
-
 import { UserProfile } from "./component/user_profile_component/UserProfile";
-import { LoginProfessor } from "./views/LoginProfessor";
 import { LoginStudent } from "./views/LoginStudent";
+import { LoginProfessor } from "./views/LoginProfessor";
 
 //create your first component
 const Layout = () => {
