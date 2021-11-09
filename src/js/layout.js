@@ -10,7 +10,8 @@ import { Home } from "./views/Home";
 import AppContextProvider from "./store/appContext";
 import { Navbar } from "./component/Navbar";
 import { Footer } from "./component/Footer";
-import { Login } from "./views/Login";
+import { LoginStudent } from "./views/LoginStudent";
+import { LoginProfessor } from "./views/LoginProfessor";
 
 //create your first component
 const Layout = () => {
@@ -35,8 +36,11 @@ const Layout = () => {
 							<Route exact path="/signup/student">
 								<SignupStudent />
 							</Route>
-							<Route exact path="/login">
-								<Login />
+							<Route exact path="/login/student">
+								<LoginStudent />
+							</Route>
+							<Route exact path="/login/professor">
+								<LoginProfessor />
 							</Route>
 							<Route>
 								<h1>Not found!</h1>
