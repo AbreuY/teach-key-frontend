@@ -36,8 +36,11 @@ const Layout = () => {
 							<Route exact path="/signup/student">
 								<SignupStudent />
 							</Route>
-							<Route exact path="/login">
-								<Login />
+							<Route exact path="/login/student">
+								<LoginStudent />
+							</Route>
+							<Route exact path="/login/professor">
+								<LoginProfessor />
 							</Route>
 							<Route exact path="/user/profile" component={UserProfile} />
 							<Route>
