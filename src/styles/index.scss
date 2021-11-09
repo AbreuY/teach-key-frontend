@@ -162,3 +162,19 @@ input {
 form {
     margin: 0;
 }
+
+/* STYLES FOR LANDING PAGE CAROUSEL */
+.landing-img-corousel {
+  height: 250px; 
+  width: 250px; 
+  
+}
+
+@media (max-width: 751px) {
+  .landing-img-corousel {
+    height: 200px; 
+    width: 200px; 
+    margin-left: 158px; 
+    margin-top: 105px;
+  }
+}
