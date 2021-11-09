@@ -26,10 +26,14 @@ export const Navbar = () => {
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li className="nav-item">
 								<a className="nav-link active" aria-current="page" href="#">
-									Do you have an account?
-									<Link to="/login" className="linkDecoration text-danger">
+									Do you have an account? Login here as
+									<Link to="/login/professor" className="linkDecoration text-danger">
 										{" "}
-										Login Here.
+										Professor{" "}
+									</Link>
+									or{" "}
+									<Link to="/login/student" className="linkDecoration text-danger">
+										Student
 									</Link>
 								</a>
 							</li>
@@ -38,10 +42,14 @@ export const Navbar = () => {
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li className="nav-item">
 								<a className="nav-link active" aria-current="page" href="#">
-									Do you have an account?
-									<Link to="/login" className="linkDecoration text-danger">
+									Do you have an account? Login here as
+									<Link to="/login/professor" className="linkDecoration text-danger">
 										{" "}
-										Login Here.
+										Professor{" "}
+									</Link>
+									or{" "}
+									<Link to="/login/student" className="linkDecoration text-danger">
+										Student
 									</Link>
 								</a>
 							</li>
