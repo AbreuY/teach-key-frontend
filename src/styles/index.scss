@@ -185,7 +185,16 @@ form {
   text-decoration: none;
 }
 /* CARROUSEL STYLES*/
-.mycaruosel .wrapper{
+
+.carousel_container{
+  position: relative;
+  width: 800px;
+  min-width: 350px;
+  min-height: 250px;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+.carousel_wrapper{
   width: 300%;
   /* 300% 'caz we have 3 cards */
   min-height: 100%;
@@ -194,7 +203,7 @@ form {
   transition: 1s;
 }
 
-.mycaruosel .card{
+.carousel-card{
   width: 800px;
   min-height: 100%;
   background: #fff;
@@ -207,7 +216,7 @@ form {
   margin: 0 10px;
 }
 
-.mycaruosel .card-thumb{
+.carousel-card-thumb{
   width: 70%;
   height: 250px;
   overflow: hidden;
@@ -216,13 +225,13 @@ form {
   position: relative;
 }
 
-.mycaruosel .client-img{
+.carousel-client-img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.mycaruosel .client-name{
+.carousel-client-name{
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -234,7 +243,7 @@ form {
   font-size: 14px;
 }
 
-.mycaruosel .card-body{
+.carousel-card-body{
   width: 120%;
   min-height: 100%;
   height: auto;
@@ -243,62 +252,48 @@ form {
   padding-bottom: 50px;
 }
 
-.mycaruosel .review{
+.review{
   font-size: 20px;
   line-height: 30px;
   margin-top: 30px;
 }
 
-.mycaruosel .rating{
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mycaruosel .star{
-  width: 25px;
-  margin-right: 5px;
-}
-
-.mycaruosel .indicators{
+.carousel_indicators{
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.mycaruosel .indicators button{
+.carousel_indicators button{
   background: none;
   border: none;
   outline: none;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid rgb(192, 11, 11);;
   cursor: pointer;
   margin-left: 5px;
   transition: .5s;
 }
 
-.mycaruosel button.active{
+button.active{
   width: 40px;
   border-radius: 50px;
-  background: #fff;
+  background: rgb(192, 11, 11);
 }
 
 @media (max-width: 800px){
   
-  .mycaruosel .card{
+  .carousel-card{
       flex-direction: column;
   }
-  .mycaruosel .card-thumb{
+  .carousel-card-thumb{
       width: 100%;
       border-radius: 10px;
   }
-  .mycaruosel .card-body{
+  .carousel-card-body{
       width: 100%;
       min-height: auto;
       margin-left: 0;

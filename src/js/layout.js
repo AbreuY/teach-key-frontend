@@ -11,6 +11,7 @@ import AppContextProvider from "./store/appContext";
 import { Navbar } from "./component/Navbar";
 import { Footer } from "./component/Footer";
 import { Login } from "./views/Login";
+import { UserProfile } from "./component/user_profile_component/UserProfile";
 
 //create your first component
 const Layout = () => {
@@ -38,6 +39,7 @@ const Layout = () => {
 							<Route exact path="/login">
 								<Login />
 							</Route>
+							<Route exact path="/user/profile" component={UserProfile} />
 							<Route>
 								<h1>Not found!</h1>
 							</Route>
