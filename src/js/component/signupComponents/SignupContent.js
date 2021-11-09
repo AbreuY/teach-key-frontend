@@ -7,13 +7,17 @@ export const SignupContent = props => {
 	const [email, setEmail] = useState("");
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [country, setCountry] = useState("");
 	const history = useHistory();
-
+	const countryData = country => {
+		setCountry(country);
+	};
 	async function signup(event) {
 		let data = {
 			user_name: username,
 			email: email,
-			password: password
+			password: password,
+			country: country
 		};
 
 		let response = await fetch(props.url, {
@@ -90,7 +94,7 @@ export const SignupContent = props => {
 								<div className="pt-3 pt-sm-3 pt-md-2 pt-lg-0 ">
 									<p style={{ color: "rgb(236, 73, 73)", fontSize: "21px" }}>Country</p>
 									<div>
-										<SignupCountryInputs />
+										<SignupCountryInputs countryData={countryData} />
 									</div>
 								</div>
 							</div>

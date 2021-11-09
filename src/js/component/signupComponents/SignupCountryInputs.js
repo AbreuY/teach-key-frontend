@@ -1,9 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const SignupCountryInputs = () => {
+export const SignupCountryInputs = ({ countryData }) => {
 	return (
 		<>
-			<select id="country" name="country">
+			<select
+				id="country"
+				name="country"
+				onChange={e => {
+					countryData(e.target.value);
+				}}>
 				<option value="0" className="text-center border border-bottom">
 					Select
 				</option>
@@ -14,7 +20,7 @@ export const SignupCountryInputs = () => {
 				<option value="Andorra">Andorra</option>
 				<option value="Angola">Angola</option>
 				<option value="Anguilla">Anguilla</option>
-				<option value="Antigua & Barbuda">Antigua & Barbuda</option>
+				<option value="Antigua &amp; Barbuda">Antigua &amp; Barbuda</option>
 				<option value="Argentina">Argentina</option>
 				<option value="Armenia">Armenia</option>
 				<option value="Aruba">Aruba</option>
@@ -33,7 +39,7 @@ export const SignupCountryInputs = () => {
 				<option value="Bhutan">Bhutan</option>
 				<option value="Bolivia">Bolivia</option>
 				<option value="Bonaire">Bonaire</option>
-				<option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+				<option value="Bosnia &amp; Herzegovina">Bosnia &amp; Herzegovina</option>
 				<option value="Botswana">Botswana</option>
 				<option value="Brazil">Brazil</option>
 				<option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
@@ -195,13 +201,13 @@ export const SignupCountryInputs = () => {
 				<option value="St Kitts-Nevis">St Kitts-Nevis</option>
 				<option value="St Lucia">St Lucia</option>
 				<option value="St Maarten">St Maarten</option>
-				<option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
-				<option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+				<option value="St Pierre &amp; Miquelon">St Pierre &amp; Miquelon</option>
+				<option value="St Vincent &amp; Grenadines">St Vincent &amp; Grenadines</option>
 				<option value="Saipan">Saipan</option>
 				<option value="Samoa">Samoa</option>
 				<option value="Samoa American">Samoa American</option>
 				<option value="San Marino">San Marino</option>
-				<option value="Sao Tome & Principe">Sao Tome & Principe</option>
+				<option value="Sao Tome &amp; Principe">Sao Tome &amp; Principe</option>
 				<option value="Saudi Arabia">Saudi Arabia</option>
 				<option value="Senegal">Senegal</option>
 				<option value="Seychelles">Seychelles</option>
@@ -228,11 +234,11 @@ export const SignupCountryInputs = () => {
 				<option value="Togo">Togo</option>
 				<option value="Tokelau">Tokelau</option>
 				<option value="Tonga">Tonga</option>
-				<option value="Trinidad & Tobago">Trinidad & Tobago</option>
+				<option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
 				<option value="Tunisia">Tunisia</option>
 				<option value="Turkey">Turkey</option>
 				<option value="Turkmenistan">Turkmenistan</option>
-				<option value="Turks & Caicos Is">Turks & Caicos Is</option>
+				<option value="Turks &amp; Caicos Is">Turks &amp; Caicos Is</option>
 				<option value="Tuvalu">Tuvalu</option>
 				<option value="Uganda">Uganda</option>
 				<option value="United Kingdom">United Kingdom</option>
@@ -248,7 +254,7 @@ export const SignupCountryInputs = () => {
 				<option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
 				<option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
 				<option value="Wake Island">Wake Island</option>
-				<option value="Wallis & Futana Is">Wallis & Futana Is</option>
+				<option value="Wallis &amp; Futana Is">Wallis &amp; Futana Is</option>
 				<option value="Yemen">Yemen</option>
 				<option value="Zaire">Zaire</option>
 				<option value="Zambia">Zambia</option>
@@ -256,4 +262,8 @@ export const SignupCountryInputs = () => {
 			</select>
 		</>
 	);
+};
+
+SignupCountryInputs.propTypes = {
+	countryData: PropTypes.func
 };
