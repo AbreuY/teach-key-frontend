@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import Logo2 from "../../../img/logo2.png";
 
 export const LoginContent = () => {
@@ -46,8 +47,10 @@ export const LoginContent = () => {
 												type="password"
 												placeholder="Password"
 												maxLength="100"></input>
-											<input
-												className="bi bi-eye-slash"
+											<a
+												id="changeIcon1"
+												style={{ textDecoration: "none" }}
+												className="far fa-eye text-black text-center"
 												type="checkbox"
 												onClick={e => {
 													let showPassword = document.getElementById("input1");
@@ -55,6 +58,14 @@ export const LoginContent = () => {
 														showPassword.type = "text";
 													} else {
 														showPassword.type = "password";
+													}
+
+													let changeIcon = document.getElementById("changeIcon1");
+													if (changeIcon.className === "far fa-eye text-black text-center") {
+														changeIcon.className =
+															"far fa-eye-slash text-black text-center";
+													} else {
+														changeIcon.className = "far fa-eye text-black text-center";
 													}
 												}}
 											/>
