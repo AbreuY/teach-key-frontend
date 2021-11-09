@@ -3,15 +3,17 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { LandingPage } from "./views/LandingPage";
-import injectContext from "./store/appContext";
+
 import { SignupProfessor } from "./views/SignupProfessor";
 import { SignupStudent } from "./views/SignupStudent";
 import { Home } from "./views/Home";
 import AppContextProvider from "./store/appContext";
 import { Navbar } from "./component/Navbar";
 import { Footer } from "./component/Footer";
-import { Login } from "./views/Login";
+
 import { UserProfile } from "./component/user_profile_component/UserProfile";
+import { LoginProfessor } from "./views/LoginProfessor";
+import { LoginStudent } from "./views/LoginStudent";
 
 //create your first component
 const Layout = () => {
