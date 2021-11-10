@@ -52,24 +52,27 @@ export const SignupContent = props => {
 										setUsername(event.target.value);
 									}}
 									value={username}
+									id="signupUsername"
 								/>
 							</div>
 							<div className="col-12 col-md-6 col-sm-6 col-lg-6 pt-3">
 								<input
 									className="pt-3 pt-sm-3 pt-md-2 pt-lg-0"
-									type="email"
+									type="text"
 									placeholder="Email"
 									maxLength="100"
 									onChange={event => {
 										setEmail(event.target.value);
 									}}
 									value={email}
+									id="signupEmail"
 								/>
 							</div>
 						</div>
 						<div className="row pt-0 pt-sm-0 pt-md-0 pt-lg-3 mt-4 signupInput">
 							<div className="col-12 col-md-6 col-sm-6 col-lg-6 pt-0 pt-sm-3 pt-md-3 pt-lg-3">
 								<input
+									id="inputPassword1"
 									className="pt-3 pt-sm-3 pt-md-2 pt-lg-0"
 									type="password"
 									placeholder="Password"
@@ -82,6 +85,8 @@ export const SignupContent = props => {
 							</div>
 							<div className="col-12 col-md-6 col-sm-6 col-lg-6 pt-3">
 								<input
+									style={{}}
+									id="inputConfirmPassword1"
 									className="pt-3 pt-sm-3 pt-md-2 pt-lg-0"
 									type="password"
 									placeholder="Confirm Password"
@@ -89,12 +94,13 @@ export const SignupContent = props => {
 								/>
 							</div>
 						</div>
+
 						<div className="row pt-0 pt-sm-0 pt-md-0 pt-lg-3 mt-4">
 							<div className="col-12 col-md-12 col-sm-12 col-lg-12 pt-3">
 								<div className="pt-3 pt-sm-3 pt-md-2 pt-lg-0 ">
 									<p style={{ color: "rgb(236, 73, 73)", fontSize: "21px" }}>Country</p>
 									<div>
-										<SignupCountryInputs countryData={countryData} />
+										<SignupCountryInputs id="country1" countryData={countryData} />
 									</div>
 								</div>
 							</div>
@@ -104,7 +110,44 @@ export const SignupContent = props => {
 							<div className="col">
 								<button
 									onClick={event => {
-										signup();
+										let inputPassword = document.getElementById("inputPassword1");
+										let inputConfirmPassword = document.getElementById("inputConfirmPassword1");
+										let inputUsername = document.getElementById("signupUsername");
+										let inputEmail = document.getElementById("signupEmail");
+										let inputCountry = country;
+										if (
+											inputPassword.value == "" ||
+											inputUsername.value == "" ||
+											inputEmail.value == "" ||
+											inputConfirmPassword.value == ""
+										) {
+											alert("You need to fill all the forms");
+											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
+											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
+											inputEmail.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
+											inputUsername.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
+										} else if (
+											inputPassword.value != inputConfirmPassword.value ||
+											inputPassword.value == "" ||
+											inputConfirmPassword.value == ""
+										) {
+											alert("Not Matching Password");
+											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
+											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
+											inputEmail.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
+											inputUsername.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
+										} else if (
+											inputCountry == "Select" ||
+											inputCountry == "" ||
+											inputCountry == "0"
+										) {
+											alert("Please, choose your country");
+											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
+											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0";
+											inputCountry.classStyle = "errorInput";
+										} else {
+											signup();
+										}
 									}}
 									type="button"
 									className="btn btn-outline-danger">

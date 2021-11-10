@@ -47,29 +47,28 @@ export const LoginContent = () => {
 												type="password"
 												placeholder="Password"
 												maxLength="100"></input>
-											<a
-												id="changeIcon1"
-												style={{ textDecoration: "none" }}
-												className="far fa-eye text-black text-center"
-												type="checkbox"
-												onClick={e => {
-													let showPassword = document.getElementById("input1");
-													if (showPassword.type === "password") {
-														showPassword.type = "text";
-													} else {
-														showPassword.type = "password";
-													}
-
-													let changeIcon = document.getElementById("changeIcon1");
-													if (changeIcon.className === "far fa-eye text-black text-center") {
-														changeIcon.className =
-															"far fa-eye-slash text-black text-center";
-													} else {
-														changeIcon.className = "far fa-eye text-black text-center";
-													}
-												}}
-											/>
 										</div>
+										<a
+											id="changeIcon1"
+											style={{ textDecoration: "none", paddingTop: "1rem" }}
+											className="far fa-eye text-black text-center"
+											type="checkbox"
+											onClick={e => {
+												let showPassword = document.getElementById("input1");
+												if (showPassword.type === "password") {
+													showPassword.type = "text";
+												} else {
+													showPassword.type = "password";
+												}
+
+												let changeIcon = document.getElementById("changeIcon1");
+												if (changeIcon.className === "far fa-eye text-black text-center") {
+													changeIcon.className = "far fa-eye-slash text-black text-center";
+												} else {
+													changeIcon.className = "far fa-eye text-black text-center";
+												}
+											}}
+										/>
 									</div>
 									<div className="row pt-3 text-center pt-5 pt-sm-5 pt-md-5 pt-lg-5 text-center">
 										<div className="col">
