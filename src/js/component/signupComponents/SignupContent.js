@@ -144,7 +144,6 @@ export const SignupContent = props => {
 											alert("Please, choose your country");
 											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
 											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0";
-											inputCountry.classStyle = "errorInput";
 										} else {
 											signup();
 										}

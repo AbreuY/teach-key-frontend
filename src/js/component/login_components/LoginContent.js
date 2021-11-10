@@ -16,8 +16,8 @@ export const LoginContent = () => {
 									<img src={Logo2} />
 									Teach Key
 								</p>
-								<p className="text-secondary text-md-center text-sm-center text-center">
-									<div>
+								<div>
+									<p className="text-secondary text-md-center text-sm-center text-center">
 										{"Don't have an account? Register as a "}
 										<Link to="/signup/student" className="aLinkDecoration text-danger">
 											Student{" "}
@@ -26,8 +26,8 @@ export const LoginContent = () => {
 										<Link to="/signup/professor" className="text-danger aLinkDecoration">
 											Professor
 										</Link>
-									</div>
-								</p>
+									</p>
+								</div>
 								<div className="container-fluid">
 									<div className="row pt-3 loginInput text-center">
 										<div className="col-12">

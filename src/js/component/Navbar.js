@@ -25,33 +25,33 @@ export const Navbar = () => {
 					{location.pathname == "/signup/professor" ? (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li className="nav-item">
-								<a className="nav-link active" aria-current="page" href="#">
-									Do you have an account? Login here as
-									<Link to="/login/professor" className="linkDecoration text-danger">
+								<div className="d-flex">
+									<p className="my-auto">Do you have an account? Login here as</p>
+									<Link to="/login/professor" className="linkDecoration text-danger nav-link active">
 										{" "}
 										Professor{" "}
 									</Link>
-									or{" "}
-									<Link to="/login/student" className="linkDecoration text-danger">
+									<p className="my-auto">or </p>
+									<Link to="/login/student" className="linkDecoration text-danger nav-link">
 										Student
 									</Link>
-								</a>
+								</div>
 							</li>
 						</ul>
 					) : location.pathname == "/signup/student" ? (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li className="nav-item">
-								<a className="nav-link active" aria-current="page" href="#">
-									Do you have an account? Login here as
-									<Link to="/login/professor" className="linkDecoration text-danger">
+								<div className="d-flex">
+									<p className="my-auto">Do you have an account? Login here as</p>
+									<Link to="/login/professor" className="linkDecoration text-danger nav-link active">
 										{" "}
 										Professor{" "}
 									</Link>
-									or{" "}
-									<Link to="/login/student" className="linkDecoration text-danger">
+									<p className="my-auto">or </p>
+									<Link to="/login/student" className="linkDecoration text-danger nav-link">
 										Student
 									</Link>
-								</a>
+								</div>
 							</li>
 						</ul>
 					) : (
@@ -78,7 +78,7 @@ export const Navbar = () => {
 								</a>
 								<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 									<li>
-										<Link to="/login" className="dropdown-item" href="#">
+										<Link to="/login" className="dropdown-item">
 											Login
 										</Link>
 									</li>
@@ -96,21 +96,17 @@ export const Navbar = () => {
 								</a>
 								<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 									<li>
-										<a className="dropdown-item" href="#">
-											<Link to="/signup/student" className="linkDecoration">
-												{" "}
-												Register as Student
-											</Link>
-										</a>
+										<Link to="/signup/student" className="linkDecoration dropdown-item">
+											{" "}
+											Register as Student
+										</Link>
 									</li>
 
 									<li>
-										<a className="dropdown-item" href="#">
-											<Link to="/signup/professor" className="linkDecoration">
-												{" "}
-												Register as Professor
-											</Link>
-										</a>
+										<Link to="/signup/professor" className="linkDecoration dropdown-item">
+											{" "}
+											Register as Professor
+										</Link>
 									</li>
 								</ul>
 							</li>
