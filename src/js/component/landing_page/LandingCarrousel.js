@@ -25,7 +25,7 @@ export const LandingCarrousel = () => {
 				<div className="carousel-card">
 					<div className="carousel-card-thumb">
 						<img src={Testimonio1} className="carousel-client-img" alt="" />
-						<span className="carousel-client-name">client one</span>
+						<span className="carousel-client-name">Marta789</span>
 					</div>
 					<div className="carousel-card-body">
 						<p className="review">
@@ -37,7 +37,7 @@ export const LandingCarrousel = () => {
 				<div className="carousel-card">
 					<div className="carousel-card-thumb">
 						<img src={Testimonio2} className=" carousel-client-img" alt="" />
-						<span className=" carousel-client-name">client two</span>
+						<span className=" carousel-client-name">Ernestom24</span>
 					</div>
 					<div className="carousel-card-body">
 						<p className=" review">
@@ -49,7 +49,7 @@ export const LandingCarrousel = () => {
 				<div className="carousel-card">
 					<div className=" carousel-card-thumb">
 						<img src={Testimonio3} className=" carousel-client-img" alt="" />
-						<span className=" carousel-client-name">client three</span>
+						<span className=" carousel-client-name">Bryan56</span>
 					</div>
 					<div className="carousel-card-body">
 						<p className="review">
