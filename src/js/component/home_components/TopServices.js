@@ -3,7 +3,7 @@ import { CardsServices } from "./CardsServices";
 
 export const TopServices = () => {
 	return (
-		<div className="container">
+		<div className="container" data-aos="fade-up" data-aos-duration="2000">
 			<div className="row">
 				<div className="text-center">
 					<h1 className="display-4">Popular Services</h1>

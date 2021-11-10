@@ -3,7 +3,7 @@ import { CardsProfessors } from "./CardsProfessors";
 
 export const TopProfessors = () => {
 	return (
-		<div className="container mt-5">
+		<div className="container mt-5" data-aos="fade-up" data-aos-duration="2000">
 			<div className="row">
 				<div className="text-center">
 					<h1 className="display-4">Top Professors</h1>

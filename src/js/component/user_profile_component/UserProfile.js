@@ -1,148 +1,104 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { CardsGroup } from "./CardsGroup";
+import { UserDetails } from "./UserDetails";
 
 export const UserProfile = () => {
+	const [test, setTest] = useState("");
 	return (
 		<div className="container">
-			<div className="col-md-12">
-				<div className="col-md-4">
-					<div className="portlet light profile-sidebar-portlet bordered">
-						<div className="profile-userpic">
-							<img
-								src="https://bootdey.com/img/Content/avatar/avatar6.png"
-								className="img-responsive"
-								alt=""
-							/>{" "}
-						</div>
-						<div className="profile-usertitle">
-							<div className="profile-usertitle-name"> Marcus Doe </div>
-							<div className="profile-usertitle-job"> Developer </div>
-						</div>
-						<div className="profile-userbuttons">
-							<button type="button" className="btn btn-info  btn-sm">
-								Follow
-							</button>
-							<button type="button" className="btn btn-info  btn-sm">
-								Message
-							</button>
-						</div>
-						<div className="profile-usermenu">
-							<ul className="nav">
-								<li className="active">
-									<a href="#">
-										<i className="icon-home"></i> Ticket List{" "}
-									</a>
+			<div className="row justify-content-center">
+				<div className="col-md-7 col-lg-4 mb-5 mb-lg-0">
+					<div className="card border-0 shadow">
+						<img
+							src="https://randomuser.me/api/portraits/lego/2.jpg"
+							className="mx-auto pt-2 rounded-circle h-75 w-75"
+							alt="..."
+						/>
+						<div className="card-body p-1-9 p-xl-5">
+							<div className="mb-4">
+								<h3 className="h4 mb-0">User Name</h3>
+								<span className="text-primary">Description</span>
+							</div>
+							<ul className="list-unstyled mb-4">
+								<li className="mb-3">
+									<Link to={"#!"} className="links">
+										<i className="far fa-envelope display-25 me-3 text-secondary"></i>
+										email@email.email
+									</Link>
+								</li>
+								<li className="mb-3">
+									<Link to={"#!"} className="links">
+										<i className="far fa-envelope display-25 me-3 text-secondary"></i>phone or
+										email?
+									</Link>
 								</li>
 								<li>
-									<a href="#">
-										<i className="icon-settings"></i> Support Staff{" "}
-									</a>
+									<Link to={"#!"} className="links">
+										<i className="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>Country
+									</Link>
+								</li>
+							</ul>
+							<ul className="social-icon-style2 ps-0">
+								<li>
+									<Link to={"#!"} className="rounded-icon-3">
+										<i className="fab fa-facebook-f"></i>
+									</Link>
 								</li>
 								<li>
-									<a href="#">
-										<i className="icon-info"></i> Configurations{" "}
-									</a>
+									<Link to={"#!"} className="rounded-icon-3">
+										<i className="fab fa-twitter"></i>
+									</Link>
+								</li>
+								<li>
+									<Link to={"#!"} className="rounded-icon-3">
+										<i className="fab fa-youtube"></i>
+									</Link>
+								</li>
+								<li>
+									<Link to={"#!"} className="rounded-icon-3">
+										<i className="fab fa-linkedin-in"></i>
+									</Link>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div className="col-md-8">
-					<div className="portlet light bordered">
-						<div className="portlet-title tabbable-line">
-							<div className="caption caption-md">
-								<i className="icon-globe theme-font hide"></i>
-								<span className="caption-subject font-blue-madison bold uppercase">Your info</span>
+				<div className="col-lg-8">
+					<div className="ps-lg-1-6 ps-xl-5">
+						<div className="mb-5 wow fadeIn">
+							<div className="text-start mb-1-6 wow fadeIn">
+								<h2 className="h1 mb-0 text-primary">Profile</h2>
 							</div>
+							<UserDetails />
 						</div>
-						<div className="portlet-body">
-							<div>
-								{/*<!-- Nav tabs -->*/}
-								<ul className="nav nav-tabs" role="tablist">
-									<li role="presentation" className="active">
-										<a href="#home" aria-controls="home" role="tab" data-toggle="tab">
-											Update
-										</a>
-									</li>
-									<li role="presentation">
-										<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-											Profile
-										</a>
-									</li>
-									<li role="presentation">
-										<a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-											Messages
-										</a>
-									</li>
-									<li role="presentation">
-										<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
-											Settings
-										</a>
-									</li>
-								</ul>
-
-								{/*<!-- Tab panels -->*/}
-								<div className="tab-content">
-									<div role="tabpanel" className="tab-pane active" id="home">
-										<form>
-											<div className="form-group">
-												<label htmlFor="inputName">Name</label>
-												<input
-													type="text"
-													className="form-control"
-													id="inputName"
-													placeholder="Name"
-												/>
-											</div>
-											<div className="form-group">
-												<label htmlFor="inputLastName">Last Name</label>
-												<input
-													type="text"
-													className="form-control"
-													id="inputLastName"
-													placeholder="Last Name"
-												/>
-											</div>
-											<div className="form-group">
-												<label htmlFor="exampleInputEmail1">Email address</label>
-												<input
-													type="email"
-													className="form-control"
-													id="exampleInputEmail1"
-													placeholder="Email"
-												/>
-											</div>
-											<div className="form-group">
-												<label htmlFor="exampleInputPassword1">Password</label>
-												<input
-													type="password"
-													className="form-control"
-													id="exampleInputPassword1"
-													placeholder="Password"
-												/>
-											</div>
-											<div className="form-group">
-												<label htmlFor="exampleInputFile">File input</label>
-												<input type="file" id="exampleInputFile" />
-												<p className="help-block">Example block-level help text here.</p>
-											</div>
-											<div className="checkbox">
-												<label>
-													<input type="checkbox" /> Check me out
-												</label>
-											</div>
-											<button type="submit" className="btn btn-default">
-												Submit
+						<div className="mb-5 wow fadeIn">
+							{/* <div className="text-start mb-1-6 wow fadeIn">
+								<h2 className="mb-0 text-primary">Services</h2>
+							</div> */}
+							<div className="row mt-n4">
+								<div className="accordion accordion-flush" id="accordionFlushExample">
+									<div className="accordion-item">
+										<h2 className="accordion-header" id="flush-headingOne">
+											<button
+												className="accordion-button collapsed"
+												type="button"
+												data-bs-toggle="collapse"
+												data-bs-target="#flush-collapseOne"
+												aria-expanded="false"
+												aria-controls="flush-collapseOne">
+												<h2 className="mb-0 text-primary">Services</h2>
 											</button>
-										</form>
-									</div>
-									<div role="tabpanel" className="tab-pane" id="profile">
-										Profile
-									</div>
-									<div role="tabpanel" className="tab-pane" id="messages">
-										Messages
-									</div>
-									<div role="tabpanel" className="tab-pane" id="settings">
-										Settings
+										</h2>
+										<div
+											id="flush-collapseOne"
+											className="accordion-collapse collapse"
+											aria-labelledby="flush-headingOne"
+											data-bs-parent="#accordionFlushExample">
+											<div className="accordion-body">
+												<CardsGroup />
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
