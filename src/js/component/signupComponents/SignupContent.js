@@ -40,7 +40,7 @@ export const SignupContent = props => {
 				<div className="row align-items-center mt-5">
 					<div className="col-12 col-md-12 col-sm-12 col-lg-6 text-md-center text-sm-center signupBox text-center shadow-lg p-3 mb-5 bg-body rounded">
 						<div className="fs-2">{props.title}</div>
-						<p className="text-secondary pt-3">{props.titleDescription}</p>
+						<p className="inputPText1 pt-3">{props.titleDescription}</p>
 						<div className="row pt-3 signupInput">
 							<div className="col-12 col-md-6 col-sm-6 col-lg-6 pt-3">
 								<input
