@@ -28,7 +28,7 @@ export const SignupContent = props => {
 			}
 		});
 		if (response.ok) {
-			history.push("/login");
+			history.push("/login" + props.sendTo);
 		} else {
 			alert(response.statusText);
 		}
@@ -179,5 +179,6 @@ SignupContent.propTypes = {
 	title: PropTypes.string,
 	titleDescription: PropTypes.string,
 	image: PropTypes.string,
-	url: PropTypes.string
+	url: PropTypes.string,
+	sendTo: PropTypes.string
 };

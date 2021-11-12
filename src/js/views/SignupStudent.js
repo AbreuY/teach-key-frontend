@@ -12,6 +12,7 @@ export const SignupStudent = () => {
 				titleDescription="To start learning!"
 				image={GirlStudying}
 				url={URL}
+				sendTo="/student"
 			/>
 		</>
 	);

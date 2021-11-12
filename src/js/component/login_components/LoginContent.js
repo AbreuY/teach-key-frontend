@@ -46,7 +46,7 @@ export const LoginContent = props => {
 									Teach Key
 								</p>
 								<div>
-									<p className="text-secondary text-md-center text-sm-center text-center">
+									<p className="inputPText1  text-md-center text-sm-center text-center">
 										{"Don't have an account? Register as a "}
 										<Link to="/signup/student" className="aLinkDecoration text-danger">
 											Student{" "}
@@ -76,7 +76,7 @@ export const LoginContent = props => {
 										<div className="col-12">
 											<input
 												id="input1"
-												className="pt-5 pt-sm-5 pt-md-5 pt-lg-5 text-center"
+												className="pt-5 pt-sm-5 pt-md-5 pt-lg-5 text-center inputFocus"
 												type="password"
 												placeholder="Password"
 												maxLength="100"

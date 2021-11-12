@@ -158,10 +158,14 @@ input {
     color: rgb(236, 73, 73);
     font-size: 21px;
 
-    input:focus, textarea:focus, select:focus select form{
-      outline: none;
-    }
   }
+
+
+
+  input:focus, textarea:focus, select:focus select form{
+    outline: none;
+  }
+
 
 .inputPText1 {
   color: #7A777D;
