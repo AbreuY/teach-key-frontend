@@ -18,10 +18,29 @@ const AppContextProvider = ({ children }) => {
 				description: "Some description b",
 				orientation: "right"
 			}
-		]
+		],
+
+		token: undefined
 	});
 
-	const actions = {};
+	const actions = {
+		deleteToken: () => {
+			localStorage.removeItem("token");
+			setStore(prev => ({
+				...prev,
+				token: undefined
+			}));
+		},
+
+		setToken: token => {
+			localStorage.setItem("token", token);
+			setStore(prev => ({
+				...prev,
+				token: token
+			}));
+		}
+	};
+
 	const context = { store, actions };
 
 	return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
