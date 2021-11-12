@@ -257,7 +257,7 @@ export const LandingDescription = () => {
 				}{" "}
 				{"y han llevado el aprendizaje a otro nivel"}
 			</div>
-			<div className="pb-5">
+			<div className="container pb-5">
 				<LandingCarrousel />
 			</div>
 		</div>

@@ -195,6 +195,7 @@ form {
 .carousel_container{
   position: relative;
   width: 800px;
+  margin: auto;
   min-width: 350px;
   min-height: 250px;
   padding-bottom: 40px;
@@ -291,7 +292,7 @@ button.active{
 }
 
 @media (max-width: 800px){
-  
+
   .carousel-card{
       flex-direction: column;
   }

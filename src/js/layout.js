@@ -44,7 +44,7 @@ const Layout = () => {
 							<Route exact path="/login/professor">
 								<LoginProfessor />
 							</Route>
-							<Route exact path="/user/profile" component={UserProfile} />
+							<Route exact path="/:role/:id/profile" component={UserProfile} />
 							<Route exact path="/services">
 								<Services />
 							</Route>

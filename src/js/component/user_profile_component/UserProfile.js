@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 import { CardsGroup } from "./CardsGroup";
 import { UserDetails } from "./UserDetails";
 
 export const UserProfile = () => {
 	const [test, setTest] = useState("");
+	const params = useParams();
 	return (
 		<div className="container">
 			<div className="row justify-content-center">
@@ -72,37 +74,43 @@ export const UserProfile = () => {
 							</div>
 							<UserDetails />
 						</div>
-						<div className="mb-5 wow fadeIn">
-							{/* <div className="text-start mb-1-6 wow fadeIn">
+						{params.role == "student" ? (
+							""
+						) : (
+							<>
+								<div className="mb-5 wow fadeIn">
+									{/* <div className="text-start mb-1-6 wow fadeIn">
 								<h2 className="mb-0 text-primary">Services</h2>
 							</div> */}
-							<div className="row mt-n4">
-								<div className="accordion accordion-flush" id="accordionFlushExample">
-									<div className="accordion-item">
-										<h2 className="accordion-header" id="flush-headingOne">
-											<button
-												className="accordion-button collapsed"
-												type="button"
-												data-bs-toggle="collapse"
-												data-bs-target="#flush-collapseOne"
-												aria-expanded="false"
-												aria-controls="flush-collapseOne">
-												<h2 className="mb-0 text-primary">Services</h2>
-											</button>
-										</h2>
-										<div
-											id="flush-collapseOne"
-											className="accordion-collapse collapse"
-											aria-labelledby="flush-headingOne"
-											data-bs-parent="#accordionFlushExample">
-											<div className="accordion-body">
-												<CardsGroup />
+									<div className="row mt-n4">
+										<div className="accordion accordion-flush" id="accordionFlushExample">
+											<div className="accordion-item">
+												<h2 className="accordion-header" id="flush-headingOne">
+													<button
+														className="accordion-button collapsed"
+														type="button"
+														data-bs-toggle="collapse"
+														data-bs-target="#flush-collapseOne"
+														aria-expanded="false"
+														aria-controls="flush-collapseOne">
+														<h2 className="mb-0 text-primary">Services</h2>
+													</button>
+												</h2>
+												<div
+													id="flush-collapseOne"
+													className="accordion-collapse collapse"
+													aria-labelledby="flush-headingOne"
+													data-bs-parent="#accordionFlushExample">
+													<div className="accordion-body">
+														<CardsGroup />
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
+							</>
+						)}
 					</div>
 				</div>
 			</div>
