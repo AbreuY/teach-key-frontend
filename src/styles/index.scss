@@ -207,6 +207,7 @@ form {
   min-height: 250px;
   padding-bottom: 40px;
   overflow: hidden;
+  margin: auto
 }
 .carousel_wrapper{
   width: 300%;
@@ -300,6 +301,8 @@ button.active{
 
 @media (max-width: 800px){
 
+@media (max-width: 500px){
+  
   .carousel-card{
       flex-direction: column;
   }
@@ -424,5 +427,6 @@ https://stackoverflow.com/a/47698201/1375163 */
 @media (min-width: 992px) {
   .card-img-top-services {
       height: 11vw;
+    }
   }
 }
