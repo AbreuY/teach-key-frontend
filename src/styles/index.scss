@@ -210,6 +210,7 @@ form {
   min-height: 250px;
   padding-bottom: 40px;
   overflow: hidden;
+  margin: auto
 }
 .carousel_wrapper{
   width: 300%;
@@ -301,7 +302,7 @@ button.active{
   background: rgb(192, 11, 11);
 }
 
-@media (max-width: 800px){
+@media (max-width: 500px){
   
   .carousel-card{
       flex-direction: column;
