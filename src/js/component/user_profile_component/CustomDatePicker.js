@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import PropTypes from "prop-types";
+import { AppContext } from "../../store/appContext";
+import { addDays } from "date-fns";
 
-export const CustomDatePicker = ({ dobData }) => {
+export const CustomDatePicker = () => {
 	const [startDate, setStartDate] = useState(new Date());
+	const { store, actions } = useContext(AppContext);
+	let dob = store.dataForUser["dob"] == undefined ? new Date() : actions.convertToDate(store.dataForUser["dob"]);
+
 	return (
 		<DatePicker
-			selected={startDate}
+			selected={dob}
 			onChange={date => {
-				setStartDate(date);
-				dobData(date.toLocaleDateString());
+				actions.setDob(date.toLocaleDateString());
 			}}
 			peekNextMonth
 			showMonthDropdown
 			showYearDropdown
 			dropdownMode="select"
 			dateFormat="dd/MM/yyyy"
+			maxDate={addDays(new Date(), 0)}
 		/>
 	);
-};
-CustomDatePicker.propTypes = {
-	dobData: PropTypes.func
 };
