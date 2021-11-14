@@ -1,9 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import { AppContext } from "../store/appContext";
 
 export const Navbar = () => {
 	const location = useLocation();
+	const { store, actions } = useContext(AppContext);
+	const token = useMemo(() => {
+		return localStorage.getItem("token");
+	}, [localStorage]);
+	const logout = event => {
+		actions.deleteToken();
+	};
 
 	return (
 		<nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
@@ -21,6 +29,17 @@ export const Navbar = () => {
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon" />
 				</button>
+				{store.token && (
+					<>
+						<button
+							className="btn btn-outline-danger"
+							onClick={e => {
+								logout();
+							}}>
+							Logout
+						</button>
+					</>
+				)}
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					{location.pathname == "/signup/professor" ? (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">

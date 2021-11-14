@@ -1,9 +1,38 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+import { useHistory } from "react-router";
 import Logo2 from "../../../img/logo2.png";
+import { AppContext } from "../../store/appContext";
 
-export const LoginContent = () => {
+export const LoginContent = props => {
+	const { store, actions } = useContext(AppContext);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const history = useHistory();
+
+	async function login(event) {
+		let data = {
+			email: email,
+			password: password
+		};
+
+		let response = await fetch(props.url, {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		});
+		const body = await response.json();
+		if (response.ok) {
+			actions.setToken(body.token);
+			history.push("/");
+		} else {
+			alert(response.statusText);
+		}
+	}
+
 	return (
 		<>
 			<div className="container h-100">
@@ -36,6 +65,10 @@ export const LoginContent = () => {
 												type="email"
 												placeholder="Email"
 												maxLength="100"
+												onChange={e => {
+													setEmail(e.target.value);
+												}}
+												value={email}
 											/>
 										</div>
 									</div>
@@ -46,7 +79,12 @@ export const LoginContent = () => {
 												className="pt-5 pt-sm-5 pt-md-5 pt-lg-5 text-center"
 												type="password"
 												placeholder="Password"
-												maxLength="100"></input>
+												maxLength="100"
+												onChange={e => {
+													setPassword(e.target.value);
+												}}
+												value={password}
+											/>
 										</div>
 										<a
 											id="changeIcon1"
@@ -72,7 +110,9 @@ export const LoginContent = () => {
 									</div>
 									<div className="row pt-3 text-center pt-5 pt-sm-5 pt-md-5 pt-lg-5 text-center">
 										<div className="col">
-											<button className="btn btn-outline-danger">Login</button>
+											<button className="btn btn-outline-danger" onClick={login}>
+												Login
+											</button>
 										</div>
 									</div>
 								</div>
@@ -85,4 +125,8 @@ export const LoginContent = () => {
 			</div>
 		</>
 	);
+};
+
+LoginContent.propTypes = {
+	url: PropTypes.string
 };
