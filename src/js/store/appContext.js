@@ -23,6 +23,9 @@ const AppContextProvider = ({ children }) => {
 		BASE_URL: "http://localhost:3010",
 		dataForUser: {},
 		newService: {},
+		singleService: {},
+		serviceId: undefined,
+		isFromEdit: false,
 		imageSelected: ""
 	});
 
@@ -57,38 +60,60 @@ const AppContextProvider = ({ children }) => {
 				newService: { ...data }
 			}));
 		},
+		deleteService: async id => {
+			const response = await fetch(`${store.BASE_URL}/services/${id}`, {
+				method: "DELETE",
+				body: []
+			});
+			if (response.status == 204) {
+				alert("Service with id " + id + " was deleted");
+			}
+		},
 
-		/* Functions to handle on change method from Service Modal */
+		/* Functions to handle onChange method from Service Modal */
 		setTitle: data => {
-			let title = (store.newService.title = data);
+			let title = "";
+			if (store.isFromEdit) {
+				title = store.singleService.title = data;
+			} else {
+				title = store.newService.title = data;
+			}
 			setStore(prev => ({
 				...prev,
 				title
 			}));
 		},
 		setDescription: data => {
-			let description = (store.newService.description = data);
+			let description = "";
+			if (store.isFromEdit) {
+				description = store.singleService.description = data;
+			} else {
+				description = store.newService.description = data;
+			}
 			setStore(prev => ({
 				...prev,
 				description
 			}));
 		},
 		setPrice: data => {
-			let price = (store.newService.price = data);
+			let price = 0;
+			if (store.isFromEdit) {
+				price = store.singleService.price = data;
+			} else {
+				price = store.newService.price = data;
+			}
 			setStore(prev => ({
 				...prev,
 				price
 			}));
 		},
 		setSchedule: data => {
-			let schedule = (store.newService.schedule = data);
-			setStore(prev => ({
-				...prev,
-				schedule
-			}));
-		},
-		setSchedule: data => {
-			let schedule = (store.newService.schedule = data);
+			let schedule = 0;
+			if (store.isFromEdit) {
+				schedule = store.singleService.schedule = data;
+			} else {
+				schedule = store.newService.schedule = data;
+			}
 			setStore(prev => ({
 				...prev,
 				schedule
@@ -109,7 +134,6 @@ const AppContextProvider = ({ children }) => {
 
 		//Function to create new service
 		createNewService: async () => {
-			console.log(store.newService, "From createnewService");
 			const response = await fetch(`${store.BASE_URL}/services`, {
 				method: "POST",
 				body: JSON.stringify(store.newService),
@@ -121,7 +145,45 @@ const AppContextProvider = ({ children }) => {
 				alert("Service Created");
 			}
 		},
-		//Upload Image to Cloudinary
+		setEditToFalse: comeFromEdit => {
+			let isForEdit = (store.isFromEdit = comeFromEdit);
+			setStore(prev => ({
+				...prev,
+				isForEdit
+			}));
+		},
+		//Get single service to edit
+		getSingleServiceDetail: async (id, comeFromEdit) => {
+			let isForEdit = (store.isFromEdit = comeFromEdit);
+			let svcId = (store.serviceId = id);
+			const response = await fetch(`${store.BASE_URL}/services/${id}`, {
+				method: "GET"
+			});
+			if (response.ok) {
+				const body = await response.json();
+				let svc = (store.singleService = body);
+				setStore(prev => ({
+					...prev,
+					singleService: svc,
+					isForEdit,
+					svcId
+				}));
+			}
+		},
+		updateSingleService: async id => {
+			const response = await fetch(`${store.BASE_URL}/services/${id}`, {
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(store.singleService)
+			});
+
+			if (response.ok) {
+				alert("Updated");
+			}
+		},
+		// add image selected from input to store imageSelected
 		setImageSelected: image => {
 			let newImage = (store.imageSelected = image);
 			setStore(prev => ({
@@ -129,6 +191,7 @@ const AppContextProvider = ({ children }) => {
 				newImage
 			}));
 		},
+		//Upload Image to Cloudinary
 		uploadImage: async () => {
 			const formData = new FormData();
 			formData.append("file", store.imageSelected);

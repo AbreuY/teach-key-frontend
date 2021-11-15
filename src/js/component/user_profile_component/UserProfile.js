@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { CardsGroup } from "./CardsGroup";
 import { UserDetails } from "./UserDetails";
 import { AppContext } from "../../store/appContext";
+import { ModalSvcComponent } from "./ModalSvcComponent";
 
 export const UserProfile = () => {
 	const params = useParams();
@@ -121,10 +122,13 @@ export const UserProfile = () => {
 													<div className="accordion-body">
 														<div className="row mb-2">
 															<button
+																onClick={e => {
+																	actions.setEditToFalse();
+																}}
 																type="button"
 																className="btn btn-success"
 																data-bs-toggle="modal"
-																data-bs-target="#createNewSvcModal">
+																data-bs-target="#svcModal">
 																Create new service
 															</button>
 														</div>
@@ -142,7 +146,8 @@ export const UserProfile = () => {
 										</div>
 									</div>
 								</div>
-								<div
+								<ModalSvcComponent svcData={store.newService} />
+								{/* <div
 									className="modal fade"
 									id="editSvcModal"
 									tabIndex="-1"
@@ -218,7 +223,7 @@ export const UserProfile = () => {
 										</div>
 									</div>
 								</div>
-								{/* Create new service Modal */}
+								
 								<div
 									className="modal fade"
 									id="createNewSvcModal"
@@ -341,7 +346,7 @@ export const UserProfile = () => {
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> */}
 							</>
 						)}
 					</div>
