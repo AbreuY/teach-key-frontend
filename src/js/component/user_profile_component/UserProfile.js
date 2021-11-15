@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-import { CardsGroup } from "./CardsGroup";
+import { CardServices } from "./CardServices";
 import { UserDetails } from "./UserDetails";
 import { AppContext } from "../../store/appContext";
 import { ModalSvcComponent } from "./ModalSvcComponent";
@@ -137,7 +137,7 @@ export const UserProfile = () => {
 															{store.dataForUser.services == undefined
 																? ""
 																: store.dataForUser.services.map((svc, index) => {
-																		return <CardsGroup key={index} data={svc} />;
+																		return <CardServices key={index} data={svc} />;
 																  })}
 														</div>
 													</div>

@@ -60,6 +60,7 @@ const AppContextProvider = ({ children }) => {
 				newService: { ...data }
 			}));
 		},
+		/* deleteService(arg) Delete a service by id  */
 		deleteService: async id => {
 			const response = await fetch(`${store.BASE_URL}/services/${id}`, {
 				method: "DELETE",
@@ -119,6 +120,10 @@ const AppContextProvider = ({ children }) => {
 				schedule
 			}));
 		},
+		/* 
+		setImageUrl(arg) 
+		Put the url of the image obtained from the upload response to cloudinary into newService Object.
+		*/
 		setImageUrl: data => {
 			let image = (store.newService.image = data);
 			setStore(prev => ({
@@ -145,6 +150,7 @@ const AppContextProvider = ({ children }) => {
 				alert("Service Created");
 			}
 		},
+		//Function to set isFromEdit to false
 		setEditToFalse: comeFromEdit => {
 			let isForEdit = (store.isFromEdit = comeFromEdit);
 			setStore(prev => ({
@@ -152,7 +158,12 @@ const AppContextProvider = ({ children }) => {
 				isForEdit
 			}));
 		},
-		//Get single service to edit
+
+		/* 
+		Get single service to edit passing two arguments, id for the service,
+			and comeFromEdit to know if the user with role of professor wants to 
+			edit a published service
+		*/
 		getSingleServiceDetail: async (id, comeFromEdit) => {
 			let isForEdit = (store.isFromEdit = comeFromEdit);
 			let svcId = (store.serviceId = id);
@@ -168,8 +179,10 @@ const AppContextProvider = ({ children }) => {
 					isForEdit,
 					svcId
 				}));
+				actions.uploadImage();
 			}
 		},
+		/* Function to update a desired service, passing one argument, the id of the service */
 		updateSingleService: async id => {
 			const response = await fetch(`${store.BASE_URL}/services/${id}`, {
 				method: "PUT",
@@ -183,7 +196,11 @@ const AppContextProvider = ({ children }) => {
 				alert("Updated");
 			}
 		},
-		// add image selected from input to store imageSelected
+		/* 
+		setImageSelected(arg)
+		This function saves the selected image from the input, in the store. 
+		To be used later and uploaded to the cloudinary service. 
+		*/
 		setImageSelected: image => {
 			let newImage = (store.imageSelected = image);
 			setStore(prev => ({
@@ -191,7 +208,12 @@ const AppContextProvider = ({ children }) => {
 				newImage
 			}));
 		},
-		//Upload Image to Cloudinary
+		/*
+		uploadImage()
+		This function uploads the image to cloudinary and returns an object with load information, 
+		from which we obtain the path where the image is hosted in the cloud. 
+		To be used later as an image of the service. 
+		*/
 		uploadImage: async () => {
 			const formData = new FormData();
 			formData.append("file", store.imageSelected);
@@ -203,7 +225,9 @@ const AppContextProvider = ({ children }) => {
 			if (response.ok) {
 				const body = await response.json();
 				actions.setImageUrl(body.url);
-				actions.createNewService();
+				if (!store.isFromEdit) {
+					actions.createNewService();
+				}
 			}
 		},
 		/*

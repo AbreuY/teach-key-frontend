@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import PropTypes from "prop-types";
 import { AppContext } from "../../store/appContext";
 
-export const CardsGroup = ({ data }) => {
+export const CardServices = ({ data }) => {
 	const { store, actions } = useContext(AppContext);
 	useEffect(() => {}, []);
 	return (
@@ -12,10 +12,10 @@ export const CardsGroup = ({ data }) => {
 				<div className="card">
 					<img src={data.image} className="card-img-top-services" alt="..." />
 					<div className="card-body">
-						<h5 className="card-title">
+						<h5 className="card-title char-limit">
 							{data.title} {data.id}
 						</h5>
-						<p className="card-text">{data.description}</p>
+						<p className="card-text char-limit">{data.description}</p>
 						<div className="d-flex flex-row justify-content-start mt-auto mt-sm-2 mb-2">
 							<button
 								onClick={e => {
@@ -40,6 +40,6 @@ export const CardsGroup = ({ data }) => {
 		</>
 	);
 };
-CardsGroup.propTypes = {
+CardServices.propTypes = {
 	data: PropTypes.object
 };

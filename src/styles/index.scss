@@ -430,3 +430,10 @@ https://stackoverflow.com/a/47698201/1375163 */
       height: 11vw;
   }
 }
+
+/* LIMIT NUMBERS OF CHARACTERS IN A HTML TAG*/
+.char-limit{
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
