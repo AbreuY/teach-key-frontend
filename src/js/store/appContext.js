@@ -109,7 +109,6 @@ const AppContextProvider = ({ children }) => {
 
 		//Function to create new service
 		createNewService: async () => {
-			console.log(store.newService, "From createnewService");
 			const response = await fetch(`${store.BASE_URL}/services`, {
 				method: "POST",
 				body: JSON.stringify(store.newService),
