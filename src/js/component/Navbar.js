@@ -75,60 +75,66 @@ export const Navbar = () => {
 						</ul>
 					) : (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-							<li className="nav-item">
-								<a className="nav-link active" aria-current="page" href="#">
-									Item 1
-								</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">
-									Item 2
-								</a>
-							</li>
-							<li className="nav-item dropdown">
-								<a
-									className="nav-link dropdown-toggle"
-									href="#"
-									id="navbarDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-expanded="false">
-									Login
-								</a>
-								<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-									<li>
-										<Link to="/login" className="dropdown-item">
-											Login
-										</Link>
-									</li>
-								</ul>
-							</li>
-							<li className="nav-item dropdown">
-								<a
-									className="nav-link dropdown-toggle"
-									href="#"
-									id="navbarDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-expanded="false">
-									Register
-								</a>
-								<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-									<li>
-										<Link to="/signup/student" className="linkDecoration dropdown-item">
-											{" "}
-											Register as Student
-										</Link>
-									</li>
+							{store.token && (
+								<li className="nav-item">
+									<Link to="/services" className="nav-link active" aria-current="page" href="#">
+										Services
+									</Link>
+								</li>
+							)}
+							{!store.token && (
+								<li className="nav-item dropdown">
+									<a
+										className="nav-link dropdown-toggle"
+										href="#"
+										id="navbarDropdown"
+										role="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false">
+										Login
+									</a>
+									<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+										<li>
+											<Link to="/login/professor" className="dropdown-item">
+												Login as professor
+											</Link>
+										</li>
+										<li>
+											<Link to="/login/student" className="dropdown-item">
+												Login as student
+											</Link>
+										</li>
+									</ul>
+								</li>
+							)}
+							{!store.token && (
+								<li className="nav-item dropdown">
+									<a
+										className="nav-link dropdown-toggle"
+										href="#"
+										id="navbarDropdown"
+										role="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false">
+										Register
+									</a>
+									<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+										<li>
+											<Link to="/signup/student" className="linkDecoration dropdown-item">
+												{" "}
+												Register as Student
+											</Link>
+										</li>
 
-									<li>
-										<Link to="/signup/professor" className="linkDecoration dropdown-item">
-											{" "}
-											Register as Professor
-										</Link>
-									</li>
-								</ul>
-							</li>
+										<li>
+											<Link to="/signup/professor" className="linkDecoration dropdown-item">
+												{" "}
+												Register as Professor
+											</Link>
+										</li>
+									</ul>
+								</li>
+							)}
 						</ul>
 					)}
 				</div>
