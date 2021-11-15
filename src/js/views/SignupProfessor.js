@@ -12,6 +12,7 @@ export const SignupProfessor = () => {
 				titleDescription="Without paying anything!"
 				image={ProfessorImage}
 				url={URL}
+				sendTo="/professor"
 			/>
 		</>
 	);
