@@ -76,7 +76,7 @@ export const Navbar = () => {
 					) : (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							{store.token && (
-								<li className="nav-item">
+								<li className="nav-item dropdown">
 									<Link to="/services" className="nav-link active" aria-current="page" href="#">
 										Services
 									</Link>
