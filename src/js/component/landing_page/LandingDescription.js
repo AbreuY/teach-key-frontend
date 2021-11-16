@@ -4,16 +4,22 @@ import { LandingCarrousel } from "./LandingCarrousel";
 export const LandingDescription = () => {
 	return (
 		<div>
-			<div></div>
-			<div className="d-flex flex-row">
-				<img style={{ height: "7.5rem", width: "11rem", paddingLeft: "30px" }} src={Logo} />
-				<div className="h2 py-3 text-center">
-					En nuestra página podrás encontrar toda clase de áreas de aprendizaje y tutores especializados en
-					cada una de ellas. !Escoge un tutor en el área que necesites y empieza a aprender con nosotros!
+			<div className="container-fluid d-flex my-5" style={{ height: "25rem" }}>
+				<div className="row">
+					<div className="col-12 col-sm-12 col-lg-4 col-md-4 text-center align-self-center">
+						<img style={{ height: "8.5rem", width: "11rem" }} src={Logo} />
+					</div>
+					<div className="col-12 col-sm-12 col-lg-8 col-md-8 align-self-center">
+						<div className="h2 py-3 text-center">
+							En nuestra página podrás encontrar toda clase de áreas de aprendizaje y tutores
+							especializados en cada una de ellas. !Escoge un tutor en el área que necesites y empieza a
+							aprender con nosotros!
+						</div>
+					</div>
 				</div>
 			</div>
 			<div>
-				<div className="container-fluid ps-0 pe-0">
+				<div className="container-fluid ps-0 p-0">
 					<div id="myCarousel" className="home carousel slide carousel-fade" data-bs-ride="carousel">
 						<div className="carousel-indicators">
 							<button
