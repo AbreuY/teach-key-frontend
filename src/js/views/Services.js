@@ -2,19 +2,21 @@ import React, { useContext } from "react";
 import { ServiceContent } from "../component/services_components/ServiceContent";
 import { ServiceFilter } from "../component/services_components/ServiceFilter";
 import { AppContext } from "../store/appContext";
+import { useHistory } from "react-router";
 
 export const Services = () => {
 	const { store, actions } = useContext(AppContext);
+	const history = useHistory();
 
 	return (
 		<>
-			{store.token && (
+			{localStorage.getItem("token") && (
 				<>
 					<ServiceFilter />
 					<ServiceContent />
 				</>
 			)}
-			{!store.token && <header className="fs-1 text-danger">You need to be logged in to see the services</header>}
+			{!localStorage.getItem("token") && history.push("/")}
 		</>
 	);
 };

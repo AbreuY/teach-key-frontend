@@ -40,6 +40,7 @@ const AppContextProvider = ({ children }) => {
 
 		setToken: token => {
 			localStorage.setItem("token", token);
+
 			setStore(prev => ({
 				...prev,
 				token: token
@@ -332,6 +333,16 @@ const AppContextProvider = ({ children }) => {
 	};
 
 	const context = { store, actions };
+
+	useEffect(() => {
+		let localToken = localStorage.getItem("token");
+		if (localToken) {
+			setStore(prev => ({
+				...prev,
+				token: localToken
+			}));
+		}
+	}, [store.token]);
 
 	return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
 };

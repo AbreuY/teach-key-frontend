@@ -9,7 +9,7 @@ export const ServiceContent = () => {
 
 	const adquireServices = async () => {
 		try {
-			const response = await fetch("http://localhost:3010/services");
+			const response = await fetch(URL);
 			const body = await response.json();
 			setServices(body);
 		} catch (error) {
@@ -26,13 +26,11 @@ export const ServiceContent = () => {
 			<div className="container">
 				{services.map((service, index) => {
 					return (
-						<>
-							<div className="row">
-								<div className="col-12">
-									<ServicesCard item={service} key={index} />
-								</div>
+						<div key={index} className="row">
+							<div className="col-12">
+								<ServicesCard item={service} />
 							</div>
-						</>
+						</div>
 					);
 				})}
 			</div>
