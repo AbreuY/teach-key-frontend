@@ -33,7 +33,7 @@ export const Navbar = () => {
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon" />
 				</button>
-				{store.token && (
+				{localStorage.getItem("token") && (
 					<>
 						<button
 							className="btn btn-outline-danger"
@@ -79,14 +79,14 @@ export const Navbar = () => {
 						</ul>
 					) : (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-							{store.token && (
+							{localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<Link to="/services" className="nav-link active" aria-current="page" href="#">
 										Services
 									</Link>
 								</li>
 							)}
-							{!store.token && (
+							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
 										className="nav-link dropdown-toggle"
@@ -111,7 +111,7 @@ export const Navbar = () => {
 									</ul>
 								</li>
 							)}
-							{!store.token && (
+							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
 										className="nav-link dropdown-toggle"

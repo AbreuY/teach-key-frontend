@@ -19,7 +19,6 @@ const AppContextProvider = ({ children }) => {
 			}
 		],
 
-		token: undefined,
 		BASE_URL: "http://localhost:3010",
 		dataForUser: {},
 		newService: {},
@@ -32,19 +31,10 @@ const AppContextProvider = ({ children }) => {
 	const actions = {
 		deleteToken: () => {
 			localStorage.removeItem("token");
-			setStore(prev => ({
-				...prev,
-				token: undefined
-			}));
 		},
 
 		setToken: token => {
 			localStorage.setItem("token", token);
-
-			setStore(prev => ({
-				...prev,
-				token: token
-			}));
 		},
 		//set student/professor data by id
 		setUserData: data => {
@@ -334,15 +324,15 @@ const AppContextProvider = ({ children }) => {
 
 	const context = { store, actions };
 
-	useEffect(() => {
-		let localToken = localStorage.getItem("token");
-		if (localToken) {
-			setStore(prev => ({
-				...prev,
-				token: localToken
-			}));
-		}
-	}, [store.token]);
+	// useEffect(() => {
+	// 	let localToken = localStorage.getItem("token");
+	// 	if (localToken) {
+	// 		setStore(prev => ({
+	// 			...prev,
+	// 			token: localToken
+	// 		}));
+	// 	}
+	// }, [store.token]);
 
 	return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
 };
