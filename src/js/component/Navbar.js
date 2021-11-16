@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useMemo } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { AppContext } from "../store/appContext";
+import Logo from "../../img/logo2.png";
 
 export const Navbar = () => {
 	const location = useLocation();
@@ -17,7 +18,10 @@ export const Navbar = () => {
 		<nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 			<div className="container-fluid">
 				<Link to="/" className="navbar-brand">
-					Navbar
+					<div className="d-flex text-center">
+						<img style={{ height: "3.75rem", width: "6.5" }} src={Logo} />
+						<div className="h1 ms-2 align-self-center ">Teach Key</div>
+					</div>
 				</Link>
 				<button
 					className="navbar-toggler"
