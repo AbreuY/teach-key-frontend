@@ -137,7 +137,7 @@ export const UserProfile = () => {
 															{store.dataForUser.services == undefined
 																? ""
 																: store.dataForUser.services.map((svc, index) => {
-																		return <CardServices key={index} data={svc} />;
+																		return <CardServices key={svc.id} data={svc} />;
 																  })}
 														</div>
 													</div>

@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import Swal from "sweetalert2";
 
 export const AppContext = createContext(undefined);
 const AppContextProvider = ({ children }) => {
@@ -167,9 +168,7 @@ const AppContextProvider = ({ children }) => {
 		getSingleServiceDetail: async (id, comeFromEdit) => {
 			let isForEdit = (store.isFromEdit = comeFromEdit);
 			let svcId = (store.serviceId = id);
-			const response = await fetch(`${store.BASE_URL}/services/${id}`, {
-				method: "GET"
-			});
+			const response = await fetch(`${store.BASE_URL}/services/${id}`);
 			if (response.ok) {
 				const body = await response.json();
 				let svc = (store.singleService = body);
@@ -179,7 +178,6 @@ const AppContextProvider = ({ children }) => {
 					isForEdit,
 					svcId
 				}));
-				actions.uploadImage();
 			}
 		},
 		/* Function to update a desired service, passing one argument, the id of the service */
@@ -193,7 +191,13 @@ const AppContextProvider = ({ children }) => {
 			});
 
 			if (response.ok) {
-				alert("Updated");
+				Swal.fire({
+					icon: "success",
+					title: "Service Updated",
+					text: "This service has been updated correctly",
+					showConfirmButton: false,
+					timer: 2000
+				});
 			}
 		},
 		/* 
@@ -208,6 +212,25 @@ const AppContextProvider = ({ children }) => {
 				newImage
 			}));
 		},
+		/* updateImage */
+		updateSvc: async id => {
+			if (store.imageSelected == undefined || store.imageSelected == "") {
+				actions.updateSingleService(id);
+				return;
+			}
+			const formData = new FormData();
+			formData.append("file", store.imageSelected);
+			formData.append("upload_preset", "teachkey");
+			const response = await fetch("https://api.cloudinary.com/v1_1/dzquq6yle/image/upload", {
+				method: "POST",
+				body: formData
+			});
+			if (response.ok) {
+				const body = await response.json();
+				actions.setImageUrl(body.url);
+				actions.updateSingleService(id);
+			}
+		},
 		/*
 		uploadImage()
 		This function uploads the image to cloudinary and returns an object with load information, 
@@ -215,6 +238,10 @@ const AppContextProvider = ({ children }) => {
 		To be used later as an image of the service. 
 		*/
 		uploadImage: async () => {
+			if (store.imageSelected == undefined || store.imageSelected == "") {
+				actions.createNewService();
+				return;
+			}
 			const formData = new FormData();
 			formData.append("file", store.imageSelected);
 			formData.append("upload_preset", "teachkey");
