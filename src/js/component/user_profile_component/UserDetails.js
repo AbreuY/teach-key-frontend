@@ -87,22 +87,72 @@ export const UserDetails = () => {
 								/>
 							</div>
 						</div>
+						<hr style={{ width: "100%" }} />
+						<div className="row mb-2">
+							<div className="text-start">
+								<h4 className="mb-0">Contact Methods</h4>
+							</div>
+						</div>
 						<div className="row mb-3">
 							<div className="col-sm-3">
-								<h6 className="mb-0">Contact Methods</h6>
+								<h6 className="mb-0">Facebook</h6>
 							</div>
 							<div className="col-sm-9 text-secondary">
 								<input
 									type="text"
 									className="form-control"
 									onChange={e => {
-										actions.setContactMethod(e.target.value);
+										actions.setFacebook(e.target.value);
+									}}
+									value={store.dataForUser["facebook"] == undefined ? "" : store.dataForUser.facebook}
+								/>
+							</div>
+						</div>
+						<div className="row mb-3">
+							<div className="col-sm-3">
+								<h6 className="mb-0">Twitter</h6>
+							</div>
+							<div className="col-sm-9 text-secondary">
+								<input
+									type="text"
+									className="form-control"
+									onChange={e => {
+										actions.setTwitter(e.target.value);
+									}}
+									value={store.dataForUser["twitter"] == undefined ? "" : store.dataForUser.twitter}
+								/>
+							</div>
+						</div>
+						<div className="row mb-3">
+							<div className="col-sm-3">
+								<h6 className="mb-0">Instagram</h6>
+							</div>
+							<div className="col-sm-9 text-secondary">
+								<input
+									type="text"
+									className="form-control"
+									onChange={e => {
+										actions.setInstagram(e.target.value);
 									}}
 									value={
-										store.dataForUser["contact_methods"] == undefined
-											? ""
-											: store.dataForUser.contact_methods
+										store.dataForUser["instagram"] == undefined ? "" : store.dataForUser.instagram
 									}
+								/>
+							</div>
+						</div>
+						<div className="row mb-3">
+							<div className="col-sm-3">
+								<h6 className="mb-0">WhatsApp</h6>
+							</div>
+							<div className="col-sm-9 text-secondary">
+								<input
+									placeholder="Put your number like this https://wa.me/123456789"
+									type="text"
+									className="form-control"
+									onChange={e => {
+										actions.setWhatsApp(e.target.value);
+									}}
+									value={store.dataForUser["whatsapp"] == undefined ? "" : store.dataForUser.whatsapp}
 								/>
 							</div>
 						</div>

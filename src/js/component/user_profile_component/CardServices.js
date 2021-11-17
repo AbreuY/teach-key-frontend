@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import PropTypes from "prop-types";
 import { AppContext } from "../../store/appContext";
-
+import default_image from "../../../img/default_image.jpg";
 export const CardServices = ({ data }) => {
 	const { store, actions } = useContext(AppContext);
 	useEffect(() => {}, []);
@@ -10,7 +10,11 @@ export const CardServices = ({ data }) => {
 		<>
 			<div className="col">
 				<div className="card">
-					<img src={data.image} className="card-img-top-services" alt="..." />
+					<img
+						src={data.image == null ? default_image : data.image}
+						className="card-img-top-services"
+						alt="..."
+					/>
 					<div className="card-body">
 						<h5 className="card-title char-limit">
 							{data.title} {data.id}

@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useMemo } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { AppContext } from "../store/appContext";
 import Logo from "../../img/logo2.png";
 
 export const Navbar = () => {
 	const location = useLocation();
+	const params = useParams();
 	const { store, actions } = useContext(AppContext);
 	const token = useMemo(() => {
 		return localStorage.getItem("token");
@@ -16,6 +17,7 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+			{console.log(store.token, "from navbar")}
 			<div className="container-fluid">
 				<Link to="/" className="navbar-brand">
 					<div className="d-flex text-center">
@@ -33,17 +35,6 @@ export const Navbar = () => {
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon" />
 				</button>
-				{store.token && (
-					<>
-						<button
-							className="btn btn-outline-danger"
-							onClick={e => {
-								logout();
-							}}>
-							Logout
-						</button>
-					</>
-				)}
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					{location.pathname == "/signup/professor" ? (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -80,13 +71,72 @@ export const Navbar = () => {
 					) : (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							{store.token && (
-								<li className="nav-item dropdown">
-									<Link to="/services" className="nav-link active" aria-current="page" href="#">
-										Services
-									</Link>
-								</li>
+								<>
+									{/* <li className="nav-item dropdown">
+										<a
+											className="nav-link dropdown-toggle"
+											href="#"
+											id="navbarDropdownMenuLink"
+											role="button"
+											data-bs-toggle="dropdown"
+											aria-expanded="false">
+											Menu
+										</a> */}
+									<div className="dropdown">
+										<button
+											className="btn btn-outline-primary dropdown-toggle"
+											type="button"
+											id="dropdownMenuButton1"
+											data-bs-toggle="dropdown"
+											aria-expanded="false">
+											Menu
+										</button>
+										<ul
+											className="dropdown-menu dropdown-menu-end"
+											aria-labelledby="navbarDropdownMenuLink">
+											<li>
+												<Link to="/services" className="dropdown-item" aria-current="page">
+													Services
+												</Link>
+											</li>
+											<li>
+												<button
+													className="dropdown-item"
+													onClick={e => {
+														logout();
+													}}
+													aria-current="page">
+													Logout
+												</button>
+											</li>
+											<li>
+												<Link
+													to={`/${localStorage.getItem("role")}/${localStorage.getItem(
+														"id"
+													)}/profile`}
+													className="dropdown-item"
+													aria-current="page">
+													My Profile
+												</Link>
+											</li>
+										</ul>
+									</div>
+
+									{/* <li className="nav-item dropdown">
+										<Link to="/services" className="nav-link active" aria-current="page" href="#">
+											Services
+										</Link>
+									</li>
+									<button
+										className="btn btn-outline-danger"
+										onClick={e => {
+											logout();
+										}}>
+										Logout
+									</button> */}
+								</>
 							)}
-							{!store.token && (
+							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
 										className="nav-link dropdown-toggle"
@@ -111,7 +161,7 @@ export const Navbar = () => {
 									</ul>
 								</li>
 							)}
-							{!store.token && (
+							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
 										className="nav-link dropdown-toggle"
