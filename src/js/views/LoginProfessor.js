@@ -5,7 +5,7 @@ const URL = "http://localhost:3010/login/professor";
 export const LoginProfessor = () => {
 	return (
 		<>
-			<LoginContent url={URL} />
+			<LoginContent url={URL} header="Hello, Professor!" headerDescription="Start creating your own courses!" />
 		</>
 	);
 };

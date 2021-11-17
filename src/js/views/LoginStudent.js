@@ -5,7 +5,11 @@ const URL = "http://localhost:3010/login/student";
 export const LoginStudent = () => {
 	return (
 		<>
-			<LoginContent url={URL} />
+			<LoginContent
+				url={URL}
+				header="Hello, Student!"
+				headerDescription="Log in and start looking for your perfect Teacher!"
+			/>
 		</>
 	);
 };
