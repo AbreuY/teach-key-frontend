@@ -20,49 +20,51 @@ export const LandingCarrousel = () => {
 	};
 
 	return (
-		<div className="carousel_container">
-			<div className="carousel_wrapper">
-				<div className="carousel-card">
-					<div className="carousel-card-thumb">
-						<img src={Testimonio1} className="carousel-client-img" alt="" />
-						<span className="carousel-client-name">Marta789</span>
+		<div className="row">
+			<div className="carousel_container">
+				<div className="carousel_wrapper">
+					<div className="carousel-card">
+						<div className="carousel-card-thumb ">
+							<img src={Testimonio1} className="carousel-client-img" alt="" />
+							<span className="carousel-client-name">Marta789</span>
+						</div>
+						<div className="carousel-card-body">
+							<p className="review">
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident.
+								Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?
+							</p>
+						</div>
 					</div>
-					<div className="carousel-card-body">
-						<p className="review">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident.
-							Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?
-						</p>
+					<div className="carousel-card">
+						<div className="carousel-card-thumb ">
+							<img src={Testimonio2} className=" carousel-client-img" alt="" />
+							<span className=" carousel-client-name">Ernestom24</span>
+						</div>
+						<div className="carousel-card-body">
+							<p className=" review">
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident.
+								Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?
+							</p>
+						</div>
+					</div>
+					<div className="carousel-card">
+						<div className=" carousel-card-thumb ">
+							<img src={Testimonio3} className=" carousel-client-img" alt="" />
+							<span className=" carousel-client-name">Bryan56</span>
+						</div>
+						<div className="carousel-card-body">
+							<p className="review">
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident.
+								Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?
+							</p>
+						</div>
 					</div>
 				</div>
-				<div className="carousel-card">
-					<div className="carousel-card-thumb">
-						<img src={Testimonio2} className=" carousel-client-img" alt="" />
-						<span className=" carousel-client-name">Ernestom24</span>
-					</div>
-					<div className="carousel-card-body">
-						<p className=" review">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident.
-							Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?
-						</p>
-					</div>
+				<div className="carousel_indicators">
+					<button className="active"></button>
+					<button></button>
+					<button></button>
 				</div>
-				<div className="carousel-card">
-					<div className=" carousel-card-thumb">
-						<img src={Testimonio3} className=" carousel-client-img" alt="" />
-						<span className=" carousel-client-name">Bryan56</span>
-					</div>
-					<div className="carousel-card-body">
-						<p className="review">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident.
-							Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?
-						</p>
-					</div>
-				</div>
-			</div>
-			<div className="carousel_indicators">
-				<button className="active"></button>
-				<button></button>
-				<button></button>
 			</div>
 		</div>
 	);
