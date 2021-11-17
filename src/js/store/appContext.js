@@ -28,18 +28,18 @@ const AppContextProvider = ({ children }) => {
 		serviceId: undefined,
 		isFromEdit: false,
 		imageSelected: "",
+		profileImage: "",
 		authorized: undefined
 	});
 
 	const actions = {
-		deleteToken: () => {
+		Logout: () => {
 			localStorage.removeItem("token");
 			setStore(prev => ({
 				...prev,
 				token: undefined
 			}));
 		},
-
 		setToken: token => {
 			localStorage.setItem("token", token);
 			setStore(prev => ({
@@ -214,7 +214,33 @@ const AppContextProvider = ({ children }) => {
 				newImage
 			}));
 		},
+		setProfileImage: image => {
+			let newImage = (store.profileImage = image);
+			setStore(prev => ({
+				...prev,
+				newImage
+			}));
+		},
 		/* updateImage */
+		updateProfileImage: async id => {
+			if (store.profileImage == undefined || store.profileImage == "") {
+				//actions.updateSingleService(id);
+				return;
+			}
+			const formData = new FormData();
+			formData.append("file", store.profileImage);
+			formData.append("upload_preset", "teachkey");
+			const response = await fetch("https://api.cloudinary.com/v1_1/dzquq6yle/image/upload", {
+				method: "POST",
+				body: formData
+			});
+			if (response.ok) {
+				const body = await response.json();
+				actions.setImageUrl(body.url);
+				actions.updateSingleService(id);
+			}
+		},
+		/* Update Service Image, if no image is selected just update the text */
 		updateSvc: async id => {
 			if (store.imageSelected == undefined || store.imageSelected == "") {
 				actions.updateSingleService(id);

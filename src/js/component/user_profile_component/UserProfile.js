@@ -18,6 +18,7 @@ export const UserProfile = () => {
 			confirmButtonText: "Ok"
 		}).then(result => {
 			if (result.isConfirmed) {
+				actions.Logout();
 				history.push("/");
 			}
 		});

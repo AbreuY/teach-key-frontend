@@ -11,9 +11,6 @@ export const Navbar = () => {
 	const token = useMemo(() => {
 		return localStorage.getItem("token");
 	}, [localStorage]);
-	const logout = event => {
-		actions.deleteToken();
-	};
 
 	return (
 		<nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
@@ -103,7 +100,7 @@ export const Navbar = () => {
 												<button
 													className="dropdown-item"
 													onClick={e => {
-														logout();
+														actions.Logout();
 													}}
 													aria-current="page">
 													Logout
@@ -121,19 +118,6 @@ export const Navbar = () => {
 											</li>
 										</ul>
 									</div>
-
-									{/* <li className="nav-item dropdown">
-										<Link to="/services" className="nav-link active" aria-current="page" href="#">
-											Services
-										</Link>
-									</li>
-									<button
-										className="btn btn-outline-danger"
-										onClick={e => {
-											logout();
-										}}>
-										Logout
-									</button> */}
 								</>
 							)}
 							{!localStorage.getItem("token") && (

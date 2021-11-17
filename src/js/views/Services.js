@@ -10,13 +10,13 @@ export const Services = () => {
 
 	return (
 		<>
-			{store.token && (
+			{localStorage.getItem("token") && (
 				<>
 					<ServiceFilter />
 					<ServiceContent />
 				</>
 			)}
-			{!store.token && history.push("/")}
+			{!localStorage.getItem("token") && history.push("/")}
 		</>
 	);
 };
