@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import Logo2 from "../../../img/logo2.png";
 import { AppContext } from "../../store/appContext";
+import { useLocation } from "react-router";
+import Swal from "sweetalert2";
 
 export const LoginContent = props => {
+	const location = useLocation();
 	const { store, actions } = useContext(AppContext);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const history = useHistory();
+	const Swal = require("sweetalert2");
 
 	async function login(event) {
 		let data = {
@@ -31,7 +35,19 @@ export const LoginContent = props => {
 			localStorage.setItem("role", body.role);
 			history.push("/");
 		} else {
-			alert(response.statusText);
+			let timerInterval = Swal.fire({
+				icon: "error",
+				title: "Invalid Data",
+				html: "Try again!",
+				timer: 2500,
+
+				willClose: () => {
+					clearInterval(timerInterval);
+				}
+			}).then(result => {
+				if (result.dismiss === Swal.DismissReason.timer) {
+				}
+			});
 		}
 	}
 
@@ -44,7 +60,14 @@ export const LoginContent = props => {
 						data-aos="fade-right"
 						data-aos-duration="1500"
 						data-aos-easing="ease-in-sine">
-						<header className=" fs-1 text-center text-danger">Hello, Professor!</header>
+						<header className=" fs-1 text-center text-danger">{props.header}</header>
+						<p
+							className="text-center"
+							data-aos="fade-right"
+							data-aos-duration="2500"
+							data-aos-easing="ease-in-sine">
+							{props.headerDescription}
+						</p>
 					</div>
 					<div className="col-9 col-lg-6 col-md-6 col-sm-12 mt-5" data-aos="zoom-out-left">
 						<div className="row align-items-center">
@@ -136,5 +159,7 @@ export const LoginContent = props => {
 };
 
 LoginContent.propTypes = {
+	headerDescription: PropTypes.string,
+	header: PropTypes.string,
 	url: PropTypes.string
 };
