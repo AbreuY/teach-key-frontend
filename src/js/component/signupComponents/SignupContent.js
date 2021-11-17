@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { SignupCountryInputs } from "./SignupCountryInputs";
 import { useHistory } from "react-router";
+import Swal from "sweetalert2";
 
 export const SignupContent = props => {
 	const [email, setEmail] = useState("");
@@ -9,6 +10,8 @@ export const SignupContent = props => {
 	const [password, setPassword] = useState("");
 	const [country, setCountry] = useState("");
 	const history = useHistory();
+	const Swal = require("sweetalert2");
+
 	const countryData = country => {
 		setCountry(country);
 	};
@@ -110,6 +113,7 @@ export const SignupContent = props => {
 							<div className="col">
 								<button
 									onClick={event => {
+										let patron = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 										let inputPassword = document.getElementById("inputPassword1");
 										let inputConfirmPassword = document.getElementById("inputConfirmPassword1");
 										let inputUsername = document.getElementById("signupUsername");
@@ -121,7 +125,11 @@ export const SignupContent = props => {
 											inputEmail.value == "" ||
 											inputConfirmPassword.value == ""
 										) {
-											alert("You need to fill all the forms");
+											Swal.fire({
+												icon: "error",
+												title: "Oops...",
+												text: "You need to fill up all the forms!"
+											});
 											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
 											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
 											inputEmail.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
@@ -131,7 +139,11 @@ export const SignupContent = props => {
 											inputPassword.value == "" ||
 											inputConfirmPassword.value == ""
 										) {
-											alert("Not Matching Password");
+											Swal.fire({
+												icon: "error",
+												title: "Oops...",
+												text: "Passwords aren't matching!"
+											});
 											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
 											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
 											inputEmail.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
@@ -141,12 +153,20 @@ export const SignupContent = props => {
 											inputCountry == "" ||
 											inputCountry == "0"
 										) {
-											alert("Please, choose your country");
+											Swal.fire({
+												icon: "info",
+
+												text: "Please, choose your country"
+											});
 											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
 											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0";
-										} else {
-											signup();
-										}
+										} else if (inputEmail.value != 0) {
+											Swal.fire({
+												icon: "info",
+
+												text: "Please, choose your country"
+											});
+										} else signup();
 									}}
 									type="button"
 									className="btn btn-outline-danger">

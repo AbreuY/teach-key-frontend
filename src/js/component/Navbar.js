@@ -18,8 +18,8 @@ export const Navbar = () => {
 			<div className="container-fluid">
 				<Link to="/" className="navbar-brand">
 					<div className="d-flex text-center">
-						<img style={{ height: "3.75rem", width: "6.5" }} src={Logo} />
-						<div className="h1 ms-2 align-self-center ">Teach Key</div>
+						<img style={{ height: "2.3rem" }} src={Logo} />
+						<div className="h4 ms-2 align-self-center ">Teach Key</div>
 					</div>
 				</Link>
 				<button

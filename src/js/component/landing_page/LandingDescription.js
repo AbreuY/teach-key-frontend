@@ -257,11 +257,11 @@ export const LandingDescription = () => {
 					</div>
 				</div>
 			</div>
-			<div className="h3 py-5">
-				{
-					"Aqui podras leer comentarios y opiniones; de estudiantes y profesores que se han registrado en Teach Key"
-				}{" "}
-				{"y han llevado el aprendizaje a otro nivel"}
+			<div className="row">
+				<div className="h3 py-5 col-12 col-sm-12 col-lg-12 col-md-12 align-self-center text-center">
+					Aqui podras leer comentarios y opiniones; de estudiantes y profesores que se han registrado en Teach
+					Key y han llevado el aprendizaje a otro nivel
+				</div>
 			</div>
 			<div className="container pb-5">
 				<LandingCarrousel />
