@@ -27,6 +27,8 @@ export const LoginContent = props => {
 		const body = await response.json();
 		if (response.ok) {
 			actions.setToken(body.token);
+			localStorage.setItem("id", body.id);
+			localStorage.setItem("role", body.role);
 			history.push("/");
 		} else {
 			alert(response.statusText);

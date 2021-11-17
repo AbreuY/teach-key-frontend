@@ -9,7 +9,6 @@ export const CardServices = ({ data }) => {
 	return (
 		<>
 			<div className="col">
-				{console.log(data.image)}
 				<div className="card">
 					<img
 						src={data.image == null ? default_image : data.image}

@@ -21,7 +21,7 @@ const AppContextProvider = ({ children }) => {
 		],
 
 		token: undefined,
-		BASE_URL: "http://localhost:3010",
+		BASE_URL: "http://127.0.0.1:3010",
 		dataForUser: {},
 		newService: {},
 		singleService: {},
@@ -41,7 +41,6 @@ const AppContextProvider = ({ children }) => {
 
 		setToken: token => {
 			localStorage.setItem("token", token);
-
 			setStore(prev => ({
 				...prev,
 				token: token
@@ -145,7 +144,8 @@ const AppContextProvider = ({ children }) => {
 				method: "POST",
 				body: JSON.stringify(store.newService),
 				headers: {
-					"Content-Type": "application/json"
+					"Content-Type": "application/json",
+					Authorization: "Bearer " + localStorage.getItem("token")
 				}
 			});
 			if (response.ok) {
@@ -313,7 +313,13 @@ const AppContextProvider = ({ children }) => {
 		Fetch student/professor data by id
 		*/
 		getUserDetails: async (role, id) => {
-			const response = await fetch(`${store.BASE_URL}/${role}/${id}/profile`);
+			const response = await fetch(`${store.BASE_URL}/${role}/${id}/profile`, {
+				method: "GET",
+				headers: {
+					"Content-type": "application/json",
+					Authorization: "Bearer " + localStorage.getItem("token")
+				}
+			});
 			if (response.ok) {
 				const body = await response.json();
 				if (role == "student") {
@@ -338,12 +344,19 @@ const AppContextProvider = ({ children }) => {
 				method: "PUT",
 				body: JSON.stringify(bodyData),
 				headers: {
-					"Content-Type": "application/json"
+					"Content-Type": "application/json",
+					Authorization: "Bearer " + localStorage.getItem("token")
 				}
 			});
 			if (response.ok) {
-				const body = await response.json();
-				alert("Data Update");
+				//const body = await response.json();
+				Swal.fire({
+					icon: "success",
+					title: "Data Updated",
+					text: "Your info has been updated",
+					showConfirmButton: false,
+					timer: 2000
+				});
 			}
 		},
 
@@ -363,7 +376,7 @@ const AppContextProvider = ({ children }) => {
 
 	useEffect(() => {
 		let localToken = localStorage.getItem("token");
-		if (localToken) {
+		if (localToken != null) {
 			setStore(prev => ({
 				...prev,
 				token: localToken
