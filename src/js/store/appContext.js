@@ -27,7 +27,8 @@ const AppContextProvider = ({ children }) => {
 		singleService: {},
 		serviceId: undefined,
 		isFromEdit: false,
-		imageSelected: ""
+		imageSelected: "",
+		authorized: undefined
 	});
 
 	const actions = {
@@ -290,11 +291,32 @@ const AppContextProvider = ({ children }) => {
 				second_email
 			}));
 		},
-		setContactMethod: data => {
-			let contact = (store.dataForUser.contact_methods = data);
+		setFacebook: data => {
+			let facebook = (store.dataForUser.facebook = data);
 			setStore(prev => ({
 				...prev,
-				contact
+				facebook
+			}));
+		},
+		setTwitter: data => {
+			let twitter = (store.dataForUser.twitter = data);
+			setStore(prev => ({
+				...prev,
+				twitter
+			}));
+		},
+		setInstagram: data => {
+			let instagram = (store.dataForUser.instagram = data);
+			setStore(prev => ({
+				...prev,
+				instagram
+			}));
+		},
+		setWhatsApp: data => {
+			let whatsapp = (store.dataForUser.whatsapp = data);
+			setStore(prev => ({
+				...prev,
+				whatsapp
 			}));
 		},
 		setDob: data => {
@@ -302,6 +324,12 @@ const AppContextProvider = ({ children }) => {
 			setStore(prev => ({
 				...prev,
 				dob
+			}));
+		},
+		setAuthorized: data => {
+			setStore(prev => ({
+				...prev,
+				authorized: data
 			}));
 		},
 		/*
@@ -315,8 +343,11 @@ const AppContextProvider = ({ children }) => {
 		getUserDetails: async (role, id) => {
 			const response = await fetch(`${store.BASE_URL}/${role}/${id}/profile`, {
 				method: "GET",
+				mode: "cors",
 				headers: {
 					"Content-type": "application/json",
+					"Access-Control-Allow-Origin": "*",
+					"Access-Control-Allow-Headers": "*",
 					Authorization: "Bearer " + localStorage.getItem("token")
 				}
 			});
@@ -327,6 +358,12 @@ const AppContextProvider = ({ children }) => {
 				} else {
 					actions.setUserData(body);
 				}
+			} else if (response.status == 401) {
+				localStorage.removeItem("token");
+				setStore(prev => ({
+					...prev,
+					authorized: false
+				}));
 			}
 		},
 		/*

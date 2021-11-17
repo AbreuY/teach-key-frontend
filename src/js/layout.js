@@ -14,7 +14,6 @@ import { UserProfile } from "./component/user_profile_component/UserProfile";
 import { LoginStudent } from "./views/LoginStudent";
 import { LoginProfessor } from "./views/LoginProfessor";
 import { Services } from "./views/Services";
-import { SingleService } from "./views/SingleService";
 
 //create your first component
 const Layout = () => {
@@ -48,9 +47,6 @@ const Layout = () => {
 							<Route exact path="/:role/:id/profile" component={UserProfile} />
 							<Route exact path="/services">
 								<Services />
-							</Route>
-							<Route exact path="/services/:id">
-								<SingleService />
 							</Route>
 							<Route>
 								<h1>Not found!</h1>

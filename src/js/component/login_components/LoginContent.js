@@ -21,15 +21,22 @@ export const LoginContent = props => {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: {
-				"Content-Type": "application/json"
+				"Content-type": "application/json",
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Headers": "*"
 			}
 		});
 		const body = await response.json();
 		if (response.ok) {
+			actions.setAuthorized(true);
 			actions.setToken(body.token);
 			localStorage.setItem("id", body.id);
 			localStorage.setItem("role", body.role);
-			history.push("/");
+			if (body.role == "student") {
+				history.push("/services");
+			} else {
+				history.push(`/${body.role}/${body.id}/profile`);
+			}
 		} else {
 			alert(response.statusText);
 		}
