@@ -437,3 +437,31 @@ text-overflow: ellipsis;
 overflow: hidden;
 white-space: nowrap;
 }
+
+/* LOGIN styles */
+
+.salute {
+  z-index: 2;
+  -webkit-animation: myfirst 5s infinite;
+  animation: myfirst 5s infinite;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  animation-direction: normal;
+  -webkit-animation-direction: normal;
+}
+@-webkit-keyframes myfirst {
+  0% {
+      left: 0%;
+  }
+  100% {
+      left: 100%;
+  }
+}
+@keyframes myfirst {
+  0% {
+      left: 0%;
+  }
+  100% {
+      left: 100%;
+}
+};
