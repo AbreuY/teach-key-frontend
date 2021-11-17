@@ -21,11 +21,7 @@ const AppContextProvider = ({ children }) => {
 		],
 
 		token: undefined,
-<<<<<<< HEAD
 		BASE_URL: "http://127.0.0.1:3010",
-=======
-		BASE_URL: "http://localhost:3010",
->>>>>>> jesus
 		dataForUser: {},
 		newService: {},
 		singleService: {},
@@ -45,10 +41,6 @@ const AppContextProvider = ({ children }) => {
 
 		setToken: token => {
 			localStorage.setItem("token", token);
-<<<<<<< HEAD
-=======
-
->>>>>>> jesus
 			setStore(prev => ({
 				...prev,
 				token: token
@@ -384,11 +376,7 @@ const AppContextProvider = ({ children }) => {
 
 	useEffect(() => {
 		let localToken = localStorage.getItem("token");
-<<<<<<< HEAD
 		if (localToken != null) {
-=======
-		if (localToken) {
->>>>>>> jesus
 			setStore(prev => ({
 				...prev,
 				token: localToken
