@@ -36,14 +36,20 @@ export const LoginContent = props => {
 	return (
 		<>
 			<div className="container h-100">
-				<div className="row">
-					<div className="col mt-5">
-						<div className="row align-items-center mt-5">
-							<div className="col-xl-3 col-lg-2 col-md-1"></div>
-							<div className="col-xl-6 col-lg-8 col-md-10 col-sm-12 shadow-lg p-3 mb-5 bg-body rounded">
+				<div className="row align-items-center mt-5">
+					<div
+						className="col-3 col-lg-6 col-md-6 col-sm-12 mt-5 shadow-sm p-3 mb-5 bg-body rounded "
+						data-aos="fade-right"
+						data-aos-duration="1500"
+						data-aos-easing="ease-in-sine">
+						<header className=" fs-1 text-center text-danger">Hello, Professor!</header>
+					</div>
+					<div className="col-9 col-lg-6 col-md-6 col-sm-12 mt-5" data-aos="zoom-out-left">
+						<div className="row align-items-center">
+							<div className="col-xl-2 col-lg-1 col-md-1"></div>
+							<div className="col-xl-8 col-lg-10 col-md-10 col-sm-12  p-3 mb-5 rounded">
 								<p className="text-center fs-2 text-md-center text-sm-center">
 									<img src={Logo2} />
-									Teach Key
 								</p>
 								<div>
 									<p className="inputPText1  text-md-center text-sm-center text-center">
@@ -118,7 +124,7 @@ export const LoginContent = props => {
 								</div>
 							</div>
 
-							<div className="col-xl-3 col-lg-2 col-md-1"></div>
+							<div className="col-xl-2 col-lg-1 col-md-1"></div>
 						</div>
 					</div>
 				</div>
