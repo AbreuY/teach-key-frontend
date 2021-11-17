@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const ServicesCard = ({ item }) => {
 	return (
@@ -16,6 +17,7 @@ export const ServicesCard = ({ item }) => {
 							<p className="card-text">
 								<small className="text-muted">{item.schedule}</small>
 							</p>
+							<Link to={`/services/${item.id}`}>See more</Link>
 						</div>
 					</div>
 				</div>

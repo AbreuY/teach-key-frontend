@@ -33,10 +33,6 @@ const AppContextProvider = ({ children }) => {
 	const actions = {
 		deleteToken: () => {
 			localStorage.removeItem("token");
-			setStore(prev => ({
-				...prev,
-				token: undefined
-			}));
 		},
 
 		setToken: token => {

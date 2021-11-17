@@ -35,7 +35,6 @@ export const Navbar = () => {
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon" />
 				</button>
-
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					{location.pathname == "/signup/professor" ? (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -137,7 +136,7 @@ export const Navbar = () => {
 									</button> */}
 								</>
 							)}
-							{!store.token && (
+							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
 										className="nav-link dropdown-toggle"
@@ -162,7 +161,7 @@ export const Navbar = () => {
 									</ul>
 								</li>
 							)}
-							{!store.token && (
+							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
 										className="nav-link dropdown-toggle"
