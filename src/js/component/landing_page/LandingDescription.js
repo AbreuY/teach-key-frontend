@@ -77,7 +77,9 @@ export const LandingDescription = () => {
 								/>
 
 								<div className="container">
-									<div className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50">
+									<div
+										className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50"
+										style={{ whiteSpace: "normal" }}>
 										<h3>
 											<strong>
 												Quizas te preguntaras ¿Por qué deberias registrarte en Teach Key?
@@ -100,19 +102,17 @@ export const LandingDescription = () => {
 								/>
 
 								<div className="container">
-									<div className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50">
+									<div
+										className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50"
+										style={{ whiteSpace: "normal" }}>
 										<h3>
 											<strong>Estudiantes</strong>
 										</h3>
 										<p>
 											Aquí los Estudiantes pueden buscar el tutor que necesiten y las areas de
-											estudio que requieran
+											estudio que requieran pudiendo elegir entre los mejores tutores, calificados
+											por ellos mismos y tambien comentar sobre los tutores.
 										</p>
-										<p>
-											pudiendo elegir entre los mejores tutores, calificados por ellos mismos y
-											tambien comentar
-										</p>
-										<p>sobre los tutores.</p>
 									</div>
 								</div>
 							</div>
@@ -121,19 +121,20 @@ export const LandingDescription = () => {
 									className="home bd-placeholder-img"
 									width="100%"
 									height="100%"
-									src="https://previews.123rf.com/images/quartadis/quartadis1711/quartadis171100196/90741678-mapa-con-marcadores-de-ubicaci%C3%B3n-en-vista-isom%C3%A9trica-ilustraci%C3%B3n-de-dibujos-animados-de-vector-plano.jpg"
+									src="https://thumbs.dreamstime.com/b/smartphone-y-ejemplo-isom%C3%A9trico-del-vector-indicador-mapa-navegador-plano-tel%C3%A9fono-m%C3%B3vil-de-la-historieta-en-d-el-estilo-114226053.jpg"
 								/>
 
 								<div className="container">
-									<div className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50">
+									<div
+										className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50"
+										style={{ whiteSpace: "normal" }}>
 										<h3>
 											<strong>Estudiantes</strong>
 										</h3>
 										<p>
 											Pueden filtrar sus busquedas a las areas de ubicacion que se les hagan mas
-											favorables
+											favorables escogiendo el radio de busqueda a lo largo de sus preferencias.
 										</p>
-										<p>escogiendo el radio de busqueda a lo largo de sus preferencias.</p>
 									</div>
 								</div>
 							</div>
@@ -146,17 +147,16 @@ export const LandingDescription = () => {
 								/>
 
 								<div className="container">
-									<div className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50">
+									<div
+										className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50"
+										style={{ whiteSpace: "normal" }}>
 										<h3>
 											<strong>Estudiantes</strong>
 										</h3>
 										<p>
 											Los Estudiantes tienen la facilidad de comunicacion directa con los
-											profesores
-										</p>
-										<p>
-											para realizar preguntas, acordar pagos, horarios y todo lo referente con las
-											clases y el profesor.
+											profesores para realizar preguntas, acordar pagos, horarios y todo lo
+											referente con las clases y el profesor.
 										</p>
 									</div>
 								</div>
@@ -170,19 +170,17 @@ export const LandingDescription = () => {
 								/>
 
 								<div className="container">
-									<div className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50">
+									<div
+										className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50"
+										style={{ whiteSpace: "normal" }}>
 										<h3>
 											<strong>Profesores</strong>
 										</h3>
 										<p>
 											Al registrarse los profesores pueden agregar las areas que desean impartir
-											al perfil
+											al perfil y agregar tambien los datos que sirven de informacion a sus
+											posibles estudiantes a la hora de contratarlos.
 										</p>
-										<p>
-											y agregar tambien los datos que sirven de informacion a sus posibles
-											estudiantes a la hora de
-										</p>
-										<p>contratarlos.</p>
 									</div>
 								</div>
 							</div>
@@ -195,19 +193,18 @@ export const LandingDescription = () => {
 								/>
 
 								<div className="container">
-									<div className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50">
+									<div
+										className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50"
+										style={{ whiteSpace: "normal" }}>
 										<h3>
 											<strong>Profesores</strong>
 										</h3>
 										<p>
 											Pueden dar respuestas a las dudas que tengan los estudiantes, asi como
-											hablar directamente
+											hablar directamente con ellos y cuentan con un sistema de calificaciones
+											para asi poder posicionarse como los mejores en su area gracias a la
+											calificacion que tengan.
 										</p>
-										<p>
-											con ellos y cuentan con un sistema de calificaciones para asi poder
-											posicionarse como los
-										</p>
-										<p>mejores en su area gracias a la calificacion que tengan.</p>
 									</div>
 								</div>
 							</div>
@@ -221,19 +218,17 @@ export const LandingDescription = () => {
 								/>
 
 								<div className="container">
-									<div className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50">
+									<div
+										className="home carousel-caption text-start badge bg-light text-dark bg-opacity-50"
+										style={{ whiteSpace: "normal" }}>
 										<h3>
 											<strong>Profesores</strong>
 										</h3>
 										<p>
 											Los Profesores pueden subir previews de sus clases en el perfil cuando estan
-											iniciando en la
+											iniciando en la pagina si los estudiantes podran ver como dan sus clases y
+											tener mas seguridad a la hora de contratarlos.
 										</p>
-										<p>
-											pagina si los estudiantes podran ver como dan sus clases y tener mas
-											seguridad a la hora de
-										</p>
-										<p>contratarlos.</p>
 									</div>
 								</div>
 							</div>

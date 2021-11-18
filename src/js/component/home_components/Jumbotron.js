@@ -38,16 +38,12 @@ export const Jumbotron = () => {
 						</div>
 					</div>
 					<div className="home carousel-item">
-						<svg
+						<img
 							className="home bd-placeholder-img"
 							width="100%"
 							height="100%"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
-							preserveAspectRatio="xMidYMid slice"
-							focusable="false">
-							<rect width="100%" height="100%" fill="#777" />
-						</svg>
+							src="https://eduglobal.cl/wp-content/uploads/2020/11/Profesor-pro-800.png"
+						/>
 
 						<div className="container">
 							<div className="home carousel-caption">
@@ -62,16 +58,12 @@ export const Jumbotron = () => {
 						</div>
 					</div>
 					<div className="home carousel-item">
-						<svg
+						<img
 							className="home bd-placeholder-img"
 							width="100%"
 							height="100%"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
-							preserveAspectRatio="xMidYMid slice"
-							focusable="false">
-							<rect width="100%" height="100%" fill="#777" />
-						</svg>
+							src="https://tec.mx/sites/default/files/styles/share/public/2020-03/cinco_tips_clases_virtuales_irapuato.jpg?itok=Tshg-VUd"
+						/>
 
 						<div className="container">
 							<div className="home carousel-caption text-end">
