@@ -166,7 +166,7 @@ export const UserDetails = () => {
 							type="button"
 							className="btn btn-primary px-4"
 							onClick={() => {
-								actions.updateUserDetails(params.role, params.id);
+								actions.updateProfileImage(params.role, params.id);
 							}}>
 							Save changes
 						</button>

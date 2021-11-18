@@ -1,30 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const CardsServices = () => {
+export const CardsServices = ({ data }) => {
 	return (
-		<div className="row row-cols-1 row-cols-md-3 g-4">
-			<div className="col">
-				<div className="card bg-ligth-green h-100">
-					<img src="http://via.placeholder.com/640x360" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<div className="d-flex justify-content-start">
-							<div className="text-center">
-								<div className="stars">
-									<i className="fa fa-star" /> <i className="fa fa-star" />{" "}
-									<i className="fa fa-star" /> <i className="fa fa-star" />{" "}
-									<i className="fa fa-star" />
-								</div>
+		<div className="col">
+			<div className="card bg-ligth-green h-100">
+				<img src={data.image} className="card-img-top-services" alt="..." />
+				<div className="card-body">
+					<h5 className="card-title">{data.title}</h5>
+					<div className="d-flex justify-content-start">
+						<div className="text-center">
+							<div className="stars">
+								<i className="fa fa-star" /> <i className="fa fa-star" /> <i className="fa fa-star" />{" "}
+								<i className="fa fa-star" /> <i className="fa fa-star" />
 							</div>
 						</div>
-						<p className="card-text">
-							This is a wider card with supporting text below as a natural lead-in to additional content.
-							This content is a little bit longer.
-						</p>
 					</div>
-					<div className="card-footer">{"Footer text"}</div>
+					<p className="card-text">{data.description}</p>
 				</div>
 			</div>
 		</div>
 	);
+};
+CardsServices.propTypes = {
+	data: PropTypes.object
 };

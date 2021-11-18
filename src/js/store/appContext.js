@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Swal from "sweetalert2";
+import $ from "jquery";
 
 export const AppContext = createContext(undefined);
 const AppContextProvider = ({ children }) => {
@@ -29,7 +30,8 @@ const AppContextProvider = ({ children }) => {
 		isFromEdit: false,
 		imageSelected: "",
 		profileImage: "",
-		authorized: undefined
+		authorized: undefined,
+		topServices: undefined
 	});
 
 	const actions = {
@@ -69,7 +71,7 @@ const AppContextProvider = ({ children }) => {
 				body: []
 			});
 			if (response.status == 204) {
-				alert("Service with id " + id + " was deleted");
+				actions.getUserDetails(localStorage.getItem("role"), localStorage.getItem("id"));
 			}
 		},
 
@@ -150,7 +152,18 @@ const AppContextProvider = ({ children }) => {
 				}
 			});
 			if (response.ok) {
-				alert("Service Created");
+				$("[data-bs-dismiss=modal]").trigger({ type: "click" });
+				Swal.fire({
+					icon: "success",
+					title: "Service Created",
+					showConfirmButton: false,
+					timer: 2000
+				}).then(result => {
+					/* Read more about handling dismissals below */
+					if (result.dismiss === Swal.DismissReason.timer) {
+						actions.getUserDetails(localStorage.getItem("role"), localStorage.getItem("id"));
+					}
+				});
 			}
 		},
 		//Function to set isFromEdit to false
@@ -214,32 +227,7 @@ const AppContextProvider = ({ children }) => {
 				newImage
 			}));
 		},
-		setProfileImage: image => {
-			let newImage = (store.profileImage = image);
-			setStore(prev => ({
-				...prev,
-				newImage
-			}));
-		},
-		/* updateImage */
-		updateProfileImage: async id => {
-			if (store.profileImage == undefined || store.profileImage == "") {
-				//actions.updateSingleService(id);
-				return;
-			}
-			const formData = new FormData();
-			formData.append("file", store.profileImage);
-			formData.append("upload_preset", "teachkey");
-			const response = await fetch("https://api.cloudinary.com/v1_1/dzquq6yle/image/upload", {
-				method: "POST",
-				body: formData
-			});
-			if (response.ok) {
-				const body = await response.json();
-				actions.setImageUrl(body.url);
-				actions.updateSingleService(id);
-			}
-		},
+
 		/* Update Service Image, if no image is selected just update the text */
 		updateSvc: async id => {
 			if (store.imageSelected == undefined || store.imageSelected == "") {
@@ -390,6 +378,41 @@ const AppContextProvider = ({ children }) => {
 					...prev,
 					authorized: false
 				}));
+				actions.Logout();
+			}
+		},
+		setProfileImage: image => {
+			let newImage = (store.profileImage = image);
+			setStore(prev => ({
+				...prev,
+				newImage
+			}));
+		},
+		setProfileImageUrl: data => {
+			let image = (store.dataForUser.img_profile = data);
+			setStore(prev => ({
+				...prev,
+				image
+			}));
+		},
+		/* updateProfileImage for User */
+		updateProfileImage: async (role, id) => {
+			if (store.profileImage == undefined || store.profileImage == "") {
+				actions.updateUserDetails(role, id);
+				return;
+			}
+			const formData = new FormData();
+			formData.append("file", store.profileImage);
+			formData.append("upload_preset", "teachkey");
+			const response = await fetch("https://api.cloudinary.com/v1_1/dzquq6yle/image/upload", {
+				method: "POST",
+				body: formData
+			});
+			if (response.ok) {
+				const body = await response.json();
+				actions.setProfileImageUrl(body.url);
+				actions.updateUserDetails(role, id);
+				document.getElementById("profileformFile").value = "";
 			}
 		},
 		/*
@@ -422,7 +445,19 @@ const AppContextProvider = ({ children }) => {
 				});
 			}
 		},
-
+		setTopServices: data => {
+			setStore(prev => ({
+				...prev,
+				topServices: data
+			}));
+		},
+		getTopServices: async () => {
+			const response = await fetch(`${store.BASE_URL}/services?limit=3`);
+			if (response.ok) {
+				const body = await response.json();
+				actions.setTopServices(body);
+			}
+		},
 		/*
 		Convert a "dd/MM/yyyy" string into a Date object
 		Credits to https://stackoverflow.com/a/69873018/2576595
@@ -438,6 +473,7 @@ const AppContextProvider = ({ children }) => {
 	const context = { store, actions };
 
 	useEffect(() => {
+		actions.getTopServices();
 		let localToken = localStorage.getItem("token");
 		if (localToken != null) {
 			setStore(prev => ({

@@ -110,7 +110,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 						</form>
 					</div>
 					<div className="modal-footer">
-						<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+						<button type="button" id="#closeMyModal" className="btn btn-secondary" data-bs-dismiss="modal">
 							Close
 						</button>
 						<button
