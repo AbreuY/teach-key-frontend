@@ -12,8 +12,6 @@ export const SignupContent = props => {
 	const [country, setCountry] = useState("");
 	const history = useHistory();
 
-	const Swal = require("sweetalert2");
-
 	const countryData = country => {
 		setCountry(country);
 	};

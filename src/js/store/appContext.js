@@ -37,6 +37,8 @@ const AppContextProvider = ({ children }) => {
 	const actions = {
 		Logout: () => {
 			localStorage.removeItem("token");
+			localStorage.removeItem("role");
+			localStorage.removeItem("id");
 			setStore(prev => ({
 				...prev,
 				token: undefined

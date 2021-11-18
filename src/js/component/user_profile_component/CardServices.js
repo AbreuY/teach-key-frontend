@@ -5,6 +5,7 @@ import { AppContext } from "../../store/appContext";
 import default_image from "../../../img/default_image.jpg";
 import { Link } from "react-router-dom";
 export const CardServices = ({ data }) => {
+	console.log(data, "from card services");
 	const { store, actions } = useContext(AppContext);
 	const history = useHistory();
 	const getRole = () => {

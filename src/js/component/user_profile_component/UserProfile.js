@@ -29,6 +29,7 @@ export const UserProfile = () => {
 	};
 	useEffect(() => {
 		if (params.role && params.id) {
+			console.log(params.role, params.id, "from user profile");
 			actions.getUserDetails(params.role, params.id);
 			actions.setProfessorId(params.id);
 		}
@@ -233,7 +234,7 @@ export const UserProfile = () => {
 													<UserDetails />
 												</div>
 											)
-										) : (
+										) : window.location.pathname.includes(`/professor/${store.dataForUser.id}`) ? (
 											<div className="mb-5 wow fadeIn">
 												<div className="text-start mb-1-6 wow fadeIn">
 													<h2 className="h1 mb-0 text-primary">Profile</h2>
@@ -241,6 +242,8 @@ export const UserProfile = () => {
 
 												<UserDetails />
 											</div>
+										) : (
+											""
 										)}
 										{params.role == "student" ? (
 											""
