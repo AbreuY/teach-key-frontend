@@ -27,7 +27,7 @@ export const CardServices = ({ data }) => {
 						</h5>
 						<p className="card-text char-limit">{data.description}</p>
 						<div className="d-flex flex-row justify-content-start mt-auto mt-sm-2 mb-2">
-							{getRole() == "student" ? (
+							{window.location.pathname.includes("/user/profile") ? (
 								<button
 									onClick={e => {
 										history.push(`/services/${data.id}`);

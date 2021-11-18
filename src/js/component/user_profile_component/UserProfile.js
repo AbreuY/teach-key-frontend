@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { useHistory, useLocation, useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { CardServices } from "./CardServices";
 import { UserDetails } from "./UserDetails";
 import { AppContext } from "../../store/appContext";
@@ -11,10 +11,6 @@ export const UserProfile = () => {
 	const params = useParams();
 	const history = useHistory();
 	const { store, actions } = useContext(AppContext);
-	const location = useLocation();
-	const getRole = () => {
-		return localStorage.getItem("role");
-	};
 	const showAlert = () => {
 		Swal.fire({
 			icon: "error",
@@ -59,12 +55,8 @@ export const UserProfile = () => {
 										<div className="card-body text-center">
 											<div className="mb-4">
 												<h3 className="h4 mb-0">
-													{getRole() == "student" ? (
-														<span className="badge bg-success fs-5">
-															{window.location.pathname.includes("/professor/")
-																? "Professor"
-																: "Student"}
-														</span>
+													{localStorage.getItem("role") == "student" ? (
+														<span className="badge bg-success fs-5">Student</span>
 													) : (
 														<span className="badge bg-success fs-5">Professor</span>
 													)}
@@ -79,75 +71,7 @@ export const UserProfile = () => {
 												</h3>
 												{/* <span className="text-primary">Description</span> */}
 											</div>
-											{getRole() == "student" ? (
-												window.location.pathname.includes("/professor/") ? (
-													<>
-														<hr style={{ width: "100%" }} />
-														<ul className="social-icon-style2 ps-0">
-															<li>
-																<a
-																	href={
-																		store.dataForUser["facebook"] == undefined
-																			? "#!"
-																			: store.dataForUser.facebook
-																	}
-																	className="rounded-icon-3">
-																	<i className="fab fa-facebook"></i>
-																</a>
-															</li>
-															<li>
-																<a
-																	href={
-																		store.dataForUser["twitter"] == undefined
-																			? "#!"
-																			: store.dataForUser.twitter
-																	}
-																	className="rounded-icon-3">
-																	<i className="fab fa-twitter"></i>
-																</a>
-															</li>
-															<li>
-																<a
-																	href={
-																		store.dataForUser["instagram"] == undefined
-																			? "#!"
-																			: store.dataForUser.instagram
-																	}
-																	className="rounded-icon-3">
-																	<i className="fab fa-instagram"></i>
-																</a>
-															</li>
-															<li>
-																<a
-																	href={
-																		store.dataForUser["whatsapp"] == undefined
-																			? "#!"
-																			: store.dataForUser.whatsapp
-																	}
-																	className="rounded-icon-3">
-																	<i className="fab fa-whatsapp"></i>
-																</a>
-															</li>
-														</ul>
-													</>
-												) : (
-													<div className="mb-3">
-														<form>
-															<label htmlFor="profileformFile" className="form-label">
-																Update profile image
-															</label>
-															<input
-																className="form-control"
-																type="file"
-																id="profileformFile"
-																onChange={e => {
-																	actions.setProfileImage(e.target.files[0]);
-																}}
-															/>
-														</form>
-													</div>
-												)
-											) : (
+											{
 												<div className="mb-3">
 													<form>
 														<label htmlFor="profileformFile" className="form-label">
@@ -163,7 +87,27 @@ export const UserProfile = () => {
 														/>
 													</form>
 												</div>
-											)}
+											}
+											{/* <ul className="list-unstyled mb-4">
+												<li className="mb-3">
+													<Link to={"#!"} className="links">
+														<i className="far fa-envelope display-25 me-3 text-secondary"></i>
+														email@email.email
+													</Link>
+												</li>
+												<li className="mb-3">
+													<Link to={"#!"} className="links">
+														<i className="far fa-envelope display-25 me-3 text-secondary"></i>
+														phone or email?
+													</Link>
+												</li>
+												<li className="mb-3">
+													<Link to={"#!"} className="links">
+														<i className="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>
+														Country
+													</Link>
+												</li>
+											</ul> */}
 											{localStorage.getItem("role") == "professor" ? (
 												<>
 													<hr style={{ width: "100%" }} />
@@ -222,29 +166,12 @@ export const UserProfile = () => {
 								</div>
 								<div className="col-lg-8">
 									<div className="ps-lg-1-6 ps-xl-5">
-										{getRole() == "student" ? (
-											window.location.pathname.includes("/professor/") ? (
-												""
-											) : (
-												<div className="mb-5 wow fadeIn">
-													<div className="text-start mb-1-6 wow fadeIn">
-														<h2 className="h1 mb-0 text-primary">Profile</h2>
-													</div>
-
-													<UserDetails />
-												</div>
-											)
-										) : window.location.pathname.includes(`/professor/${store.dataForUser.id}`) ? (
-											<div className="mb-5 wow fadeIn">
-												<div className="text-start mb-1-6 wow fadeIn">
-													<h2 className="h1 mb-0 text-primary">Profile</h2>
-												</div>
-
-												<UserDetails />
+										<div className="mb-5 wow fadeIn">
+											<div className="text-start mb-1-6 wow fadeIn">
+												<h2 className="h1 mb-0 text-primary">Profile</h2>
 											</div>
-										) : (
-											""
-										)}
+											<UserDetails />
+										</div>
 										{params.role == "student" ? (
 											""
 										) : (
@@ -281,7 +208,7 @@ export const UserProfile = () => {
 																					actions.setEditToFalse();
 																				}}
 																				type="button"
-																				className="btn btn-success rounded-pill"
+																				className="btn btn-success"
 																				data-bs-toggle="modal"
 																				data-bs-target="#svcModal">
 																				Create new service

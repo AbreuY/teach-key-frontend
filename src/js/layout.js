@@ -15,6 +15,7 @@ import { LoginStudent } from "./views/LoginStudent";
 import { LoginProfessor } from "./views/LoginProfessor";
 import { Services } from "./views/Services";
 import { SingleService } from "./views/SingleService";
+import { PublicProfile } from "./views/PublicProfile";
 
 //create your first component
 const Layout = () => {
@@ -52,6 +53,7 @@ const Layout = () => {
 							<Route exact path="/services/:id">
 								<SingleService />
 							</Route>
+							<Route exact path="/user/profile" component={PublicProfile} />
 							<Route>
 								<h1>Not found!</h1>
 							</Route>

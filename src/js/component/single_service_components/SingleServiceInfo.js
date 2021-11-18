@@ -25,7 +25,12 @@ export const SingleServiceInfo = ({ info }) => {
 						</div>
 						<div className="row mt-0">
 							<div className="col-12 text-center">
-								<Link className="btn btn-outline-danger" to={`/professor/${info.professor_id}/profile`}>
+								<Link
+									className="btn btn-outline-danger"
+									onClick={e => {
+										localStorage.setItem("uid", `${info.professor_id}`);
+									}}
+									to={`/user/profile`}>
 									See professor profile!
 								</Link>
 							</div>
