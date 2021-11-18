@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
 import { ServicesCard } from "./ServicesCard";
-
-const URL = "http://localhost:3010/services";
+import { AppContext } from "../../store/appContext";
 
 export const ServiceContent = () => {
+	const { store, actions } = useContext(AppContext);
 	const [services, setServices] = useState([]);
 
 	const adquireServices = async () => {
 		try {
-			const response = await fetch(URL);
+			const response = await fetch(`${store.BASE_URL}/services`);
 			const body = await response.json();
 			setServices(body);
 		} catch (error) {

@@ -40,7 +40,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 									Price:
 								</label>
 								<input
-									type="text"
+									type="number"
 									className="form-control"
 									id="price-text"
 									onChange={e => {
@@ -60,7 +60,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 									Schedule:
 								</label>
 								<input
-									type="text"
+									type="number"
 									className="form-control"
 									id="schedule-text"
 									onChange={e => {
@@ -103,25 +103,21 @@ export const ModalSvcComponent = ({ svcData }) => {
 									type="file"
 									id="formFile"
 									onChange={e => {
-										if (e.target.files[0] != undefined) {
-											actions.setImageSelected(e.target.files[0]);
-										}
+										actions.setImageSelected(e.target.files[0]);
 									}}
 								/>
 							</div>
 						</form>
 					</div>
 					<div className="modal-footer">
-						<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+						<button type="button" id="#closeMyModal" className="btn btn-secondary" data-bs-dismiss="modal">
 							Close
 						</button>
 						<button
 							type="button"
 							className="btn btn-primary"
 							onClick={e => {
-								store.isFromEdit == true
-									? actions.updateSingleService(store.serviceId)
-									: actions.uploadImage();
+								store.isFromEdit == true ? actions.updateSvc(store.serviceId) : actions.uploadImage();
 							}}>
 							{store.isFromEdit == true ? "Update" : "Publish"}
 						</button>

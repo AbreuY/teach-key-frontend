@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { AppContext } from "../../store/appContext";
 import { CardsServices } from "./CardsServices";
 
 export const TopServices = () => {
+	const { store, actions } = useContext(AppContext);
 	return (
 		<div className="container" data-aos="fade-up" data-aos-duration="2000">
 			<div className="row">
@@ -13,9 +15,12 @@ export const TopServices = () => {
 					</p>
 				</div>
 			</div>
-			{/* Aqui hariamos una consulta a la API para consultar en la base de datos los servicios
-				mejor calificados. Ejemplo, maximo 5 */}
-			<CardsServices />
+			<div className="row row-cols-1 row-cols-md-3 g-4">
+				{store.topServices &&
+					store.topServices.map((svc, index) => {
+						return <CardsServices key={index} data={svc} />;
+					})}
+			</div>
 		</div>
 	);
 };

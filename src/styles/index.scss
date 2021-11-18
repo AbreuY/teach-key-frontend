@@ -341,7 +341,7 @@ $enable-negative-margins: true;
 }
 .social-icon-style2 li a {
   display: inline-block;
-  font-size: 14px;
+  font-size: 20px;
   text-align: center;
   color: #ffffff;
   background: #59b73f;
@@ -381,15 +381,9 @@ $enable-negative-margins: true;
   -o-transition-duration: .2s;
 }
 
-.text-secondary, .text-secondary-hover:hover {
-  color: #59b73f !important;
-}
+
 .display-25 {
   font-size: 1.4rem;
-}
-
-.text-primary, .text-primary-hover:hover {
-  color: #ff712a !important;
 }
 
 p {
@@ -436,3 +430,32 @@ text-overflow: ellipsis;
 overflow: hidden;
 white-space: nowrap;
 }
+
+/* LOGIN styles */
+
+.salute {
+  z-index: 2;
+  -webkit-animation: myfirst 5s infinite;
+  animation: myfirst 5s infinite;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  animation-direction: normal;
+  -webkit-animation-direction: normal;
+}
+@-webkit-keyframes myfirst {
+  0% {
+      left: 0%;
+  }
+  100% {
+      left: 100%;
+  }
+}
+@keyframes myfirst {
+  0% {
+      left: 0%;
+  }
+  100% {
+      left: 100%;
+}
+};
+

@@ -1,5 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import Swal from "sweetalert2";
+import $ from "jquery";
 
 export const AppContext = createContext(undefined);
 const AppContextProvider = ({ children }) => {
@@ -20,27 +22,28 @@ const AppContextProvider = ({ children }) => {
 		],
 
 		token: undefined,
-		BASE_URL: "http://localhost:3010",
+		BASE_URL: "http://127.0.0.1:3010",
 		dataForUser: {},
 		newService: {},
 		singleService: {},
 		serviceId: undefined,
 		isFromEdit: false,
-		imageSelected: ""
+		imageSelected: "",
+		profileImage: "",
+		authorized: undefined,
+		topServices: undefined
 	});
 
 	const actions = {
-		deleteToken: () => {
+		Logout: () => {
 			localStorage.removeItem("token");
 			setStore(prev => ({
 				...prev,
 				token: undefined
 			}));
 		},
-
 		setToken: token => {
 			localStorage.setItem("token", token);
-
 			setStore(prev => ({
 				...prev,
 				token: token
@@ -68,7 +71,7 @@ const AppContextProvider = ({ children }) => {
 				body: []
 			});
 			if (response.status == 204) {
-				alert("Service with id " + id + " was deleted");
+				actions.getUserDetails(localStorage.getItem("role"), localStorage.getItem("id"));
 			}
 		},
 
@@ -144,11 +147,23 @@ const AppContextProvider = ({ children }) => {
 				method: "POST",
 				body: JSON.stringify(store.newService),
 				headers: {
-					"Content-Type": "application/json"
+					"Content-Type": "application/json",
+					Authorization: "Bearer " + localStorage.getItem("token")
 				}
 			});
 			if (response.ok) {
-				alert("Service Created");
+				$("[data-bs-dismiss=modal]").trigger({ type: "click" });
+				Swal.fire({
+					icon: "success",
+					title: "Service Created",
+					showConfirmButton: false,
+					timer: 2000
+				}).then(result => {
+					/* Read more about handling dismissals below */
+					if (result.dismiss === Swal.DismissReason.timer) {
+						actions.getUserDetails(localStorage.getItem("role"), localStorage.getItem("id"));
+					}
+				});
 			}
 		},
 		//Function to set isFromEdit to false
@@ -168,9 +183,7 @@ const AppContextProvider = ({ children }) => {
 		getSingleServiceDetail: async (id, comeFromEdit) => {
 			let isForEdit = (store.isFromEdit = comeFromEdit);
 			let svcId = (store.serviceId = id);
-			const response = await fetch(`${store.BASE_URL}/services/${id}`, {
-				method: "GET"
-			});
+			const response = await fetch(`${store.BASE_URL}/services/${id}`);
 			if (response.ok) {
 				const body = await response.json();
 				let svc = (store.singleService = body);
@@ -180,7 +193,6 @@ const AppContextProvider = ({ children }) => {
 					isForEdit,
 					svcId
 				}));
-				actions.uploadImage();
 			}
 		},
 		/* Function to update a desired service, passing one argument, the id of the service */
@@ -194,7 +206,13 @@ const AppContextProvider = ({ children }) => {
 			});
 
 			if (response.ok) {
-				alert("Updated");
+				Swal.fire({
+					icon: "success",
+					title: "Service Updated",
+					text: "This service has been updated correctly",
+					showConfirmButton: false,
+					timer: 2000
+				});
 			}
 		},
 		/* 
@@ -209,6 +227,26 @@ const AppContextProvider = ({ children }) => {
 				newImage
 			}));
 		},
+
+		/* Update Service Image, if no image is selected just update the text */
+		updateSvc: async id => {
+			if (store.imageSelected == undefined || store.imageSelected == "") {
+				actions.updateSingleService(id);
+				return;
+			}
+			const formData = new FormData();
+			formData.append("file", store.imageSelected);
+			formData.append("upload_preset", "teachkey");
+			const response = await fetch("https://api.cloudinary.com/v1_1/dzquq6yle/image/upload", {
+				method: "POST",
+				body: formData
+			});
+			if (response.ok) {
+				const body = await response.json();
+				actions.setImageUrl(body.url);
+				actions.updateSingleService(id);
+			}
+		},
 		/*
 		uploadImage()
 		This function uploads the image to cloudinary and returns an object with load information, 
@@ -216,6 +254,10 @@ const AppContextProvider = ({ children }) => {
 		To be used later as an image of the service. 
 		*/
 		uploadImage: async () => {
+			if (store.imageSelected == undefined || store.imageSelected == "") {
+				actions.createNewService();
+				return;
+			}
 			const formData = new FormData();
 			formData.append("file", store.imageSelected);
 			formData.append("upload_preset", "teachkey");
@@ -263,11 +305,32 @@ const AppContextProvider = ({ children }) => {
 				second_email
 			}));
 		},
-		setContactMethod: data => {
-			let contact = (store.dataForUser.contact_methods = data);
+		setFacebook: data => {
+			let facebook = (store.dataForUser.facebook = data);
 			setStore(prev => ({
 				...prev,
-				contact
+				facebook
+			}));
+		},
+		setTwitter: data => {
+			let twitter = (store.dataForUser.twitter = data);
+			setStore(prev => ({
+				...prev,
+				twitter
+			}));
+		},
+		setInstagram: data => {
+			let instagram = (store.dataForUser.instagram = data);
+			setStore(prev => ({
+				...prev,
+				instagram
+			}));
+		},
+		setWhatsApp: data => {
+			let whatsapp = (store.dataForUser.whatsapp = data);
+			setStore(prev => ({
+				...prev,
+				whatsapp
 			}));
 		},
 		setDob: data => {
@@ -275,6 +338,12 @@ const AppContextProvider = ({ children }) => {
 			setStore(prev => ({
 				...prev,
 				dob
+			}));
+		},
+		setAuthorized: data => {
+			setStore(prev => ({
+				...prev,
+				authorized: data
 			}));
 		},
 		/*
@@ -286,7 +355,16 @@ const AppContextProvider = ({ children }) => {
 		Fetch student/professor data by id
 		*/
 		getUserDetails: async (role, id) => {
-			const response = await fetch(`${store.BASE_URL}/${role}/${id}/profile`);
+			const response = await fetch(`${store.BASE_URL}/${role}/${id}/profile`, {
+				method: "GET",
+				mode: "cors",
+				headers: {
+					"Content-type": "application/json",
+					"Access-Control-Allow-Origin": "*",
+					"Access-Control-Allow-Headers": "*",
+					Authorization: "Bearer " + localStorage.getItem("token")
+				}
+			});
 			if (response.ok) {
 				const body = await response.json();
 				if (role == "student") {
@@ -294,6 +372,47 @@ const AppContextProvider = ({ children }) => {
 				} else {
 					actions.setUserData(body);
 				}
+			} else if (response.status == 401) {
+				localStorage.removeItem("token");
+				setStore(prev => ({
+					...prev,
+					authorized: false
+				}));
+				actions.Logout();
+			}
+		},
+		setProfileImage: image => {
+			let newImage = (store.profileImage = image);
+			setStore(prev => ({
+				...prev,
+				newImage
+			}));
+		},
+		setProfileImageUrl: data => {
+			let image = (store.dataForUser.img_profile = data);
+			setStore(prev => ({
+				...prev,
+				image
+			}));
+		},
+		/* updateProfileImage for User */
+		updateProfileImage: async (role, id) => {
+			if (store.profileImage == undefined || store.profileImage == "") {
+				actions.updateUserDetails(role, id);
+				return;
+			}
+			const formData = new FormData();
+			formData.append("file", store.profileImage);
+			formData.append("upload_preset", "teachkey");
+			const response = await fetch("https://api.cloudinary.com/v1_1/dzquq6yle/image/upload", {
+				method: "POST",
+				body: formData
+			});
+			if (response.ok) {
+				const body = await response.json();
+				actions.setProfileImageUrl(body.url);
+				actions.updateUserDetails(role, id);
+				document.getElementById("profileformFile").value = "";
 			}
 		},
 		/*
@@ -311,15 +430,34 @@ const AppContextProvider = ({ children }) => {
 				method: "PUT",
 				body: JSON.stringify(bodyData),
 				headers: {
-					"Content-Type": "application/json"
+					"Content-Type": "application/json",
+					Authorization: "Bearer " + localStorage.getItem("token")
 				}
 			});
 			if (response.ok) {
-				const body = await response.json();
-				alert("Data Update");
+				//const body = await response.json();
+				Swal.fire({
+					icon: "success",
+					title: "Data Updated",
+					text: "Your info has been updated",
+					showConfirmButton: false,
+					timer: 2000
+				});
 			}
 		},
-
+		setTopServices: data => {
+			setStore(prev => ({
+				...prev,
+				topServices: data
+			}));
+		},
+		getTopServices: async () => {
+			const response = await fetch(`${store.BASE_URL}/services?limit=3`);
+			if (response.ok) {
+				const body = await response.json();
+				actions.setTopServices(body);
+			}
+		},
 		/*
 		Convert a "dd/MM/yyyy" string into a Date object
 		Credits to https://stackoverflow.com/a/69873018/2576595
@@ -335,8 +473,9 @@ const AppContextProvider = ({ children }) => {
 	const context = { store, actions };
 
 	useEffect(() => {
+		actions.getTopServices();
 		let localToken = localStorage.getItem("token");
-		if (localToken) {
+		if (localToken != null) {
 			setStore(prev => ({
 				...prev,
 				token: localToken

@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import Logo2 from "../../../img/logo2.png";
 import { AppContext } from "../../store/appContext";
+import { useLocation } from "react-router";
+import Swal from "sweetalert2";
 
 export const LoginContent = props => {
+	const location = useLocation();
 	const { store, actions } = useContext(AppContext);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const history = useHistory();
+	const Swal = require("sweetalert2");
 
 	async function login(event) {
 		let data = {
@@ -21,29 +25,63 @@ export const LoginContent = props => {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: {
-				"Content-Type": "application/json"
+				"Content-type": "application/json",
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Headers": "*"
 			}
 		});
 		const body = await response.json();
 		if (response.ok) {
+			actions.setAuthorized(true);
 			actions.setToken(body.token);
-			history.push("/");
+			localStorage.setItem("id", body.id);
+			localStorage.setItem("role", body.role);
+			if (body.role == "student") {
+				history.push("/services");
+			} else {
+				history.push(`/${body.role}/${body.id}/profile`);
+			}
 		} else {
-			alert(response.statusText);
+			let timerInterval = Swal.fire({
+				icon: "error",
+				title: "Invalid Data",
+				html: "Try again!",
+				timer: 2500,
+
+				willClose: () => {
+					clearInterval(timerInterval);
+				}
+			}).then(result => {
+				if (result.dismiss === Swal.DismissReason.timer) {
+				}
+			});
 		}
 	}
 
 	return (
 		<>
 			<div className="container h-100">
-				<div className="row">
-					<div className="col mt-5">
-						<div className="row align-items-center mt-5">
-							<div className="col-xl-3 col-lg-2 col-md-1"></div>
-							<div className="col-xl-6 col-lg-8 col-md-10 col-sm-12 shadow-lg p-3 mb-5 bg-body rounded">
+				<div className="row align-items-center mt-5">
+					<div
+						className="col-3 col-lg-6 col-md-6 col-sm-12 mt-5 shadow-sm p-3 mb-5 bg-body rounded "
+						data-aos="fade-right"
+						data-aos-duration="1500"
+						data-aos-easing="ease-in-sine">
+						<header className=" fs-1 text-center text-danger">{props.header}</header>
+						<p
+							className="text-center"
+							data-aos="fade-right"
+							data-aos-duration="2500"
+							data-aos-easing="ease-in-sine">
+							{props.headerDescription}
+						</p>
+					</div>
+					<div className="col-9 col-lg-6 col-md-6 col-sm-12 mt-5" data-aos="zoom-out-left">
+						<div className="row align-items-center">
+							<div className="col-xl-2 col-lg-1 col-md-1"></div>
+							<div className="col-xl-8 col-lg-10 col-md-10 col-sm-12  p-3 mb-5 rounded">
 								<p className="text-center fs-2 text-md-center text-sm-center">
 									<img src={Logo2} />
-									Teach Key
 								</p>
 								<div>
 									<p className="inputPText1  text-md-center text-sm-center text-center">
@@ -118,7 +156,7 @@ export const LoginContent = props => {
 								</div>
 							</div>
 
-							<div className="col-xl-3 col-lg-2 col-md-1"></div>
+							<div className="col-xl-2 col-lg-1 col-md-1"></div>
 						</div>
 					</div>
 				</div>
@@ -128,5 +166,7 @@ export const LoginContent = props => {
 };
 
 LoginContent.propTypes = {
+	headerDescription: PropTypes.string,
+	header: PropTypes.string,
 	url: PropTypes.string
 };
