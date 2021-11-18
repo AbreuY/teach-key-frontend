@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { SignupCountryInputs } from "./SignupCountryInputs";
 import { useHistory } from "react-router";
+
 import Swal from "sweetalert2";
 
 export const SignupContent = props => {
@@ -10,6 +11,7 @@ export const SignupContent = props => {
 	const [password, setPassword] = useState("");
 	const [country, setCountry] = useState("");
 	const history = useHistory();
+
 	const Swal = require("sweetalert2");
 
 	const countryData = country => {
@@ -36,12 +38,19 @@ export const SignupContent = props => {
 			alert(response.statusText);
 		}
 	}
+	function validateEmail(email) {
+		const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
 
 	return (
 		<>
 			<div className="container">
 				<div className="row align-items-center mt-5">
-					<div className="col-12 col-md-12 col-sm-12 col-lg-6 text-md-center text-sm-center signupBox text-center shadow-lg p-3 mb-5 bg-body rounded">
+					<div
+						className="col-12 col-md-12 col-sm-12 col-lg-6 text-md-center text-sm-center signupBox text-center shadow-lg p-3 mb-5 bg-body rounded "
+						data-aos="zoom-in"
+						data-aos-duration="1500">
 						<div className="fs-2">{props.title}</div>
 						<p className="inputPText1 pt-3">{props.titleDescription}</p>
 						<div className="row pt-3 signupInput">
@@ -113,7 +122,6 @@ export const SignupContent = props => {
 							<div className="col">
 								<button
 									onClick={event => {
-										let patron = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 										let inputPassword = document.getElementById("inputPassword1");
 										let inputConfirmPassword = document.getElementById("inputConfirmPassword1");
 										let inputUsername = document.getElementById("signupUsername");
@@ -160,11 +168,11 @@ export const SignupContent = props => {
 											});
 											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
 											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0";
-										} else if (inputEmail.value != 0) {
+										} else if (!validateEmail(inputEmail.value)) {
 											Swal.fire({
 												icon: "info",
 
-												text: "Please, choose your country"
+												text: "Please, write a valid email"
 											});
 										} else signup();
 									}}
@@ -178,7 +186,7 @@ export const SignupContent = props => {
 					</div>
 					<div className="col-md-12 col-lg-6 text-md-center text-sm-center text-center">
 						<div className="row">
-							<div className="col">
+							<div className="col " data-aos="zoom-in" data-aos-duration="1500">
 								<div className="ms-lg-3 ms-md">
 									<img
 										className="rounded-circle shadow-lg mb-5 bg-body h-100 w-100"
