@@ -9,17 +9,16 @@ const AppContextProvider = ({ children }) => {
 		sectionInfo: [
 			{
 				imgUrl: "https://ak.picdn.net/shutterstock/videos/1068048101/thumb/1.jpg?ip=x480",
-				title: "Tienes conocimientos profesionales en un area especifica?",
+				title: "¿Tienes conocimientos profesionales en un area especifica?",
 				description:
-					"Con Teach Key esos conocimientos pueden convertirse en ganacias para ti. Solo debes registrarte, hacer el inicio de sesion, llenar tu perfil con tus datos y tan solo es cuestion de empezar a dar tus clases. Vuelvete parte del Top Profesores!",
+					"Con Teach Key esos conocimientos pueden convertirse en ganacias para ti. Solo debes registrarte, hacer el inicio de sesion, llenar tu perfil con tus datos y tan solo es cuestion de empezar a dar tus clases. ¡Vuelvete parte del Top Profesores!",
 				orientation: "left"
 			},
 			{
 				imgUrl: "https://i.imgur.com/cQIzDHf.jpg",
-				title: "Quieres aprender sobre un area, pero no sabes quien pueda darte clases?",
+				title: "¿Quieres aprender sobre un area, pero no sabes quien pueda darte clases?",
 				description:
-					"Teach Key llega para solucionar ese problema de desconocimiento a cerca de donde y con quien aprender sobre un area especifica, registrate como estudiante y busca estre nuestra seleccion de profesores calificados, busca entre los mejores en sus areas y da con el profesor que mas se ajuste a tus necesidades.",
-				orientation: "right"
+					"Teach Key llega para solucionar ese problema de desconocimiento a cerca de donde y con quien aprender sobre un area especifica, registrate como estudiante y busca estre nuestra seleccion de profesores calificados, busca entre los mejores en sus areas y da con el profesor que mas se ajuste a tus necesidades."
 			}
 		],
 

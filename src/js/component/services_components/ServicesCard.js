@@ -5,19 +5,28 @@ import { Link } from "react-router-dom";
 export const ServicesCard = ({ item }) => {
 	return (
 		<>
-			<div className="card mb-3">
+			<div className="card mb-3 border-0">
 				<div className="row g-0">
-					<div className="col-md-4">
-						<img src={item.image} className="img-fluid card-img-top-services " alt="..." />
+					<div className="col-md-4 align-self-center">
+						<img
+							src={item.image}
+							className=" shadow-sm img-fluid w-100 me-md-1 me-lg-1 me-0 me-sm-0 rounded"
+							alt="..."
+							style={{ height: "200px" }}
+						/>
 					</div>
-					<div className="col-md-8">
-						<div className="card-body">
-							<h5 className="card-title">{item.title}</h5>
+
+					<div className="col-md-8 align-self-center ps-2">
+						<div className="card-body shadow-sm px-5 py-4 bg-body rounded">
+							<h4 className="card-title text-center mb-4" style={{ textDecoration: "underline red" }}>
+								<strong>{item.title}</strong>
+							</h4>
 							<p className="card-text">{item.description}</p>
-							<p className="card-text">
-								<small className="text-muted">{item.schedule}</small>
-							</p>
-							<Link to={`/services/${item.id}`}>See more</Link>
+							<div className="text-center">
+								<Link className="btn btn-danger" to={`/services/${item.id}`}>
+									See more
+								</Link>
+							</div>
 						</div>
 					</div>
 				</div>
