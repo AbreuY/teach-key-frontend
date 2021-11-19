@@ -1,6 +1,6 @@
 import React from "react";
 import { LoginContent } from "../component/login_components/LoginContent";
-const URL = "http://localhost:3010/login/student";
+const URL = "http://127.0.0.1:3010/login/student";
 
 export const LoginStudent = () => {
 	return (
