@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { ServicesCard } from "./ServicesCard";
 import { AppContext } from "../../store/appContext";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 export const ServiceContent = () => {
 	const { store, actions } = useContext(AppContext);
@@ -22,7 +23,6 @@ export const ServiceContent = () => {
 		});
 		if (response.ok) {
 			const body = await response.json();
-			console.log(typeof body, body);
 			if (body.length == 0) {
 				Swal.fire({
 					icon: "info",
@@ -61,57 +61,40 @@ export const ServiceContent = () => {
 
 	return (
 		<>
-			<div className="container-fluid">
-				<div className="row">
-					<div className="col-12 text-center fs-2 mt-4">
-						<header>Services</header>
+			<div className="container">
+				<div className="row mb-4">
+					<div className="col-4"></div>
+					<div
+						className="col-4 text-center fs-1 text-danger shadow py-3 mb-3 rounded"
+						data-aos="fade-down"
+						data-aos-duration="1500"
+						style={{ marginTop: "6rem" }}>
+						<header>
+							<strong>Services</strong>
+						</header>
 					</div>
+					<div className="col-4"></div>
 				</div>
-				<div className="row">
-					<div className="col-12">
-						<div className="container-fluid">
-							<div
-								className="accordion accordion-flush shadow-lg p-3 mb-5 bg-body rounded mt-4"
-								id="accordionFlushExample">
-								<div className="accordion-item">
-									<h2 className="accordion-header" id="flush-headingOne">
-										<button
-											style={{ padding: "revert" }}
-											className="accordion-button collapsed text-danger fs-2"
-											type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#flush-collapseOne"
-											aria-expanded="false"
-											aria-controls="flush-collapseOne">
-											Filter
-										</button>
-									</h2>
-									<div
-										id="flush-collapseOne"
-										className="accordion-collapse collapse"
-										aria-labelledby="flush-headingOne"
-										data-bs-parent="#accordionFlushExample">
-										<div className="accordion-body row">
-											<div className="col-12 d-flex justify-content-around">
-												<input
-													type="text"
-													value={queryString}
-													onChange={event => {
-														setQueryString(event.target.value);
-													}}
-													placeholder="Search for an specific topic"></input>
-												<button
-													onClick={event => {
-														getFilter();
-													}}
-													className="btn btn-outline-danger">
-													Filter
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+				<div className="container">
+					<div className="row justify-content-center shadow p-3 bg-body rounded mb-5">
+						<div className="col-8 align-self-center">
+							<input
+								className="border-0 w-100 shadow p-3 bg-body rounded filterInput"
+								type="text"
+								value={queryString}
+								onChange={event => {
+									setQueryString(event.target.value);
+								}}
+								placeholder="Search for an specific topic"></input>
+						</div>
+						<div className="col-4 my-4 text-center align-self-center">
+							<button
+								onClick={event => {
+									getFilter();
+								}}
+								className="btn btn-danger w-50 shadow p-3">
+								Filter
+							</button>
 						</div>
 					</div>
 				</div>
@@ -119,8 +102,8 @@ export const ServiceContent = () => {
 			<div className="container">
 				{services.map((service, index) => {
 					return (
-						<div key={index} className="row">
-							<div className="col-12">
+						<div key={index} className="row" data-aos="fade-right" data-aos-duration="1500">
+							<div className="shadow p-3 mb-5 bg-body rounded col-12">
 								<ServicesCard item={service} />
 							</div>
 						</div>
@@ -140,8 +123,17 @@ export const ServiceContent = () => {
 							}
 						}}
 						className="btn btn-outline-danger mb-3">
-						Load more
+						<strong>Load more</strong>
 					</button>
+				</div>
+				<div className="col-4"></div>
+			</div>
+			<div className="row">
+				<div className="col-4"></div>
+				<div className="col-4 text-center">
+					<Link to="/" className="btn btn-outline-danger mb-4">
+						<strong>Main Page</strong>
+					</Link>
 				</div>
 				<div className="col-4"></div>
 			</div>
