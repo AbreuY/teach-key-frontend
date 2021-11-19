@@ -49,7 +49,9 @@ export const SignupContent = props => {
 						className="col-12 col-md-12 col-sm-12 col-lg-6 text-md-center text-sm-center signupBox text-center shadow-lg p-3 mb-5 bg-body rounded "
 						data-aos="zoom-in"
 						data-aos-duration="1500">
-						<div className="fs-2">{props.title}</div>
+						<div className="fs-2">
+							<strong>{props.title}</strong>
+						</div>
 						<p className="inputPText1 pt-3">{props.titleDescription}</p>
 						<div className="row pt-3 signupInput">
 							<div className="col-12 col-md-6 col-sm-6 col-lg-6 pt-3">
@@ -108,7 +110,9 @@ export const SignupContent = props => {
 						<div className="row pt-0 pt-sm-0 pt-md-0 pt-lg-3 mt-4">
 							<div className="col-12 col-md-12 col-sm-12 col-lg-12 pt-3">
 								<div className="pt-3 pt-sm-3 pt-md-2 pt-lg-0 ">
-									<p style={{ color: "rgb(236, 73, 73)", fontSize: "21px" }}>Country</p>
+									<p style={{ color: "rgb(236, 73, 73)", fontSize: "21px" }}>
+										<strong>Country</strong>
+									</p>
 									<div>
 										<SignupCountryInputs id="country1" countryData={countryData} />
 									</div>
@@ -176,7 +180,7 @@ export const SignupContent = props => {
 									}}
 									type="button"
 									className="btn btn-outline-danger">
-									Join now!
+									<strong>Join now!</strong>
 								</button>
 							</div>
 						</div>

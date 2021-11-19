@@ -5,6 +5,7 @@ import { Container3 } from "../component/home_components/Container3";
 
 import { Jumbotron } from "../component/home_components/Jumbotron";
 import { AppContext } from "../store/appContext";
+import { Container4 } from "../component/home_components/Container4";
 
 export const Home = () => {
 	const { store, actions } = useContext(AppContext);
@@ -15,7 +16,7 @@ export const Home = () => {
 
 			<Container3 section={store.sectionInfo[0]} />
 			<TopProfessors />
-			<Container3 section={store.sectionInfo[1]} />
+			<Container4 section={store.sectionInfo[1]} />
 		</>
 	);
 };

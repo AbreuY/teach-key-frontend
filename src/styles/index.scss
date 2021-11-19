@@ -139,6 +139,7 @@ h1{
 -------------------------------------------------- */
 
 .loginInput ::placeholder {
+  font-weight:bold;
   color: rgb(221, 96, 96);
   font-size: 21px;
   input:focus, textarea:focus, select:focus select form{
@@ -157,6 +158,7 @@ input {
 .signupInput input::placeholder {
     color: rgb(236, 73, 73);
     font-size: 21px;
+    font-weight: bold;
 
   }
 
@@ -508,3 +510,22 @@ white-space: nowrap;
   top: -50px;
   position: absolute;
 }
+/* Filter styles */
+
+.filterInput{
+  border: solid 0.3px black;
+}
+
+.filterInput ::placeholder {
+  font-weight:bold;
+  color: rgb(221, 96, 96);
+  font-size: 21px;
+  border: none;
+ 
+  input:focus, textarea:focus, select:focus select form{
+    outline: none;
+    border: none;
+    
+}
+};
+
