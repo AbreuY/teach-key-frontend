@@ -139,6 +139,7 @@ h1{
 -------------------------------------------------- */
 
 .loginInput ::placeholder {
+  font-weight:bold;
   color: rgb(221, 96, 96);
   font-size: 21px;
   input:focus, textarea:focus, select:focus select form{
