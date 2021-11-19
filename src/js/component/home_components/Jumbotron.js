@@ -26,7 +26,7 @@ export const Jumbotron = () => {
 						/>
 
 						<div className="container">
-							<div className="home carousel-caption text-start bg-light text-dark bg-opacity-50">
+							<div className="home carousel-caption bg-light text-dark bg-opacity-50 text-center rounded-pill">
 								<h1>
 									<strong>Sobran las razones por las cuales debes registrarte</strong>
 								</h1>
@@ -43,7 +43,7 @@ export const Jumbotron = () => {
 						/>
 
 						<div className="container">
-							<div className="home carousel-caption bg-light text-dark bg-opacity-50">
+							<div className="home carousel-caption bg-light text-dark bg-opacity-50 text-center rounded-pill">
 								<h1>
 									<strong>Uno de nuestros objetivos principales:</strong>
 								</h1>
@@ -63,7 +63,7 @@ export const Jumbotron = () => {
 						/>
 
 						<div className="container">
-							<div className="home carousel-caption bg-light text-dark bg-opacity-50">
+							<div className="home carousel-caption bg-light text-dark bg-opacity-50 text-center rounded-pill">
 								<h1>
 									<strong>Teach Key es para todos</strong>
 								</h1>
