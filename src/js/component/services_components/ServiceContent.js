@@ -76,10 +76,10 @@ export const ServiceContent = () => {
 					<div className="col-4"></div>
 				</div>
 				<div className="container">
-					<div className="row justify-content-center shadow p-3 bg-body rounded mb-5">
-						<div className="col-8 align-self-center">
+					<div className="row justify-content-center shadow p-3  rounded mb-5">
+						<div className="col-8 d-flex align-items-center">
 							<input
-								className="border-0 w-100 shadow p-3 bg-body rounded filterInput"
+								className="border-0 w-100 shadow p-3  rounded-corners-card filterInput"
 								type="text"
 								value={queryString}
 								onChange={event => {
@@ -92,8 +92,8 @@ export const ServiceContent = () => {
 								onClick={event => {
 									getFilter();
 								}}
-								className="btn btn-danger w-50 shadow p-3">
-								Filter
+								className="btn btn-danger shadow w-25">
+								Filter <i className="fas fa-search ms-2"></i>
 							</button>
 						</div>
 					</div>
@@ -103,7 +103,7 @@ export const ServiceContent = () => {
 				{services.map((service, index) => {
 					return (
 						<div key={index} className="row" data-aos="fade-right" data-aos-duration="1500">
-							<div className="shadow p-3 mb-5 bg-body rounded col-12">
+							<div className="shadow p-3 mb-5 blizzard-blue rounded-corners-card col-12">
 								<ServicesCard item={service} />
 							</div>
 						</div>

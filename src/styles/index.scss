@@ -5,8 +5,23 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
-  background-color: #92DEE1;
+  background-color: #ffffff;
   padding-top: 56px;
+}
+.blizzard-blue{
+  background-color: #92DEE1;
+}
+.cinnabar-btn{
+    color:#ffffff;
+    background-color: #E14F3F;
+    border-color: #E14F3F;
+}
+
+.cinnabar-btn:hover{
+  color:#ffffff;
+  background-color: #c02e1e;
+  border-color: #c02e1e;
+  transition: 0.5s;
 }
 h1{
   font-family: 'Roboto', sans-serif;
