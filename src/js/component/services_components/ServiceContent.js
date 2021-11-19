@@ -92,7 +92,7 @@ export const ServiceContent = () => {
 								onClick={event => {
 									getFilter();
 								}}
-								className="btn btn-danger shadow w-25">
+								className="btn cinnabar-btn shadow w-25">
 								Filter <i className="fas fa-search ms-2"></i>
 							</button>
 						</div>
@@ -122,7 +122,7 @@ export const ServiceContent = () => {
 								loadMoreServices(20);
 							}
 						}}
-						className="btn btn-outline-danger mb-3">
+						className="btn cinnabar-outline-btn mb-3">
 						<strong>Load more</strong>
 					</button>
 				</div>
@@ -131,7 +131,7 @@ export const ServiceContent = () => {
 			<div className="row">
 				<div className="col-4"></div>
 				<div className="col-4 text-center">
-					<Link to="/" className="btn btn-outline-danger mb-4">
+					<Link to="/" className="btn cinnabar-outline-btn mb-4">
 						<strong>Main Page</strong>
 					</Link>
 				</div>
