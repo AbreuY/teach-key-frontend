@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../store/appContext";
 import { CardsProfessors } from "./CardsProfessors";
 
 export const TopProfessors = () => {
+	const { store, actions } = useContext(AppContext);
 	return (
 		<div className="container mt-5" data-aos="fade-up" data-aos-duration="2000">
 			<div className="row">
@@ -13,11 +15,12 @@ export const TopProfessors = () => {
 					</p>
 				</div>
 			</div>
-			{/* Aqui hariamos una llamada a la API para consultar en la base de datos los profesores 
-				mejor calificados. para renderizar las cardsprofessors. Ejmeplo: 5 cards.
-			*/}
-
-			<CardsProfessors />
+			<div className="row row-cols-1 row-cols-md-3 g-4">
+				{store.topProfessor &&
+					store.topProfessor.map((svc, index) => {
+						return <CardsProfessors key={index} data={svc} />;
+					})}
+			</div>
 		</div>
 	);
 };

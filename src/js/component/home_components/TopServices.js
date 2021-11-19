@@ -5,7 +5,7 @@ import { CardsServices } from "./CardsServices";
 export const TopServices = () => {
 	const { store, actions } = useContext(AppContext);
 	return (
-		<div className="container" data-aos="fade-up" data-aos-duration="2000">
+		<div className="container mt-4" data-aos="fade-up" data-aos-duration="2000">
 			<div className="row">
 				<div className="text-center">
 					<h1 className="display-4">Servicios Populares</h1>

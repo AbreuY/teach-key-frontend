@@ -15,10 +15,10 @@ export const CardServices = ({ data }) => {
 	return (
 		<>
 			<div className="col">
-				<div className="card">
+				<div className="card rounded-corners-card p-3">
 					<img
 						src={data.image == null ? default_image : data.image}
-						className="card-img-top-services"
+						className="card-img-top-services rounded-3"
 						alt="..."
 					/>
 					<div className="card-body">

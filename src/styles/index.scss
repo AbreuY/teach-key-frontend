@@ -5,7 +5,7 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
-  background-color: #FFFFFF;
+  background-color: #92DEE1;
   padding-top: 56px;
 }
 h1{
@@ -393,6 +393,10 @@ p {
 .mb-1-6, .my-1-6 {
   margin-bottom: 1.6rem;
 }
+/* ROUNDED CORNERS CARD */
+.rounded-corners-card {
+  border-radius: 1.5rem !important;
+}
 /* KEEP ALL IMAGES EQUALS IN A CARD 
 https://stackoverflow.com/a/47698201/1375163 */
 .card-img-top-services {
@@ -459,3 +463,48 @@ white-space: nowrap;
 }
 };
 
+/* SHAPES */
+.container-section {
+  position: relative;
+  overflow: hidden;
+  z-index: 1
+}
+.container-section .app-shape-1 {
+  width: 560px;
+  height: 560px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  left: 2vh;
+  // bottom: 85px;
+  position: absolute;
+  z-index: -1;
+}
+
+.container-section .app-shape-2 {
+  width: 560px;
+  height: 560px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  left: 31%;
+  top: 60px;
+  position: absolute;
+  z-index: -1;
+}
+.container-section .app-shape-3 {
+  width: 560px;
+  height: 560px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  right: 15%;
+  bottom: 70%;
+  position: absolute;
+}
+.container-section .app-shape-4 {
+  width: 560px;
+  height: 560px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  right: -243px;
+  top: -50px;
+  position: absolute;
+}

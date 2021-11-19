@@ -36,10 +36,10 @@ export const UserProfile = () => {
 			{store.authorized == false
 				? showAlert()
 				: localStorage.getItem("token") && (
-						<div className="container">
+						<div className="container mt-2">
 							<div style={{ marginTop: "1vh" }} className="row justify-content-center">
 								<div className="col-md-7 col-lg-3 mb-5 mb-lg-0">
-									<div className="card border-0 shadow">
+									<div className="card border-0 shadow pt-2">
 										{console.log(store.dataForUser.img_profile)}
 										<img
 											src={
@@ -49,7 +49,7 @@ export const UserProfile = () => {
 													? default_img
 													: store.dataForUser.img_profile
 											}
-											className="mx-auto rounded-circle border border-4 border-light h-75 w-75"
+											className="mx-auto rounded-3 border border-4 border-black h-75 w-75"
 											alt="User Profile Photo"
 										/>
 										<div className="card-body text-center">
@@ -202,17 +202,22 @@ export const UserProfile = () => {
 																	aria-labelledby="flush-headingOne"
 																	data-bs-parent="#accordionFlushExample">
 																	<div className="accordion-body">
-																		<div className="row mb-2">
-																			<button
-																				onClick={e => {
-																					actions.setEditToFalse();
-																				}}
-																				type="button"
-																				className="btn btn-success"
-																				data-bs-toggle="modal"
-																				data-bs-target="#svcModal">
-																				Create new service
-																			</button>
+																		<div className="d-flex justify-content-end mb-4">
+																			<span
+																				data-bs-toggle="tooltip"
+																				data-bs-placement="top"
+																				title="Crear nuevo servicio">
+																				<button
+																					onClick={e => {
+																						actions.setEditToFalse();
+																					}}
+																					type="button"
+																					className="btn btn-success"
+																					data-bs-toggle="modal"
+																					data-bs-target="#svcModal">
+																					<i className="fas fa-plus"></i>
+																				</button>
+																			</span>
 																		</div>
 
 																		<div className="row row-cols-1 row-cols-md-2 g-4">

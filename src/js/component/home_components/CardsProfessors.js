@@ -1,23 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const CardsProfessors = () => {
+export const CardsProfessors = ({ data }) => {
 	return (
-		<div className="row row-cols-1 row-cols-md-3 g-4">
-			<div className="col">
-				<div className="card h-100">
-					<img src="https://i.imgur.com/2o1qfVY.jpg" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Joseprofessor32</h5>
-						<p className="card-text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada sapien at massa
-							accumsan, sed vestibulum lacus facilisis. Cras eleifend tortor sed faucibus tristique.
-						</p>
+		<div className="col">
+			<div className="card rounded-corners-card p-3 h-100" data-aos="fade-up">
+				<img src={data.img_profile} className="card-img-top rounded-3" alt="..." />
+				<div className="card-body">
+					<h5 className="card-title">{data.user_name}</h5>
+					<div className="d-flex justify-content-start">
+						<div className="text-center">
+							<div className="stars">
+								<i className="fa fa-star" /> <i className="fa fa-star" /> <i className="fa fa-star" />{" "}
+								<i className="fa fa-star" /> <i className="fa fa-star" />
+							</div>
+						</div>
 					</div>
-					<div className="card-footer">
-						<small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
-					</div>
+					<p className="card-text">{data.country}</p>
 				</div>
 			</div>
 		</div>
 	);
+};
+CardsProfessors.propTypes = {
+	data: PropTypes.object
 };

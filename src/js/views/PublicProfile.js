@@ -37,7 +37,7 @@ export const PublicProfile = () => {
 			{store.authorized == false
 				? showAlert()
 				: localStorage.getItem("token") && (
-						<div className="container">
+						<div className="container mt-2">
 							<div style={{ marginTop: "1vh" }} className="row justify-content-center">
 								<div className="col-md-7 col-lg-3 mb-5 mb-lg-0">
 									<div className="card border-0 shadow">
@@ -49,7 +49,7 @@ export const PublicProfile = () => {
 													? default_img
 													: data.img_profile
 											}
-											className="mx-auto rounded-circle border border-4 border-light h-75 w-75"
+											className="mx-auto rounded-3 border border-4 border-black h-75 w-75"
 											alt="User Profile Photo"
 										/>
 										<div className="card-body text-center">
@@ -76,6 +76,8 @@ export const PublicProfile = () => {
 												<li>
 													<a
 														href={data["facebook"] == undefined ? "#!" : data.facebook}
+														target="_blank"
+														rel="noreferrer"
 														className="rounded-icon-3">
 														<i className="fab fa-facebook"></i>
 													</a>
@@ -83,6 +85,8 @@ export const PublicProfile = () => {
 												<li>
 													<a
 														href={data["twitter"] == undefined ? "#!" : data.twitter}
+														target="_blank"
+														rel="noreferrer"
 														className="rounded-icon-3">
 														<i className="fab fa-twitter"></i>
 													</a>
@@ -90,6 +94,8 @@ export const PublicProfile = () => {
 												<li>
 													<a
 														href={data["instagram"] == undefined ? "#!" : data.instagram}
+														target="_blank"
+														rel="noreferrer"
 														className="rounded-icon-3">
 														<i className="fab fa-instagram"></i>
 													</a>
@@ -97,6 +103,8 @@ export const PublicProfile = () => {
 												<li>
 													<a
 														href={data["whatsapp"] == undefined ? "#!" : data.whatsapp}
+														target="_blank"
+														rel="noreferrer"
 														className="rounded-icon-3">
 														<i className="fab fa-whatsapp"></i>
 													</a>

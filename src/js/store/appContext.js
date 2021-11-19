@@ -8,7 +8,7 @@ const AppContextProvider = ({ children }) => {
 	const [store, setStore] = useState({
 		sectionInfo: [
 			{
-				imgUrl: "https://ak.picdn.net/shutterstock/videos/1068048101/thumb/1.jpg?ip=x480",
+				imgUrl: "https://i.imgur.com/DqFsPl6.jpg",
 				title: "Tienes conocimientos profesionales en un area especifica?",
 				description:
 					"Con Teach Key esos conocimientos pueden convertirse en ganacias para ti. Solo debes registrarte, hacer el inicio de sesion, llenar tu perfil con tus datos y tan solo es cuestion de empezar a dar tus clases. Vuelvete parte del Top Profesores!",
@@ -33,7 +33,8 @@ const AppContextProvider = ({ children }) => {
 		imageSelected: "",
 		profileImage: "",
 		authorized: undefined,
-		topServices: undefined
+		topServices: undefined,
+		topProfessor: undefined
 	});
 
 	const actions = {
@@ -461,11 +462,24 @@ const AppContextProvider = ({ children }) => {
 				topServices: data
 			}));
 		},
+		setTopProfessor: data => {
+			setStore(prev => ({
+				...prev,
+				topProfessor: data
+			}));
+		},
 		getTopServices: async () => {
 			const response = await fetch(`${store.BASE_URL}/services?limit=3`);
 			if (response.ok) {
 				const body = await response.json();
 				actions.setTopServices(body);
+			}
+		},
+		getTopProfessor: async () => {
+			const response = await fetch(`${store.BASE_URL}/professor?limit=3`);
+			if (response.ok) {
+				const body = await response.json();
+				actions.setTopProfessor(body);
 			}
 		},
 		/*
@@ -484,6 +498,7 @@ const AppContextProvider = ({ children }) => {
 
 	useEffect(() => {
 		actions.getTopServices();
+		actions.getTopProfessor();
 		let localToken = localStorage.getItem("token");
 		if (localToken != null) {
 			setStore(prev => ({
