@@ -39,6 +39,7 @@ const AppContextProvider = ({ children }) => {
 			localStorage.removeItem("token");
 			localStorage.removeItem("role");
 			localStorage.removeItem("id");
+			localStorage.removeItem("uid");
 			setStore(prev => ({
 				...prev,
 				token: undefined
@@ -161,8 +162,12 @@ const AppContextProvider = ({ children }) => {
 					showConfirmButton: false,
 					timer: 2000
 				}).then(result => {
-					/* Read more about handling dismissals below */
 					if (result.dismiss === Swal.DismissReason.timer) {
+						document.getElementById("fileForm").value = "";
+						actions.setTitle("");
+						actions.setPrice("");
+						actions.setSchedule("");
+						actions.setDescription("");
 						actions.getUserDetails(localStorage.getItem("role"), localStorage.getItem("id"));
 					}
 				});

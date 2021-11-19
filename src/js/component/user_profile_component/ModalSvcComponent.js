@@ -57,7 +57,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="schedule-text" className="col-form-label">
-									Schedule:
+									Schedule Hours:
 								</label>
 								<input
 									type="number"
@@ -95,13 +95,13 @@ export const ModalSvcComponent = ({ svcData }) => {
 									}></textarea>
 							</div>
 							<div className="mb-3">
-								<label htmlFor="formFile" className="form-label">
+								<label htmlFor="fileForm" className="form-label">
 									Upload Image
 								</label>
 								<input
 									className="form-control"
 									type="file"
-									id="formFile"
+									id="fileForm"
 									onChange={e => {
 										actions.setImageSelected(e.target.files[0]);
 									}}
