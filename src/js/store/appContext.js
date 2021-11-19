@@ -81,7 +81,7 @@ const AppContextProvider = ({ children }) => {
 		setTitle: data => {
 			let title = "";
 			if (store.isFromEdit) {
-				title = store.singleService.title = data;
+				matter = store.singleService.title = data;
 			} else {
 				title = store.newService.title = data;
 			}
@@ -90,6 +90,7 @@ const AppContextProvider = ({ children }) => {
 				title
 			}));
 		},
+
 		setDescription: data => {
 			let description = "";
 			if (store.isFromEdit) {
