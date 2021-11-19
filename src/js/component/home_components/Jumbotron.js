@@ -26,61 +26,50 @@ export const Jumbotron = () => {
 						/>
 
 						<div className="container">
-							<div className="home carousel-caption text-start">
-								<h1>Example headline.</h1>
-								<p>Some representative placeholder content for the first slide of the carousel.</p>
+							<div className="home carousel-caption text-start bg-light text-dark bg-opacity-50">
+								<h1>
+									<strong>Sobran las razones por las cuales debes registrarte</strong>
+								</h1>
+								<p>Teach Key ofrece gran cantidad de pobilidades para sus usuarios</p>
+							</div>
+						</div>
+					</div>
+					<div className="home carousel-item">
+						<img
+							className="home bd-placeholder-img"
+							width="100%"
+							height="100%"
+							src="https://eduglobal.cl/wp-content/uploads/2020/11/Profesor-pro-800.png"
+						/>
+
+						<div className="container">
+							<div className="home carousel-caption bg-light text-dark bg-opacity-50">
+								<h1>
+									<strong>Uno de nuestros objetivos principales:</strong>
+								</h1>
 								<p>
-									<a className="btn btn-lg btn-primary" href="#">
-										Sign up today
-									</a>
+									El de posibilitar el encuentro 1 a 1 entre estudiantes y profesores para la
+									comodidas y facilidad de los usuarios
 								</p>
 							</div>
 						</div>
 					</div>
 					<div className="home carousel-item">
-						<svg
+						<img
 							className="home bd-placeholder-img"
 							width="100%"
 							height="100%"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
-							preserveAspectRatio="xMidYMid slice"
-							focusable="false">
-							<rect width="100%" height="100%" fill="#777" />
-						</svg>
+							src="https://tec.mx/sites/default/files/styles/share/public/2020-03/cinco_tips_clases_virtuales_irapuato.jpg?itok=Tshg-VUd"
+						/>
 
 						<div className="container">
-							<div className="home carousel-caption">
-								<h1>Another example headline.</h1>
-								<p>Some representative placeholder content for the second slide of the carousel.</p>
+							<div className="home carousel-caption bg-light text-dark bg-opacity-50">
+								<h1>
+									<strong>Teach Key es para todos</strong>
+								</h1>
 								<p>
-									<a className="btn btn-lg btn-primary" href="#">
-										Learn more
-									</a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div className="home carousel-item">
-						<svg
-							className="home bd-placeholder-img"
-							width="100%"
-							height="100%"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
-							preserveAspectRatio="xMidYMid slice"
-							focusable="false">
-							<rect width="100%" height="100%" fill="#777" />
-						</svg>
-
-						<div className="container">
-							<div className="home carousel-caption text-end">
-								<h1>One more for good measure.</h1>
-								<p>Some representative placeholder content for the third slide of this carousel.</p>
-								<p>
-									<a className="btn btn-lg btn-primary" href="#">
-										Browse gallery
-									</a>
+									No importa tu edad, genero o lugar de ubicacion; Teach Key llega a ti para darte
+									entrada a un mundo de conocimiento
 								</p>
 							</div>
 						</div>

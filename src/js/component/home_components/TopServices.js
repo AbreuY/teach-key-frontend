@@ -8,7 +8,7 @@ export const TopServices = () => {
 		<div className="container" data-aos="fade-up" data-aos-duration="2000">
 			<div className="row">
 				<div className="text-center">
-					<h1 className="display-4">Popular Services</h1>
+					<h1 className="display-4">Servicios Populares</h1>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada sapien at massa
 						accumsan, sed vestibulum lacus facilisis. Cras eleifend tortor sed faucibus tristique.
