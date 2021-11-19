@@ -5,7 +5,7 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
-  background-color: #ffffff;
+  background-color: white;
   padding-top: 56px;
 }
 .blizzard-blue{
@@ -562,3 +562,20 @@ white-space: nowrap;
 }
 };
 
+/* NAVBAR */
+
+.bg-blizzard{
+  --bs-bg-opacity: 1;
+    background-color: #31c7cc!important;
+}
+
+.anchorStyle a:active a:link a{
+  color:#E14F3F;
+}
+
+a {
+  color:black;
+}
+a:hover{
+  color:black;
+}

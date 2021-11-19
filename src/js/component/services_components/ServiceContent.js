@@ -65,13 +65,11 @@ export const ServiceContent = () => {
 				<div className="row mb-4">
 					<div className="col-4"></div>
 					<div
-						className="col-4 text-center fs-1 text-danger shadow py-3 mb-3 rounded"
+						className="col-4 text-center fs-1 shadow py-3 mb-3 rounded fw-bold"
 						data-aos="fade-down"
 						data-aos-duration="1500"
-						style={{ marginTop: "6rem" }}>
-						<header>
-							<strong>Services</strong>
-						</header>
+						style={{ marginTop: "6rem", color: "#E14F3F" }}>
+						<header>Services</header>
 					</div>
 					<div className="col-4"></div>
 				</div>
@@ -102,7 +100,7 @@ export const ServiceContent = () => {
 			<div className="container">
 				{services.map((service, index) => {
 					return (
-						<div key={index} className="row" data-aos="fade-right" data-aos-duration="1500">
+						<div key={index} className="row" data-aos="fade-right" data-aos-duration="1000">
 							<div className="shadow p-3 mb-5 blizzard-blue rounded-corners-card col-12">
 								<ServicesCard item={service} />
 							</div>
@@ -122,20 +120,20 @@ export const ServiceContent = () => {
 								loadMoreServices(20);
 							}
 						}}
-						className="btn cinnabar-outline-btn mb-3">
-						<strong>Load more</strong>
+						className="btn cinnabar-outline-btn mb-3 fw-bold">
+						Load more
 					</button>
 				</div>
 				<div className="col-4"></div>
 			</div>
 			<div className="row">
-				<div className="col-4"></div>
-				<div className="col-4 text-center">
-					<Link to="/" className="btn cinnabar-outline-btn mb-4">
-						<strong>Main Page</strong>
+				<div className="col-3"></div>
+				<div className="col-6 text-center">
+					<Link to="/" className="btn cinnabar-outline-btn mb-4 w-25 fw-bold">
+						Main Page
 					</Link>
 				</div>
-				<div className="col-4"></div>
+				<div className="col-3"></div>
 			</div>
 		</>
 	);

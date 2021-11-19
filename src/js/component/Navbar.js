@@ -13,25 +13,18 @@ export const Navbar = () => {
 	}, [localStorage]);
 
 	return (
-		<nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-			<div className="container">
-				<Link to="/" className="navbar-brand">
-					<div className="d-flex text-center">
-						<img style={{ height: "2.3rem" }} src={Logo} />
-						<div className="h4 ms-2 align-self-center ">Teach Key</div>
+		<nav className="navbar navbar-expand-lg fixed-top bg-blizzard">
+			<div className="container anchorStyle">
+				<Link to="/" className="navbar-brand anchorStyle">
+					<div
+						className="d-flex ps-5 ms-1 text-center shadow rounded-corners-card bg-white align-self-center"
+						style={{ width: "17rem", height: "2.8rem" }}>
+						<img style={{ height: "2.3rem" }} src={Logo} className="mt-1" />
+						<div className="h4 ms-2 align-self-center mt-1 ">Teach Key</div>
 					</div>
 				</Link>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon" />
-				</button>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<div className="">
 					{location.pathname == "/signup/professor" ? (
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li className="nav-item">
@@ -65,64 +58,41 @@ export const Navbar = () => {
 							</li>
 						</ul>
 					) : (
-						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+						<ul className="d-flex navbar-nav ms-auto mb-2 mb-lg-0">
 							{store.token && (
 								<>
-									{/* <li className="nav-item dropdown">
-										<a
-											className="nav-link dropdown-toggle"
-											href="#"
-											id="navbarDropdownMenuLink"
-											role="button"
-											data-bs-toggle="dropdown"
-											aria-expanded="false">
-											Menu
-										</a> */}
-									<div className="dropdown">
-										<button
-											className="btn btn-outline-primary dropdown-toggle"
-											type="button"
-											id="dropdownMenuButton1"
-											data-bs-toggle="dropdown"
-											aria-expanded="false">
-											Menu
-										</button>
-										<ul
-											className="dropdown-menu dropdown-menu-end"
-											aria-labelledby="navbarDropdownMenuLink">
-											<li>
-												<Link to="/services" className="dropdown-item" aria-current="page">
-													Services
-												</Link>
-											</li>
-											<li>
-												<button
-													className="dropdown-item"
-													onClick={e => {
-														actions.Logout();
-													}}
-													aria-current="page">
-													Logout
-												</button>
-											</li>
-											<li>
-												<Link
-													to={`/${localStorage.getItem("role")}/${localStorage.getItem(
-														"id"
-													)}/profile`}
-													className="dropdown-item"
-													aria-current="page">
-													My Profile
-												</Link>
-											</li>
-										</ul>
+									<div className="d-flex">
+										<div>
+											<Link to="/services" className="btn cinnabar-outline-btn fw-bold">
+												Services
+											</Link>
+										</div>
+										<div>
+											<Link
+												to={`/${localStorage.getItem("role")}/${localStorage.getItem(
+													"id"
+												)}/profile`}
+												className="btn cinnabar-outline-btn mx-3 fw-bold">
+												My Profile
+											</Link>
+										</div>
+										<div>
+											<button
+												className="btn cinnabar-outline-btn fw-bold"
+												onClick={e => {
+													actions.Logout();
+												}}
+												aria-current="page">
+												Logout
+											</button>
+										</div>
 									</div>
 								</>
 							)}
 							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
-										className="nav-link dropdown-toggle"
+										className="nav-link dropdown-toggle btn cinnabar-outline-btn anchorStyle"
 										href="#"
 										id="navbarDropdown"
 										role="button"
@@ -147,7 +117,7 @@ export const Navbar = () => {
 							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
-										className="nav-link dropdown-toggle"
+										className="nav-link dropdown-toggle anchorStyle  btn cinnabar-outline-btn"
 										href="#"
 										id="navbarDropdown"
 										role="button"

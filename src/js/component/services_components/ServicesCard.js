@@ -18,8 +18,10 @@ export const ServicesCard = ({ item }) => {
 
 					<div className="col-md-8 align-self-center ps-2">
 						<div className="card-body shadow-sm px-5 bg-white py-4 rounded-corners-card">
-							<h4 className="card-title text-center mb-4" style={{ textDecoration: "underline red" }}>
-								<strong>{item.title}</strong>
+							<h4
+								className="card-title text-center mb-4 fw-bold"
+								style={{ textDecoration: "underline #E14F3F" }}>
+								{item.title}
 							</h4>
 							<p className="card-text">{item.description}</p>
 							<div className="text-center">
