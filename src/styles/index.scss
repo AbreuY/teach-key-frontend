@@ -11,6 +11,9 @@ body{
 .blizzard-blue{
   background-color: #92DEE1;
 }
+
+/* BUTTONS */
+
 .cinnabar-btn{
     color:#ffffff;
     background-color: #E14F3F;
@@ -23,6 +26,21 @@ body{
   border-color: #c02e1e;
   transition: 0.5s;
 }
+
+.cinnabar-outline-btn{
+  color: #E14F3F;
+  background-color: white;
+  border-color: #E14F3F;
+}
+
+.cinnabar-outline-btn:hover{
+  color: white;
+  background-color: #E14F3F;
+  border-color: #E14F3F;
+  transition: 0.5s;
+}
+
+
 h1{
   font-family: 'Roboto', sans-serif;
 }
