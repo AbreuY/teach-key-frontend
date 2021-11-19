@@ -6,36 +6,51 @@ export const SingleServiceInfo = ({ info }) => {
 	return (
 		<div className="mt-5">
 			<div className="container">
-				<div className="row" style={{ marginTop: "10rem", marginBottom: "6rem" }}>
+				<div className="row align-items-center" style={{ marginTop: "10rem", marginBottom: "6rem" }}>
 					<div
 						className="col-12 col-lg-4 col-md-12 col-sm-12 align-self-center px-md-0 px-0 px-sm-0 px-lg-2 "
 						data-aos="fade-right">
-						<img src={info.image} className="shadow-lg 		 bg-body rounded w-100 h-100 " />
+						<img src={info.image} className="shadow-lg 		 bg-body  rounded-corners-card w-100 h-100 " />
 					</div>
 					<div
-						className="col-12 col-lg-8 col-md-12 col-sm-12 shadow-lg p-3 bg-body rounded"
+						className="col-12 col-lg-8 col-md-12 col-sm-12 shadow-lg p-3 bg-body  rounded-corners-card"
 						data-aos="fade-left">
-						<header className="fs-2 text-center">{info.title}</header>
-						<p className="mt-2 mb-4 fs-5">{info.description}</p>
+						<header className="fs-2 text-center fw-bold" style={{ textDecoration: "underline #25BCC2" }}>
+							{info.title}
+						</header>
+						<p className="mt-2 mb-4 fs-5 px-4">{info.description}</p>
 						<div className="row mt-4 mb-5">
-							<div className="col-6">
-								<p className="text-danger text-center fs-4">{`Price: ${info.price} $`}</p>
+							<div className="col-6 mt-2 text-center">
+								<span className="text-center fs-4" style={{ color: "#E14F3F" }}>
+									<strong>Price: </strong>
+									{`${info.price} `}
+									<i className="fas fa-dollar-sign fw-bold"></i>
+								</span>
 							</div>
-							<div className="col-6">
-								<p className="text-black text-center fs-4">{`${info.schedule} ${
-									info.schedule == 1 ? "Hour" : "Hours"
-								} `}</p>
+							<div className="col-6 mt-2 text-center">
+								<span className="text-black text-center fs-4">
+									<strong>Time: </strong>
+									{`${info.schedule} ${info.schedule == 1 ? "Hour" : "Hours"} `}
+									<i className="far fa-clock"></i>
+								</span>
 							</div>
 						</div>
 						<div className="row mt-0">
 							<div className="col-12 text-center">
 								<Link
-									className="btn btn-outline-danger"
+									className="btn cinnabar-btn"
 									onClick={e => {
 										localStorage.setItem("uid", `${info.professor_id}`);
 									}}
 									to={`/user/profile`}>
 									See professor profile!
+								</Link>
+							</div>
+						</div>
+						<div className="row mt-2">
+							<div className="col-12 text-center">
+								<Link to="/services" className="btn cinnabar-btn">
+									Return to Services
 								</Link>
 							</div>
 						</div>

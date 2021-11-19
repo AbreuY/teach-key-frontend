@@ -57,7 +57,7 @@ export const Footer = () => {
 						<div className="col-12 col-lg-4 col-md-4 col-sm-4 text-center align-self-center">
 							<button
 								type="button"
-								className="btn bg-danger text-light bg-opacity-75 "
+								className="btn cinnabar-btn text-light bg-opacity-75 "
 								data-bs-toggle="modal"
 								data-bs-target="#staticBackdrop">
 								¿Necesitas ayuda?
