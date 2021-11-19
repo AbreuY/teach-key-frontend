@@ -40,7 +40,7 @@ export const PublicProfile = () => {
 						<div className="container mt-2">
 							<div style={{ marginTop: "1vh" }} className="row justify-content-center">
 								<div className="col-md-7 col-lg-3 mb-5 mb-lg-0">
-									<div className="card border-0 shadow">
+									<div className="card border-0 shadow pt-2 blizzard-blue">
 										<img
 											src={
 												data.img_profile == undefined ||
