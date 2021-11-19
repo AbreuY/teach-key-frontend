@@ -576,10 +576,11 @@ white-space: nowrap;
 .accordion-button:focus {
   box-shadow: none;
   border-color: rgba(0,0,0,.125);
+}
 /* NAVBAR */
 
-}
 .bg-blizzard{
+  background-color: #31c7cc!important;
   --bs-bg-opacity: 1;
     background-color: #92DEE1!important;
 }
@@ -593,5 +594,9 @@ a {
 }
 a:hover{
   color:black;
+}
+/* FOOTER */
+.footer{
+  margin-top: 60px;
 }
 
