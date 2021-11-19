@@ -2,7 +2,7 @@ import React from "react";
 import { SignupContent } from "../component/signupComponents/SignupContent";
 import GirlStudying from "../../img/girlstudying.jpg";
 
-const URL = "http://127.0.0.0.1:3010/register/student";
+const URL = "http://127.0.0.1:3010/register/student";
 
 export const SignupStudent = () => {
 	return (
