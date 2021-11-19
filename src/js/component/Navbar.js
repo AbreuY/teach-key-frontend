@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import { useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { AppContext } from "../store/appContext";
@@ -14,8 +14,7 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-			{console.log(store.token, "from navbar")}
-			<div className="container-fluid">
+			<div className="container">
 				<Link to="/" className="navbar-brand">
 					<div className="d-flex text-center">
 						<img style={{ height: "2.3rem" }} src={Logo} />
@@ -40,11 +39,11 @@ export const Navbar = () => {
 									<p className="my-auto">Do you have an account? Login here as</p>
 									<Link to="/login/professor" className="linkDecoration text-danger nav-link active">
 										{" "}
-										Professor{" "}
+										<strong>Professor</strong>{" "}
 									</Link>
 									<p className="my-auto">or </p>
 									<Link to="/login/student" className="linkDecoration text-danger nav-link">
-										Student
+										<strong>Student</strong>
 									</Link>
 								</div>
 							</li>
@@ -56,11 +55,11 @@ export const Navbar = () => {
 									<p className="my-auto">Do you have an account? Login here as</p>
 									<Link to="/login/professor" className="linkDecoration text-danger nav-link active">
 										{" "}
-										Professor{" "}
+										<strong>Professor</strong>{" "}
 									</Link>
 									<p className="my-auto">or </p>
 									<Link to="/login/student" className="linkDecoration text-danger nav-link">
-										Student
+										<strong>Student</strong>
 									</Link>
 								</div>
 							</li>
