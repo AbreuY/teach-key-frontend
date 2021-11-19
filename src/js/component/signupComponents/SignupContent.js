@@ -4,6 +4,7 @@ import { SignupCountryInputs } from "./SignupCountryInputs";
 import { useHistory } from "react-router";
 
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 export const SignupContent = props => {
 	const [email, setEmail] = useState("");
@@ -179,12 +180,17 @@ export const SignupContent = props => {
 										} else signup();
 									}}
 									type="button"
-									className="btn btn-outline-danger">
-									<strong>Join now!</strong>
+									className="btn cinnabar-outline-btn">
+									<strong>¡Unete ya!</strong>
 								</button>
 							</div>
 						</div>
-						<div className="row pt-0 pt-sm-0 pt-md-0 pt-lg-3 mt-4 signupInput" />
+						<div className="row pt-0 pt-sm-0 pt-md-0 pt-lg-1 mt-4">
+							<div className="col">
+								<Link className="btn cinnabar-outline-btn">Página principal</Link>
+							</div>
+						</div>
+						<div className="row pt-0 pt-sm-0 pt-md-0 pt-lg-1 mt-4 signupInput" />
 					</div>
 					<div className="col-md-12 col-lg-6 text-md-center text-sm-center text-center">
 						<div className="row">

@@ -4,7 +4,11 @@ import { LandingCarrousel } from "./LandingCarrousel";
 export const LandingDescription = () => {
 	return (
 		<div>
-			<div className="container-fluid d-flex my-5" style={{ height: "25rem" }}>
+			<div
+				className="container-fluid d-flex my-5"
+				style={{ height: "25rem" }}
+				data-aos="zoom-in"
+				data-aos-duration="3000">
 				<div className="row">
 					<div className="col-12 col-sm-12 col-lg-4 col-md-4 text-center align-self-center">
 						<img style={{ height: "8.5rem", width: "11rem" }} src={Logo} />
@@ -12,7 +16,7 @@ export const LandingDescription = () => {
 					<div className="col-12 col-sm-12 col-lg-8 col-md-8 align-self-center">
 						<div className="h2 py-3 text-center">
 							En nuestra página podrás encontrar toda clase de áreas de aprendizaje y tutores
-							especializados en cada una de ellas. !Escoge un tutor en el área que necesites y empieza a
+							especializados en cada una de ellas. ¡Escoge un tutor en el área que necesites y empieza a
 							aprender con nosotros!
 						</div>
 					</div>
@@ -20,7 +24,10 @@ export const LandingDescription = () => {
 			</div>
 			<div>
 				<div className="container-fluid ps-0 p-0">
-					<div id="myCarousel" className="home carousel slide carousel-fade" data-bs-ride="carousel">
+					<div
+						id="myCarousel"
+						className=" rounded-corners-card home carousel slide carousel-fade"
+						data-bs-ride="carousel">
 						<div className="carousel-indicators">
 							<button
 								type="button"
@@ -82,14 +89,14 @@ export const LandingDescription = () => {
 										style={{ whiteSpace: "normal" }}>
 										<h3>
 											<strong>
-												Quizas te preguntaras ¿Por qué deberias registrarte en Teach Key?
+												Quizás te preguntarás ¿Por qué deberías registrarte en Teach Key?
 											</strong>
 										</h3>
 										<p>
-											A continuacion te mostraremos los beneficios de ser un Estudiante o Profesor
+											A continuación te mostraremos los beneficios de ser un Estudiante o Profesor
 											en Teach Key...
 										</p>
-										<p>Veras lo facil que es registrarse y empezar a aprender. </p>
+										<p>Verás lo fácil que es registrarse y empezar a aprender. </p>
 									</div>
 								</div>
 							</div>
@@ -111,7 +118,7 @@ export const LandingDescription = () => {
 										<p>
 											Aquí los Estudiantes pueden buscar el tutor que necesiten y las areas de
 											estudio que requieran pudiendo elegir entre los mejores tutores, calificados
-											por ellos mismos y tambien comentar sobre los tutores.
+											por ellos mismos y también comentar sobre los tutores.
 										</p>
 									</div>
 								</div>
@@ -132,7 +139,7 @@ export const LandingDescription = () => {
 											<strong>Estudiantes</strong>
 										</h3>
 										<p>
-											Pueden filtrar sus busquedas a las areas de ubicacion que se les hagan mas
+											Pueden filtrar sus busquedas a las areas de ubicación que se les hagan más
 											favorables escogiendo el radio de busqueda a lo largo de sus preferencias.
 										</p>
 									</div>
@@ -154,7 +161,7 @@ export const LandingDescription = () => {
 											<strong>Estudiantes</strong>
 										</h3>
 										<p>
-											Los Estudiantes tienen la facilidad de comunicacion directa con los
+											Los Estudiantes tienen la facilidad de comunicación directa con los
 											profesores para realizar preguntas, acordar pagos, horarios y todo lo
 											referente con las clases y el profesor.
 										</p>
@@ -178,7 +185,7 @@ export const LandingDescription = () => {
 										</h3>
 										<p>
 											Al registrarse los profesores pueden agregar las areas que desean impartir
-											al perfil y agregar tambien los datos que sirven de informacion a sus
+											al perfil y agregar también los datos que sirven de informacion a sus
 											posibles estudiantes a la hora de contratarlos.
 										</p>
 									</div>
@@ -203,7 +210,7 @@ export const LandingDescription = () => {
 											Pueden dar respuestas a las dudas que tengan los estudiantes, asi como
 											hablar directamente con ellos y cuentan con un sistema de calificaciones
 											para asi poder posicionarse como los mejores en su area gracias a la
-											calificacion que tengan.
+											calificación que tengan.
 										</p>
 									</div>
 								</div>
@@ -227,7 +234,7 @@ export const LandingDescription = () => {
 										<p>
 											Los Profesores pueden subir previews de sus clases en el perfil cuando estan
 											iniciando en la pagina si los estudiantes podran ver como dan sus clases y
-											tener mas seguridad a la hora de contratarlos.
+											tener más seguridad a la hora de contratarlos.
 										</p>
 									</div>
 								</div>
@@ -254,7 +261,7 @@ export const LandingDescription = () => {
 			</div>
 			<div className="row">
 				<div className="h3 py-5 col-12 col-sm-12 col-lg-12 col-md-12 align-self-center text-center">
-					Aqui podras leer comentarios y opiniones; de estudiantes y profesores que se han registrado en Teach
+					Aquí podras leer comentarios y opiniones; de estudiantes y profesores que se han registrado en Teach
 					Key y han llevado el aprendizaje a otro nivel
 				</div>
 			</div>

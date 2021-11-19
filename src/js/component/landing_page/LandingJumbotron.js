@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../../img/logo2.png";
 export const LandingJumbotron = () => {
 	return (
 		<div className="container-fluid w-100 mb-5">
 			<div className="jumbotron pt-5">
 				<div
-					className="container-fluid bg-dark bg-gradient text-light  mt-5"
+					className="container-fluid bg-dark bg-gradient text-light  mt-5 rounded-corners-card shadow"
 					data-aos="fade-up"
 					data-aos-duration="2000">
 					<div className="container">
@@ -30,10 +31,14 @@ export const LandingJumbotron = () => {
 					</div>
 				</div>
 
-				<div className="d-flex justify-content-center" data-aos="fade-up" data-aos-duration="2000">
-					<button type="button" className="btn btn-primary mt-2">
-						Start Now
-					</button>
+				<div className="d-flex justify-content-center mt-4" data-aos="fade-up" data-aos-duration="2000">
+					<Link to="/signup/student" type="button" className="btn cinnabar-btn mt-2">
+						Empezar ahora como estudiante!
+					</Link>
+
+					<Link to="/signup/professor" type="button" className="btn cinnabar-btn ms-2 mt-2">
+						Empezar ahora como profesor!
+					</Link>
 				</div>
 			</div>
 		</div>
