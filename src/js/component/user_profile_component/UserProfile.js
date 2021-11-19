@@ -56,15 +56,15 @@ export const UserProfile = () => {
 											<div className="mb-4">
 												<h3 className="h4 mb-0">
 													{localStorage.getItem("role") == "student" ? (
-														<span className="badge bg-success fs-5">Student</span>
+														<span className="badge cinnabar-btn fs-5">Student</span>
 													) : (
-														<span className="badge bg-success fs-5">Professor</span>
+														<span className="badge cinnabar-btn fs-5">Professor</span>
 													)}
 													<br />
 													{store.dataForUser["user_name"] == undefined ? (
 														""
 													) : (
-														<span className="badge bg-warning text-dark fs-6">
+														<span className="badge cinnabar-badge fs-6">
 															{store.dataForUser.user_name}
 														</span>
 													)}
@@ -167,9 +167,6 @@ export const UserProfile = () => {
 								<div className="col-lg-8">
 									<div className="ps-lg-1-6 ps-xl-5">
 										<div className="mb-5 wow fadeIn">
-											<div className="text-start mb-1-6 wow fadeIn">
-												<h2 className="h1 mb-0 text-primary">Profile</h2>
-											</div>
 											<UserDetails />
 										</div>
 										{params.role == "student" ? (
@@ -193,7 +190,7 @@ export const UserProfile = () => {
 																		data-bs-target="#flush-collapseOne"
 																		aria-expanded="false"
 																		aria-controls="flush-collapseOne">
-																		<h2 className="mb-0 text-primary">Services</h2>
+																		<h2 className="mb-0 fw-bold">Services</h2>
 																	</button>
 																</h2>
 																<div

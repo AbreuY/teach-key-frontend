@@ -10,8 +10,8 @@ export const TopServices = () => {
 				<div className="text-center">
 					<h1 className="display-4">Servicios Populares</h1>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada sapien at massa
-						accumsan, sed vestibulum lacus facilisis. Cras eleifend tortor sed faucibus tristique.
+						Puedes escoger entre una variedad de servicios en el área que estes buscando. Aquí tenemos los
+						servicios más solicitados.
 					</p>
 				</div>
 			</div>

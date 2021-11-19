@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export const CardsServices = ({ data }) => {
 	return (
 		<div className="col">
-			<div className="card rounded-corners-card p-3 h-100" data-aos="flip-right">
+			<div className="card rounded-corners-card p-3 h-100" data-aos="flip-right" data-aos-duration="2000">
 				<img src={data.image} className="card-img-top rounded-3" alt="..." />
 				<div className="card-body">
 					<h5 className="card-title">{data.title}</h5>

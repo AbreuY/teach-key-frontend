@@ -9,10 +9,7 @@ export const TopProfessors = () => {
 			<div className="row">
 				<div className="text-center">
 					<h1 className="display-4">Top Profesores</h1>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada sapien at massa
-						accumsan, sed vestibulum lacus facilisis. Cras eleifend tortor sed faucibus tristique.
-					</p>
+					<p>Aqui podrás encontrar una variedad de profesores mejores calificados en sus áreas de estudio.</p>
 				</div>
 			</div>
 			<div className="row row-cols-1 row-cols-md-3 g-4">

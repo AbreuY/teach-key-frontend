@@ -9,9 +9,9 @@ const AppContextProvider = ({ children }) => {
 		sectionInfo: [
 			{
 				imgUrl: "https://i.imgur.com/DqFsPl6.jpg",
-				title: "Tienes conocimientos profesionales en un area especifica?",
+				title: "¿Tienes conocimientos profesionales en un area especifica?",
 				description:
-					"Con Teach Key esos conocimientos pueden convertirse en ganacias para ti. Solo debes registrarte, hacer el inicio de sesion, llenar tu perfil con tus datos y tan solo es cuestion de empezar a dar tus clases. ¡Vuelvete parte del Top Profesores!",
+					"Con Teach Key esos conocimientos pueden convertirse en ganacias para ti. Solo debes registrarte, hacer el inicio de sesion, llenar tu perfil con tus datos y tan solo es cuestion de empezar a dar tus clases. ¡Vuelvete parte de los Profesores Top!",
 				orientation: "left"
 			},
 			{

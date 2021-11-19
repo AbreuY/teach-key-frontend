@@ -12,6 +12,10 @@ export const UserDetails = () => {
 		<div className="card">
 			<div className="card-body">
 				<div className="row mb-3">
+					<div className="text-start mb-3">
+						<h4 className="mb-0 fw-bold">Profile</h4>
+					</div>
+
 					<div className="col-sm-3">
 						<h6 className="mb-0">User Name</h6>
 					</div>
@@ -89,8 +93,8 @@ export const UserDetails = () => {
 						</div>
 						<hr style={{ width: "100%" }} />
 						<div className="row mb-2">
-							<div className="text-start">
-								<h4 className="mb-0">Contact Methods</h4>
+							<div className="text-start mb-3">
+								<h4 className="mb-0 fw-bold">Contact Methods</h4>
 							</div>
 						</div>
 						<div className="row mb-3">
@@ -164,7 +168,7 @@ export const UserDetails = () => {
 					<div className="col-sm-9 text-secondary">
 						<button
 							type="button"
-							className="btn btn-primary px-4"
+							className="btn cinnabar-btn px-4"
 							onClick={() => {
 								actions.updateProfileImage(params.role, params.id);
 							}}>

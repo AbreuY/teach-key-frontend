@@ -5,7 +5,7 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
-  background-color: #ffffff;
+  background-color: #eefbf3;
   padding-top: 56px;
 }
 .blizzard-blue{
@@ -38,6 +38,12 @@ body{
   background-color: #E14F3F;
   border-color: #E14F3F;
   transition: 0.5s;
+}
+.cinnabar-badge{
+    color: #E14F3F;
+    background-color: white;
+    border-color: #E14F3F;
+
 }
 
 
@@ -562,3 +568,12 @@ white-space: nowrap;
 }
 };
 
+/* ACCORDION NOT COLLAPSED COLOR */
+.accordion-button:not(.collapsed) {
+  color: #E14F3F;
+  background-color: #ffffff;
+}
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,.125);
+}
