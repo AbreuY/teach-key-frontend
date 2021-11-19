@@ -32,7 +32,7 @@ export const CardServices = ({ data }) => {
 									onClick={e => {
 										history.push(`/services/${data.id}`);
 									}}
-									className="me-1 btn btn-primary rounded-pill">
+									className="me-1 btn cinnabar-btn rounded-pill">
 									Ver Publicacion
 								</button>
 							) : (

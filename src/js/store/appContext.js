@@ -161,7 +161,7 @@ const AppContextProvider = ({ children }) => {
 				$("[data-bs-dismiss=modal]").trigger({ type: "click" });
 				Swal.fire({
 					icon: "success",
-					title: "Service Created",
+					title: "Servicio Creado",
 					showConfirmButton: false,
 					timer: 2000
 				}).then(result => {
@@ -218,8 +218,8 @@ const AppContextProvider = ({ children }) => {
 			if (response.ok) {
 				Swal.fire({
 					icon: "success",
-					title: "Service Updated",
-					text: "This service has been updated correctly",
+					title: "Servicio Actualizado",
+					text: "El servicio se actualizó correctamente",
 					showConfirmButton: false,
 					timer: 2000
 				});
@@ -448,8 +448,8 @@ const AppContextProvider = ({ children }) => {
 				//const body = await response.json();
 				Swal.fire({
 					icon: "success",
-					title: "Data Updated",
-					text: "Your info has been updated",
+					title: "Datos Actualizados",
+					text: "Tu información se actualizó correctamente",
 					showConfirmButton: false,
 					timer: 2000
 				});

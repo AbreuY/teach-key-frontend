@@ -14,7 +14,7 @@ export const UserProfile = () => {
 	const showAlert = () => {
 		Swal.fire({
 			icon: "error",
-			title: "Session expired, please login again!",
+			title: "La Sesión expiró, por favor inicia sesión!",
 			confirmButtonText: "Ok"
 		}).then(result => {
 			if (result.isConfirmed) {
@@ -37,7 +37,9 @@ export const UserProfile = () => {
 				? showAlert()
 				: localStorage.getItem("token") && (
 						<div className="container mt-2">
-							<div style={{ marginTop: "1vh" }} className="row justify-content-center">
+							<div
+								style={{ marginTop: "1vh", marginBottom: "16vh" }}
+								className="row justify-content-center">
 								<div className="col-md-7 col-lg-3 mb-5 mb-lg-0">
 									<div className="card border-0 shadow pt-2 blizzard-blue">
 										{console.log(store.dataForUser.img_profile)}
@@ -49,7 +51,7 @@ export const UserProfile = () => {
 													? default_img
 													: store.dataForUser.img_profile
 											}
-											className="mx-auto rounded-3 border border-4 border-black h-75 w-75"
+											className="mx-auto rounded-3 h-75 w-75"
 											alt="User Profile Photo"
 										/>
 										<div className="card-body text-center">

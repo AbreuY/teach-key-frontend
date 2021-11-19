@@ -41,7 +41,10 @@ export const ServiceContent = () => {
 			const body = await response.json();
 			setServices(body);
 		} catch (error) {
-			alert(`failed to fetch ${error}`);
+			Swal.fire({
+				icon: "info",
+				text: `Error al obtener datos ${error}`
+			});
 		}
 	};
 

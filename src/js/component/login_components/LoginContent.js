@@ -150,9 +150,16 @@ export const LoginContent = props => {
 									</div>
 									<div className="row pt-3 text-center pt-5 pt-sm-5 pt-md-5 pt-lg-5 text-center">
 										<div className="col">
-											<button className="btn btn-outline-danger" onClick={login}>
-												Iniciar Sesión
+											<button className="btn cinnabar-outline-btn" onClick={login}>
+												Iniciar sesión
 											</button>
+										</div>
+									</div>
+									<div className="row pt-1 text-center pt-1 pt-sm-1 pt-md-1 pt-lg-1 text-center">
+										<div className="col">
+											<Link className="btn cinnabar-outline-btn" to="/">
+												Página principal
+											</Link>
 										</div>
 									</div>
 								</div>

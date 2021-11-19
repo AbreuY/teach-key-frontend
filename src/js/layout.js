@@ -24,7 +24,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
+		<div style={{ overflow: "hidden" }}>
 			<AppContextProvider>
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
