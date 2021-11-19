@@ -578,9 +578,10 @@ white-space: nowrap;
   border-color: rgba(0,0,0,.125);
 /* NAVBAR */
 
+}
 .bg-blizzard{
   --bs-bg-opacity: 1;
-    background-color: #31c7cc!important;
+    background-color: #92DEE1!important;
 }
 
 .anchorStyle a:active a:link a{
@@ -593,4 +594,16 @@ a {
 a:hover{
   color:black;
 }
+
+a:focus:out-of-range{
+  color:#E14F3F;
+}
+
+
+a:link{
+  color:#E14F3F;
+}
+
+a:visited{
+  color:#E14F3F;
 }
