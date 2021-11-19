@@ -7,14 +7,14 @@ export const CardsProfessors = () => {
 				<div className="card h-100">
 					<img src="https://i.imgur.com/2o1qfVY.jpg" className="card-img-top" alt="..." />
 					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
+						<h5 className="card-title">Joseprofessor32</h5>
 						<p className="card-text">
-							This is a wider card with supporting text below as a natural lead-in to additional content.
-							This content is a little bit longer.
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada sapien at massa
+							accumsan, sed vestibulum lacus facilisis. Cras eleifend tortor sed faucibus tristique.
 						</p>
 					</div>
 					<div className="card-footer">
-						<small className="text-muted">Last updated 3 mins ago</small>
+						<small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
 					</div>
 				</div>
 			</div>

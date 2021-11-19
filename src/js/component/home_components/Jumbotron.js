@@ -26,14 +26,11 @@ export const Jumbotron = () => {
 						/>
 
 						<div className="container">
-							<div className="home carousel-caption text-start">
-								<h1>Example headline.</h1>
-								<p>Some representative placeholder content for the first slide of the carousel.</p>
-								<p>
-									<a className="btn btn-lg btn-primary" href="#">
-										Sign up today
-									</a>
-								</p>
+							<div className="home carousel-caption text-start bg-light text-dark bg-opacity-50">
+								<h1>
+									<strong>Sobran las razones por las cuales debes registrarte</strong>
+								</h1>
+								<p>Teach Key ofrece gran cantidad de pobilidades para sus usuarios</p>
 							</div>
 						</div>
 					</div>
@@ -46,13 +43,13 @@ export const Jumbotron = () => {
 						/>
 
 						<div className="container">
-							<div className="home carousel-caption">
-								<h1>Another example headline.</h1>
-								<p>Some representative placeholder content for the second slide of the carousel.</p>
+							<div className="home carousel-caption bg-light text-dark bg-opacity-50">
+								<h1>
+									<strong>Uno de nuestros objetivos principales:</strong>
+								</h1>
 								<p>
-									<a className="btn btn-lg btn-primary" href="#">
-										Learn more
-									</a>
+									El de posibilitar el encuentro 1 a 1 entre estudiantes y profesores para la
+									comodidas y facilidad de los usuarios
 								</p>
 							</div>
 						</div>
@@ -66,13 +63,13 @@ export const Jumbotron = () => {
 						/>
 
 						<div className="container">
-							<div className="home carousel-caption text-end">
-								<h1>One more for good measure.</h1>
-								<p>Some representative placeholder content for the third slide of this carousel.</p>
+							<div className="home carousel-caption bg-light text-dark bg-opacity-50">
+								<h1>
+									<strong>Teach Key es para todos</strong>
+								</h1>
 								<p>
-									<a className="btn btn-lg btn-primary" href="#">
-										Browse gallery
-									</a>
+									No importa tu edad, genero o lugar de ubicacion; Teach Key llega a ti para darte
+									entrada a un mundo de conocimiento
 								</p>
 							</div>
 						</div>

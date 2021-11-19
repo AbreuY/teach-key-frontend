@@ -4,7 +4,10 @@ import PropTypes from "prop-types";
 
 export const Container3 = props => {
 	return (
-		<div className="container-fluid bg-ligth-green mt-5" data-aos="fade-up" data-aos-duration="2000">
+		<div
+			className="container-fluid bg-black bg-gradient text-white mt-5"
+			data-aos="fade-up"
+			data-aos-duration="2000">
 			<div className="container">
 				<div className={props.section.orientation == "right" ? "d-flex flex-row-reverse" : "row"}>
 					<div className="col-md-6">
