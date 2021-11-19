@@ -84,7 +84,7 @@ const AppContextProvider = ({ children }) => {
 		setTitle: data => {
 			let title = "";
 			if (store.isFromEdit) {
-				matter = store.singleService.title = data;
+				title = store.singleService.title = data;
 			} else {
 				title = store.newService.title = data;
 			}

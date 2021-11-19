@@ -8,8 +8,8 @@ export const SignupStudent = () => {
 	return (
 		<>
 			<SignupContent
-				title="Sign Up as a Student"
-				titleDescription="To start learning!"
+				title="Registrate Como Estudiante"
+				titleDescription="Y empieza a aprender!"
 				image={GirlStudying}
 				url={URL}
 				sendTo="/student"

@@ -44,8 +44,8 @@ export const LoginContent = props => {
 		} else {
 			let timerInterval = Swal.fire({
 				icon: "error",
-				title: "Invalid Data",
-				html: "Try again!",
+				title: "Datos incorrecots",
+				html: "Intenta nuevamente",
 				timer: 2500,
 
 				willClose: () => {
@@ -87,13 +87,13 @@ export const LoginContent = props => {
 								</p>
 								<div>
 									<p className="inputPText1  text-md-center text-sm-center text-center">
-										{"Don't have an account? Register as a "}
+										{"¿No tienes una cuenta? Regístrate como "}
 										<Link to="/signup/student" className="aLinkDecoration text-danger">
-											<strong>Student </strong>
+											<strong>Estudiante </strong>
 										</Link>
-										or as a{" "}
+										o como{" "}
 										<Link to="/signup/professor" className="text-danger aLinkDecoration">
-											<strong>Professor</strong>
+											<strong>Profesor</strong>
 										</Link>
 									</p>
 								</div>
@@ -103,7 +103,7 @@ export const LoginContent = props => {
 											<input
 												className="pt-5 pt-sm-5 pt-md-5 pt-lg-3 text-center"
 												type="email"
-												placeholder="Email"
+												placeholder="Correo"
 												maxLength="100"
 												onChange={e => {
 													setEmail(e.target.value);
@@ -118,7 +118,7 @@ export const LoginContent = props => {
 												id="input1"
 												className="pt-5 pt-sm-5 pt-md-5 pt-lg-5 text-center inputFocus"
 												type="password"
-												placeholder="Password"
+												placeholder="Contraseña"
 												maxLength="100"
 												onChange={e => {
 													setPassword(e.target.value);
@@ -151,7 +151,7 @@ export const LoginContent = props => {
 									<div className="row pt-3 text-center pt-5 pt-sm-5 pt-md-5 pt-lg-5 text-center">
 										<div className="col">
 											<button className="btn btn-outline-danger" onClick={login}>
-												Login
+												Iniciar Sesión
 											</button>
 										</div>
 									</div>

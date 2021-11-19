@@ -14,6 +14,19 @@ body{
 
 /* BUTTONS */
 
+.blizzard-btn{
+  color:#ffffff;
+  background-color: #92DEE1;
+  border-color: #92DEE1;
+}
+
+.blizzard-btn:hover{
+color:#ffffff;
+background-color: #76c1c4;
+border-color: #76c1c4;
+transition: 0.5s;
+}
+
 .cinnabar-btn{
     color:#ffffff;
     background-color: #E14F3F;
@@ -33,7 +46,9 @@ body{
   border-color: #E14F3F;
 }
 
-.cinnabar-outline-btn:hover{
+.cinnabar-outline-btn:hover,
+.cinnabar-outline-btn:focus,
+.cinnabar-outline-btn:active{
   color: white;
   background-color: #E14F3F;
   border-color: #E14F3F;

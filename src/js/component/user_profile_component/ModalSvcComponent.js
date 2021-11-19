@@ -9,7 +9,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 				<div className="modal-content">
 					<div className="modal-header">
 						<h5 className="modal-title" id="svcModalLabel">
-							Service
+							Servicio
 						</h5>
 						<button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
@@ -17,7 +17,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 						<form>
 							<div className="mb-3">
 								<label htmlFor="recipient-title" className="col-form-label">
-									Title:
+									Titulo:
 								</label>
 								<input
 									type="text"
@@ -37,7 +37,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="price-text" className="col-form-label">
-									Price:
+									Precio:
 								</label>
 								<input
 									type="number"
@@ -57,7 +57,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="schedule-text" className="col-form-label">
-									Schedule Hours:
+									Horas:
 								</label>
 								<input
 									type="number"
@@ -77,7 +77,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="description-text" className="col-form-label">
-									Description:
+									Descripcion:
 								</label>
 								<textarea
 									className="form-control"
@@ -96,7 +96,7 @@ export const ModalSvcComponent = ({ svcData }) => {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="fileForm" className="form-label">
-									Upload Image
+									Cargar Imagen
 								</label>
 								<input
 									className="form-control"
@@ -111,15 +111,15 @@ export const ModalSvcComponent = ({ svcData }) => {
 					</div>
 					<div className="modal-footer">
 						<button type="button" id="#closeMyModal" className="btn btn-secondary" data-bs-dismiss="modal">
-							Close
+							Cerrar
 						</button>
 						<button
 							type="button"
-							className="btn btn-primary"
+							className="btn cinnabar-btn"
 							onClick={e => {
 								store.isFromEdit == true ? actions.updateSvc(store.serviceId) : actions.uploadImage();
 							}}>
-							{store.isFromEdit == true ? "Update" : "Publish"}
+							{store.isFromEdit == true ? "Actualizar" : "Publicar"}
 						</button>
 					</div>
 				</div>

@@ -69,7 +69,7 @@ export const ServiceContent = () => {
 						data-aos="fade-down"
 						data-aos-duration="1500"
 						style={{ marginTop: "6rem", color: "#E14F3F" }}>
-						<header>Services</header>
+						<header>Servicios</header>
 					</div>
 					<div className="col-4"></div>
 				</div>
@@ -83,7 +83,7 @@ export const ServiceContent = () => {
 								onChange={event => {
 									setQueryString(event.target.value);
 								}}
-								placeholder="Search for an specific topic"></input>
+								placeholder="Busca un tema en específico"></input>
 						</div>
 						<div className="col-4 my-4 text-center align-self-center">
 							<button
@@ -91,7 +91,7 @@ export const ServiceContent = () => {
 									getFilter();
 								}}
 								className="btn cinnabar-btn shadow w-25">
-								Filter <i className="fas fa-search ms-2"></i>
+								Buscar <i className="fas fa-search ms-2"></i>
 							</button>
 						</div>
 					</div>
@@ -121,7 +121,7 @@ export const ServiceContent = () => {
 							}
 						}}
 						className="btn cinnabar-outline-btn mb-3 fw-bold">
-						Load more
+						Cargar más
 					</button>
 				</div>
 				<div className="col-4"></div>
@@ -130,7 +130,7 @@ export const ServiceContent = () => {
 				<div className="col-3"></div>
 				<div className="col-6 text-center">
 					<Link to="/" className="btn cinnabar-outline-btn mb-4 w-25 fw-bold">
-						Main Page
+						Inicio
 					</Link>
 				</div>
 				<div className="col-3"></div>

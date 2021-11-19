@@ -58,7 +58,7 @@ export const SignupContent = props => {
 								<input
 									className="pt-3 pt-sm-3 pt-md-2 pt-lg-0"
 									type="text"
-									placeholder="Username"
+									placeholder="Nombre usuario"
 									maxLength="100"
 									onChange={event => {
 										setUsername(event.target.value);
@@ -71,7 +71,7 @@ export const SignupContent = props => {
 								<input
 									className="pt-3 pt-sm-3 pt-md-2 pt-lg-0"
 									type="text"
-									placeholder="Email"
+									placeholder="Correo"
 									maxLength="100"
 									onChange={event => {
 										setEmail(event.target.value);
@@ -87,7 +87,7 @@ export const SignupContent = props => {
 									id="inputPassword1"
 									className="pt-3 pt-sm-3 pt-md-2 pt-lg-0"
 									type="password"
-									placeholder="Password"
+									placeholder="Contraseña"
 									maxLength="30"
 									onChange={event => {
 										setPassword(event.target.value);
@@ -101,7 +101,7 @@ export const SignupContent = props => {
 									id="inputConfirmPassword1"
 									className="pt-3 pt-sm-3 pt-md-2 pt-lg-0"
 									type="password"
-									placeholder="Confirm Password"
+									placeholder="Confirmar contraseña"
 									maxLength="30"
 								/>
 							</div>
@@ -111,7 +111,7 @@ export const SignupContent = props => {
 							<div className="col-12 col-md-12 col-sm-12 col-lg-12 pt-3">
 								<div className="pt-3 pt-sm-3 pt-md-2 pt-lg-0 ">
 									<p style={{ color: "rgb(236, 73, 73)", fontSize: "21px" }}>
-										<strong>Country</strong>
+										<strong>País</strong>
 									</p>
 									<div>
 										<SignupCountryInputs id="country1" countryData={countryData} />
@@ -138,7 +138,7 @@ export const SignupContent = props => {
 											Swal.fire({
 												icon: "error",
 												title: "Oops...",
-												text: "You need to fill up all the forms!"
+												text: "!Necesitas rellenar todos los formularios!"
 											});
 											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
 											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
@@ -152,21 +152,21 @@ export const SignupContent = props => {
 											Swal.fire({
 												icon: "error",
 												title: "Oops...",
-												text: "Passwords aren't matching!"
+												text: "!La contraseña no coincide!"
 											});
 											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
 											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 errorInput";
 											inputEmail.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
 											inputUsername.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
 										} else if (
-											inputCountry == "Select" ||
+											inputCountry == "Seleccionar" ||
 											inputCountry == "" ||
 											inputCountry == "0"
 										) {
 											Swal.fire({
 												icon: "info",
 
-												text: "Please, choose your country"
+												text: "Por favor, selecciona tu país"
 											});
 											inputPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0 ";
 											inputConfirmPassword.className = "pt-3 pt-sm-3 pt-md-2 pt-lg-0";
@@ -174,13 +174,13 @@ export const SignupContent = props => {
 											Swal.fire({
 												icon: "info",
 
-												text: "Please, write a valid email"
+												text: "Por favor escribe un email válido."
 											});
 										} else signup();
 									}}
 									type="button"
 									className="btn btn-outline-danger">
-									<strong>Join now!</strong>
+									<strong>Registrarse</strong>
 								</button>
 							</div>
 						</div>

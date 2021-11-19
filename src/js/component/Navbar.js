@@ -29,14 +29,14 @@ export const Navbar = () => {
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li className="nav-item">
 								<div className="d-flex">
-									<p className="my-auto">Do you have an account? Login here as</p>
+									<p className="my-auto">¿Tienes una cuenta? Inicia sesion como</p>
 									<Link to="/login/professor" className="linkDecoration text-danger nav-link active">
 										{" "}
-										<strong>Professor</strong>{" "}
+										<strong>Profesor</strong>{" "}
 									</Link>
-									<p className="my-auto">or </p>
+									<p className="my-auto">o </p>
 									<Link to="/login/student" className="linkDecoration text-danger nav-link">
-										<strong>Student</strong>
+										<strong>Estudiante</strong>
 									</Link>
 								</div>
 							</li>
@@ -45,20 +45,20 @@ export const Navbar = () => {
 						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li className="nav-item">
 								<div className="d-flex">
-									<p className="my-auto">Do you have an account? Login here as</p>
+									<p className="my-auto">¿Tienes una cuenta? Inicia sesion como</p>
 									<Link
 										to="/login/professor"
 										className="linkDecoration nav-link active"
 										style={{ color: "#E14F3F" }}>
 										{" "}
-										<strong>Professor</strong>{" "}
+										<strong>Profesor</strong>{" "}
 									</Link>
-									<p className="my-auto">or </p>
+									<p className="my-auto">o </p>
 									<Link
 										to="/login/student"
 										className="linkDecoration nav-link active"
 										style={{ color: "#E14F3F" }}>
-										<strong>Student</strong>
+										<strong>Estudiante</strong>
 									</Link>
 								</div>
 							</li>
@@ -69,8 +69,10 @@ export const Navbar = () => {
 								<>
 									<div className="d-flex">
 										<div>
-											<Link to="/services" className="btn cinnabar-outline-btn fw-bold">
-												Services
+											<Link
+												to="/services"
+												className="btn cinnabar-outline-btn shadow-none fw-bold">
+												Servicios
 											</Link>
 										</div>
 										<div>
@@ -78,18 +80,18 @@ export const Navbar = () => {
 												to={`/${localStorage.getItem("role")}/${localStorage.getItem(
 													"id"
 												)}/profile`}
-												className="btn cinnabar-outline-btn mx-3 fw-bold">
-												My Profile
+												className="btn cinnabar-outline-btn shadow-none mx-3 fw-bold">
+												Mi Perfil
 											</Link>
 										</div>
 										<div>
 											<button
-												className="btn cinnabar-outline-btn fw-bold"
+												className="btn cinnabar-outline-btn shadow-none fw-bold"
 												onClick={e => {
 													actions.Logout();
 												}}
 												aria-current="page">
-												Logout
+												Cerrar sesión
 											</button>
 										</div>
 									</div>
@@ -98,23 +100,23 @@ export const Navbar = () => {
 							{!localStorage.getItem("token") && (
 								<li className="nav-item dropdown">
 									<a
-										className="dropdown-toggle btn cinnabar-outline-btn anchorStyle me-2"
+										className="dropdown-toggle btn cinnabar-outline-btn shadow-none anchorStyle me-2"
 										href="#"
 										id="navbarDropdown"
 										role="button"
 										data-bs-toggle="dropdown"
 										aria-expanded="false">
-										Login
+										Iniciar Sesión
 									</a>
 									<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 										<li>
 											<Link to="/login/professor" className="dropdown-item">
-												Login as professor
+												Inicia sesión como profesor
 											</Link>
 										</li>
 										<li>
 											<Link to="/login/student" className="dropdown-item">
-												Login as student
+												Inicia sesión como estudiante
 											</Link>
 										</li>
 									</ul>
@@ -129,20 +131,20 @@ export const Navbar = () => {
 										role="button"
 										data-bs-toggle="dropdown"
 										aria-expanded="false">
-										Register
+										Registrarse
 									</a>
 									<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 										<li>
 											<Link to="/signup/student" className="linkDecoration dropdown-item">
 												{" "}
-												Register as Student
+												Registrarse como estudiante
 											</Link>
 										</li>
 
 										<li>
 											<Link to="/signup/professor" className="linkDecoration dropdown-item">
 												{" "}
-												Register as Professor
+												Registrarse como profesor
 											</Link>
 										</li>
 									</ul>

@@ -10,7 +10,7 @@ export const SingleServiceInfo = ({ info }) => {
 					<div
 						className="col-12 col-lg-4 col-md-12 col-sm-12 align-self-center px-md-0 px-0 px-sm-0 px-lg-2 "
 						data-aos="fade-right">
-						<img src={info.image} className="shadow-lg 		 bg-body  rounded-corners-card w-100 h-100 " />
+						<img src={info.image} className="shadow-lg bg-body rounded-corners-card w-100 h-100 " />
 					</div>
 					<div
 						className="col-12 col-lg-8 col-md-12 col-sm-12 shadow-lg p-3 bg-body  rounded-corners-card"
@@ -22,14 +22,14 @@ export const SingleServiceInfo = ({ info }) => {
 						<div className="row mt-4 mb-5">
 							<div className="col-6 mt-2 text-center">
 								<span className="text-center fs-4" style={{ color: "#E14F3F" }}>
-									<strong>Price: </strong>
+									<strong>Precio: </strong>
 									{`${info.price} `}
 									<i className="fas fa-dollar-sign fw-bold"></i>
 								</span>
 							</div>
 							<div className="col-6 mt-2 text-center">
 								<span className="text-black text-center fs-4">
-									<strong>Time: </strong>
+									<strong>Tiempo: </strong>
 									{`${info.schedule} ${info.schedule == 1 ? "Hour" : "Hours"} `}
 									<i className="far fa-clock"></i>
 								</span>
@@ -43,14 +43,14 @@ export const SingleServiceInfo = ({ info }) => {
 										localStorage.setItem("uid", `${info.professor_id}`);
 									}}
 									to={`/user/profile`}>
-									See professor profile!
+									Ver perfil de profesor
 								</Link>
 							</div>
 						</div>
 						<div className="row mt-2">
 							<div className="col-12 text-center">
 								<Link to="/services" className="btn cinnabar-btn">
-									Return to Services
+									Regresar a servicios
 								</Link>
 							</div>
 						</div>

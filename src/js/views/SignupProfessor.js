@@ -8,8 +8,8 @@ export const SignupProfessor = () => {
 	return (
 		<>
 			<SignupContent
-				title="Sign Up as a Professor"
-				titleDescription="Without paying anything!"
+				title="Registrate como Profesor"
+				titleDescription="Sin pagar nada!"
 				image={ProfessorImage}
 				url={URL}
 				sendTo="/professor"

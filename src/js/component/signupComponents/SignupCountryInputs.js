@@ -11,7 +11,7 @@ export const SignupCountryInputs = ({ countryData }) => {
 					countryData(e.target.value);
 				}}>
 				<option value="0" className="text-center border border-bottom">
-					Select
+					Seleccionar
 				</option>
 				<option value="Afganistan">Afghanistan</option>
 				<option value="Albania">Albania</option>

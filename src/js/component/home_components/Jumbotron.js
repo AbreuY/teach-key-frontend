@@ -81,7 +81,7 @@ export const Jumbotron = () => {
 					data-bs-target="#myCarousel"
 					data-bs-slide="prev">
 					<span className="carousel-control-prev-icon" aria-hidden="true" />
-					<span className="visually-hidden">Previous</span>
+					<span className="visually-hidden">Anterior</span>
 				</button>
 				<button
 					className="carousel-control-next"
@@ -89,7 +89,7 @@ export const Jumbotron = () => {
 					data-bs-target="#myCarousel"
 					data-bs-slide="next">
 					<span className="carousel-control-next-icon" aria-hidden="true" />
-					<span className="visually-hidden">Next</span>
+					<span className="visually-hidden">Siguiente</span>
 				</button>
 			</div>
 		</div>

@@ -26,7 +26,7 @@ export const ServicesCard = ({ item }) => {
 							<p className="card-text">{item.description}</p>
 							<div className="text-center">
 								<Link className="btn cinnabar-btn" to={`/services/${item.id}`}>
-									See more
+									Ver más
 								</Link>
 							</div>
 						</div>

@@ -55,7 +55,7 @@ export const PublicProfile = () => {
 										<div className="card-body text-center">
 											<div className="mb-4">
 												<h3 className="h4 mb-0">
-													<span className="badge bg-success fs-5">Professor</span>
+													<span className="badge bg-success fs-5">Profesor</span>
 
 													<br />
 													{data["user_name"] == undefined ? (
@@ -70,7 +70,7 @@ export const PublicProfile = () => {
 
 											<hr style={{ width: "100%" }} />
 											<div className="text-center">
-												<h4 className="mb-0 mt-2 text-primary">Contacts</h4>
+												<h4 className="mb-0 mt-2 text-primary">Contactos</h4>
 											</div>
 											<ul className="social-icon-style2 ps-0">
 												<li>
@@ -117,7 +117,7 @@ export const PublicProfile = () => {
 									<div className="ps-lg-1-6 ps-xl-5">
 										<div className="mb-5 wow fadeIn">
 											<div className="row mt-n4">
-												<h2 className="mb-0 mt-2 text-primary">Services</h2>
+												<h2 className="mb-0 mt-2 text-primary">Servicios</h2>
 												<div className="row row-cols-1 row-cols-md-2 g-4">
 													{data.services == undefined
 														? ""

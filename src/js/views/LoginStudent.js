@@ -7,8 +7,8 @@ export const LoginStudent = () => {
 		<>
 			<LoginContent
 				url={URL}
-				header="Hello, Student!"
-				headerDescription="Log in and start looking for your perfect Teacher!"
+				header="Hola, Estudiante!"
+				headerDescription="¡Inicia sesión y comienza a buscar a tu profesor!"
 			/>
 		</>
 	);

@@ -33,7 +33,7 @@ export const CardServices = ({ data }) => {
 										history.push(`/services/${data.id}`);
 									}}
 									className="me-1 btn btn-primary rounded-pill">
-									View Service
+									Ver Publicacion
 								</button>
 							) : (
 								<>
@@ -41,17 +41,17 @@ export const CardServices = ({ data }) => {
 										onClick={e => {
 											actions.getSingleServiceDetail(data.id, true);
 										}}
-										className="me-1 btn btn-primary rounded-pill"
+										className="me-1 btn blizzard-btn rounded-pill"
 										data-bs-toggle="modal"
 										data-bs-target="#svcModal">
-										Edit
+										Editar
 									</button>
 									<button
 										onClick={e => {
 											actions.deleteService(data.id);
 										}}
-										className="btn btn-danger rounded-pill">
-										Delete
+										className="btn cinnabar-btn shadow-none rounded-pill">
+										Eliminar
 									</button>
 								</>
 							)}

@@ -13,11 +13,11 @@ export const UserDetails = () => {
 			<div className="card-body">
 				<div className="row mb-3">
 					<div className="text-start mb-3">
-						<h4 className="mb-0 fw-bold">Profile</h4>
+						<h4 className="mb-0 fw-bold">Datos</h4>
 					</div>
 
 					<div className="col-sm-3">
-						<h6 className="mb-0">User Name</h6>
+						<h6 className="mb-0">Nombre Usuario</h6>
 					</div>
 					<div className="col-sm-9 text-secondary">
 						<input
@@ -32,7 +32,7 @@ export const UserDetails = () => {
 				</div>
 				<div className="row mb-3">
 					<div className="col-sm-3">
-						<h6 className="mb-0">Date of Birth</h6>
+						<h6 className="mb-0">Fecha Nac.</h6>
 					</div>
 					<div className="col-sm-9 text-secondary">
 						<CustomDatePicker />
@@ -40,7 +40,7 @@ export const UserDetails = () => {
 				</div>
 				<div className="row mb-3">
 					<div className="col-sm-3">
-						<h6 className="mb-0">Country</h6>
+						<h6 className="mb-0">Pais</h6>
 					</div>
 					<div className="col-sm-9 text-secondary">
 						<input
@@ -55,7 +55,7 @@ export const UserDetails = () => {
 				</div>
 				<div className="row mb-3">
 					<div className="col-sm-3">
-						<h6 className="mb-0">Email</h6>
+						<h6 className="mb-0">Correo</h6>
 					</div>
 					<div className="col-sm-9 text-secondary">
 						<input
@@ -74,7 +74,7 @@ export const UserDetails = () => {
 					<>
 						<div className="row mb-3">
 							<div className="col-sm-3">
-								<h6 className="mb-0">Secondary email</h6>
+								<h6 className="mb-0">Correo secundario</h6>
 							</div>
 							<div className="col-sm-9 text-secondary">
 								<input
@@ -94,7 +94,7 @@ export const UserDetails = () => {
 						<hr style={{ width: "100%" }} />
 						<div className="row mb-2">
 							<div className="text-start mb-3">
-								<h4 className="mb-0 fw-bold">Contact Methods</h4>
+								<h4 className="mb-0 fw-bold">Métodos Contacto</h4>
 							</div>
 						</div>
 						<div className="row mb-3">
@@ -172,7 +172,7 @@ export const UserDetails = () => {
 							onClick={() => {
 								actions.updateProfileImage(params.role, params.id);
 							}}>
-							Save changes
+							Guardar Cambios
 						</button>
 					</div>
 				</div>

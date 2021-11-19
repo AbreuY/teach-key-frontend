@@ -8,7 +8,7 @@ export const TopProfessors = () => {
 		<div className="container mt-5" data-aos="fade-up" data-aos-duration="2000">
 			<div className="row">
 				<div className="text-center">
-					<h1 className="display-4">Top Profesores</h1>
+					<h1 className="display-4">Profesores Top</h1>
 					<p>Aqui podrás encontrar una variedad de profesores mejores calificados en sus áreas de estudio.</p>
 				</div>
 			</div>
